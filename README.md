@@ -11,8 +11,10 @@
 
 # Usage
  - 本Project起始于MCBE v1.16.0.2，历史版本不在翻译计划内。
- > see https://vanilla-jsdocs.amd.rocks/
- > see /game_version/clickMe.html **Download it!**
+ ```
+ see https://vanilla-jsdocs.amd.rocks/
+ see /game_version/clickMe.html **You can download it!**
+ ```
 
 # Contribute
  - 若您在已翻译项目中发现错误或不理解的地方，请提交Issue
