@@ -1,1 +1,6 @@
 theme: jekyll-theme-slate
+
+deploy: 
+type: git
+repo: /
+branch: master
