@@ -6,7 +6,8 @@
 *** 翻译内容禁止商用，转载请带上项目Github链接。尊重他人劳动成果请勿盗用。<br><br>
 在这里，你可以找到一些Script API关于对象和返回类型的定义<br>
 
-<h1><p id="Block JS API Object"><span class="anchored">[对象] 方块</span></p></h1>
+<!-- the document is start ... -->
+<h1><p id="Block JS API Object"><span class="anchored">[对象] JavaScript 方块</span></p></h1>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
 <tbody><tr> <th style="border-style:solid; border-width:3;">名称</th> <th style="border-style:solid; border-width:3;">类型</th><th style="border-style:solid; border-width:3;">备注</th> </tr>
 <tr>
@@ -54,10 +55,7 @@
 </tr>
 </tbody></table>
 
-<h1><p id="Component JS API Object"><span class="anchored">[对象] JavaScript 插件</span></p></h1>
-
-<h2></h2>
-
+<h1><p id="Component JS API Object"><span class="anchored">[对象] JavaScript 组件</span></p></h1>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
 <tbody><tr> <th style="border-style:solid; border-width:3;">名称</th> <th style="border-style:solid; border-width:3;">类型</th><th style="border-style:solid; border-width:3;">备注</th> </tr>
 <tr>
@@ -72,53 +70,42 @@
 </tr>
 </tbody></table>
 
-<h1><p id="Entity JS API Object">Entity JS API Object</span></p></h1>
-
-<h2></h2>
-
+<h1><p id="Entity JS API Object"><span class="anchored">[对象] JavaScript 实体</span></p></h1>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
-<tbody><tr> <th style="border-style:solid; border-width:3;">Name</th> <th style="border-style:solid; border-width:3;">Type</th> <th style="border-style:solid; border-width:3;">Entity JS API Object</th> <th style="border-style:solid; border-width:3;">Description</th> </tr>
+<tbody><tr> <th style="border-style:solid; border-width:3;">名称</th> <th style="border-style:solid; border-width:3;">类型</th><th style="border-style:solid; border-width:3;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:3; padding:7px">__identifier__</td>
-<td style="border-style:solid; border-width:3; padding:7px">String</td>
-<td style="border-style:solid; border-width:3; padding:7px"></td>
-<td style="border-style:solid; border-width:3; padding:7px">READ ONLY. This is the identifier for the object in the format namespace:name. For example, if the type is entity and the object is representing a vanilla cow, the identifier would be minecraft:cow<br></td>
+<td style="border-style:solid; border-width:3; padding:7px">字符串</td>
+<td style="border-style:solid; border-width:3; padding:7px">[只读] 这是命名空间对于指定实体的对象标识符。例如牛(cow)，标识符为minecraft:cow<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:3; padding:7px">__type__</td>
-<td style="border-style:solid; border-width:3; padding:7px">String</td>
-<td style="border-style:solid; border-width:3; padding:7px"></td>
-<td style="border-style:solid; border-width:3; padding:7px">READ ONLY. This defines the type of object. Can be: "entity" or "item_entity".<br></td>
+<td style="border-style:solid; border-width:3; padding:7px">字符串</td>
+<td style="border-style:solid; border-width:3; padding:7px">[只读] 这是对象的类型，可以是“entity”或“item_entity”。<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:3; padding:7px">id</td>
-<td style="border-style:solid; border-width:3; padding:7px">Positive Integer</td>
-<td style="border-style:solid; border-width:3; padding:7px"></td>
-<td style="border-style:solid; border-width:3; padding:7px">READ ONLY. This is the unique identifier of the entity.<br></td>
+<td style="border-style:solid; border-width:3; padding:7px">正整数</td>
+<td style="border-style:solid; border-width:3; padding:7px">[只读] 这是实体的唯一标识符。<br></td>
 </tr>
 </tbody></table>
 
-<h1><p id="Entity Ticking Area JS API Object"><span class="anchored"><a href="#Entity%20Ticking%20Area%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Ticking Area JS API Object</span></p></h1>
-
-<h2></h2>
-
+<h1><p id="Entity Ticking Area JS API Object"><span class="anchored">[对象] JavaScript 实体常加载区域</span></p></h1>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
-<tbody><tr> <th style="border-style:solid; border-width:3;">Name</th> <th style="border-style:solid; border-width:3;">Type</th> <th style="border-style:solid; border-width:3;">Entity Ticking Area JS API Object</th> <th style="border-style:solid; border-width:3;">Description</th> </tr>
+<tbody><tr> <th style="border-style:solid; border-width:3;">名称</th> <th style="border-style:solid; border-width:3;">类型</th><th style="border-style:solid; border-width:3;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:3; padding:7px">__type__</td>
-<td style="border-style:solid; border-width:3; padding:7px">String</td>
-<td style="border-style:solid; border-width:3; padding:7px"></td>
-<td style="border-style:solid; border-width:3; padding:7px">READ ONLY. This defines the type of object. Will be: "entity_ticking_area".<br></td>
+<td style="border-style:solid; border-width:3; padding:7px">字符串</td>
+<td style="border-style:solid; border-width:3; padding:7px">[只读] 这是对象的类型，为 "entity_ticking_area".<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:3; padding:7px">entity_ticking_area_id</td>
-<td style="border-style:solid; border-width:3; padding:7px">Positive Integer</td>
-<td style="border-style:solid; border-width:3; padding:7px"></td>
-<td style="border-style:solid; border-width:3; padding:7px">READ ONLY. This is the unique identifier of the ticking area.<br></td>
+<td style="border-style:solid; border-width:3; padding:7px">整数</td>
+<td style="border-style:solid; border-width:3; padding:7px">[只读] 这是实体常加载区域的唯一标识符。<br></td>
 </tr>
 </tbody></table>
 
-<h1><p id="ItemStack JS API Object"><span class="anchored"><a href="#ItemStack%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>ItemStack JS API Object</span></p></h1>
+<h1><p id="ItemStack JS API Object"><span class="anchored">ItemStack JS API Object</span></p></h1>
 
 <h2></h2>
 
