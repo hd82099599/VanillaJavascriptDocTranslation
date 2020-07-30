@@ -146,9 +146,6 @@
 </tbody></table>
 
 <h1><p id="Level Ticking Area JS API Object"><span class="anchored">[对象] JavaScript 存档常加载区域</span></p></h1>
-
-<h2></h2>
-
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
 <tbody><tr> <th style="border-style:solid; border-width:3;">名称</th> <th style="border-style:solid; border-width:3;">类型</th><th style="border-style:solid; border-width:3;">备注</th> </tr>
 <tr>
@@ -163,40 +160,33 @@
 </tr>
 </tbody></table>
 
-<h1><p id="Query JS API Object"><span class="anchored">Query JS API Object</span></p></h1>
-
-<h2></h2>
-
+<h1><p id="Query JS API Object"><span class="anchored">[对象] JavaScript 查询</span></p></h1>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
-<tbody><tr> <th style="border-style:solid; border-width:3;">Name</th> <th style="border-style:solid; border-width:3;">Type</th> <th style="border-style:solid; border-width:3;">Query JS API Object</th> <th style="border-style:solid; border-width:3;">Description</th> </tr>
+<tbody><tr> <th style="border-style:solid; border-width:3;">名称</th> <th style="border-style:solid; border-width:3;">类型</th><th style="border-style:solid; border-width:3;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:3; padding:7px">__type__</td>
-<td style="border-style:solid; border-width:3; padding:7px">String</td>
-<td style="border-style:solid; border-width:3; padding:7px"></td>
-<td style="border-style:solid; border-width:3; padding:7px">READ ONLY. This defines the type of object. Will be: "query".<br></td>
+<td style="border-style:solid; border-width:3; padding:7px">字符串</td>
+<td style="border-style:solid; border-width:3; padding:7px">[只读] 这是对象的类型，为“query”。<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:3; padding:7px">query_id</td>
-<td style="border-style:solid; border-width:3; padding:7px">Positive Integer</td>
-<td style="border-style:solid; border-width:3; padding:7px"></td>
-<td style="border-style:solid; border-width:3; padding:7px">READ ONLY. This is the unique identifier of the query.<br></td>
+<td style="border-style:solid; border-width:3; padding:7px">整数</td>
+<td style="border-style:solid; border-width:3; padding:7px">[只读] 这是Query的唯一标识符。<br></td>
 </tr>
 </tbody></table>
 
-<h1><p id="Ticking Area JS API Object"><span class="anchored"><a href="#Ticking%20Area%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Ticking Area JS API Object</span></p></h1>
+<h1><p id="Ticking Area JS API Object"><span class="anchored">常加载区域的JSAPI对象</span></p></h1>
+常加载区域有两种类型，实体(Entity)和区域(level)。当你的函数需要常加载区域时，您可以使用任意一种作为参数。<br>
+<br>
 
-There are two types of ticking area objects. Entity and Level. When a function calls for a ticking area it can take either type as an argument.<br>
-<br><br>
+<h1><p id="Script Bindings"><span class="anchored">内容绑定</span></p></h1>
+绑定是Vanilla Script引擎修改游戏中内容的功能。<br>
 
-<h1><p id="Script Bindings"><span class="anchored"><a href="#Script%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Script Bindings</span></p></h1>
+<h1><p id="Block Bindings"><span class="anchored">Block Bindings</span></p></h1>
+方块绑定定义玩家如何与方块交互。<br>
 
-Bindings are the capabilities of the Minecraft Script Engine to change or modify things in the game.<br><h1><p id="Block Bindings"><span class="anchored"><a href="#Block%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Block Bindings</span></p></h1>
-
-These functions define how you interact with blocks.<br><h2></h2>
-
-<h2><p id="getBlock(Ticking Area, PositionObject)"><span class="anchored"><a href="#getBlock(Ticking%20Area%2C%20PositionObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlock(Ticking Area, PositionObject)</span></p></h2>
-
-Allows you to get a block from the world when provided a JavaScript object containing a position. The block must be within a ticking area.<br><h3></h3>
+<h2>getBlock(常加载区域ID, 坐标对象)</span></p></h2>
+获取方块的NBT信息，指定方块需要在常加载区域内。<br>
 
 <h3><p id="Parameters"><span class="anchored">Parameters</span></p></h3>
 
