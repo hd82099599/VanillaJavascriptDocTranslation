@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<h1><p id="Script API Objects"><span class="anchored">Script API Objects</span></p></h1>
+<h1><p id="Script API Objects"><span class="anchored">Vanilla Script API 文档</span></p></h1>
 
-Here you can find the definition of some objects returned by the script API.<br><h1><p id="Block JS API Object"><span class="anchored">Block JS API Object</span></p></h1>
+*** 原文档版权归bedrock.dev所有，本人只是自发翻译。<br>
+*** 翻译内容禁止商用，转载请带上项目Github链接。尊重他人劳动成果请勿盗用。<br><br>
+在这里，你可以找到一些Script API关于对象和返回类型的定义<br>
 
-<h2></h2>
-
+<h1><p id="Block JS API Object"><span class="anchored">对象：方块</span></p></h1>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
-<tbody><tr> <th style="border-style:solid; border-width:3;">Name</th> <th style="border-style:solid; border-width:3;">Type</th> <th style="border-style:solid; border-width:3;">Block JS API Object</th> <th style="border-style:solid; border-width:3;">Description</th> </tr>
+<tbody><tr> <th style="border-style:solid; border-width:3;">名称</th> <th style="border-style:solid; border-width:3;">类型</th><th style="border-style:solid; border-width:3;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:3; padding:7px">__identifier__</td>
-<td style="border-style:solid; border-width:3; padding:7px">String</td>
-<td style="border-style:solid; border-width:3; padding:7px"></td>
-<td style="border-style:solid; border-width:3; padding:7px">READ ONLY. This is the identifier for the object in the format namespace:name. For example, if the type is block and the object is representing a block of bedrock, the identifier would be minecraft:bedrock<br></td>
+<td style="border-style:solid; border-width:3; padding:7px">字符串</td>
+<td style="border-style:solid; border-width:3; padding:7px">[只读] 这是命名空间对于指定方块的对象标识符。例如基岩(bedrock)方块，标识符为 minecraft:bedrock。<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:3; padding:7px">__type__</td>
-<td style="border-style:solid; border-width:3; padding:7px">String</td>
-<td style="border-style:solid; border-width:3; padding:7px"></td>
-<td style="border-style:solid; border-width:3; padding:7px">READ ONLY. This defines the type of object. Will be: "block".<br></td>
+<td style="border-style:solid; border-width:3; padding:7px">字符串</td>
+<td style="border-style:solid; border-width:3; padding:7px">[只读] 这是对象的类型，为“方块”。<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:3; padding:7px">block_position</td>
-<td style="border-style:solid; border-width:3; padding:7px">JavaScript Object</td>
-<td style="border-style:solid; border-width:3; padding:7px"></td>
-<td style="border-style:solid; border-width:3; padding:7px">READ ONLY. This is the position of the block and it functions as part of its unique identifier.<br><h3><p id="Parameters"><span class="anchored">Parameters</span></p></h3>
+<td style="border-style:solid; border-width:3; padding:7px">JavaScript对象</td>
+<td style="border-style:solid; border-width:3; padding:7px">[只读] 这是方块的位置。是它“唯一”标识符的一部分。<br><h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
 <h4></h4>
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
-<tbody><tr> <th style="border-style:solid; border-width:1;">Name</th> <th style="border-style:solid; border-width:1;">Type</th> <th style="border-style:solid; border-width:1;">Description</th> </tr>
+<tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th> <th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">x</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
-<td style="border-style:solid; border-width:1; padding:9px">The x position<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
+<td style="border-style:solid; border-width:1; padding:9px">x 坐标<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">y</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
-<td style="border-style:solid; border-width:1; padding:9px">The y position<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
+<td style="border-style:solid; border-width:1; padding:9px">y 坐标<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">z</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
-<td style="border-style:solid; border-width:1; padding:9px">The z position<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
+<td style="border-style:solid; border-width:1; padding:9px">z 坐标<br></td>
 </tr>
 </tbody></table>
 
@@ -51,13 +49,12 @@ Here you can find the definition of some objects returned by the script API.<br>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:3; padding:7px">ticking_area</td>
-<td style="border-style:solid; border-width:3; padding:7px">JavaScript Object</td>
-<td style="border-style:solid; border-width:3; padding:7px"></td>
-<td style="border-style:solid; border-width:3; padding:7px">READ ONLY. This is the ticking area object that was used to get this block.<br></td>
+<td style="border-style:solid; border-width:3; padding:7px">JavaScript 对象</td>
+<td style="border-style:solid; border-width:3; padding:7px">[只读] 这用于常加载区块对象获取此方块。<br></td>
 </tr>
 </tbody></table>
 
-<h1><p id="Component JS API Object"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Component%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Component JS API Object</span></p></h1>
+<h1><p id="Component JS API Object"><span class="anchored">Component JS API Object</span></p></h1>
 
 <h2></h2>
 
@@ -77,7 +74,7 @@ Here you can find the definition of some objects returned by the script API.<br>
 </tr>
 </tbody></table>
 
-<h1><p id="Entity JS API Object"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Entity%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity JS API Object</span></p></h1>
+<h1><p id="Entity JS API Object"><span class="anchored"><a href="#Entity%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity JS API Object</span></p></h1>
 
 <h2></h2>
 
@@ -103,7 +100,7 @@ Here you can find the definition of some objects returned by the script API.<br>
 </tr>
 </tbody></table>
 
-<h1><p id="Entity Ticking Area JS API Object"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Entity%20Ticking%20Area%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Ticking Area JS API Object</span></p></h1>
+<h1><p id="Entity Ticking Area JS API Object"><span class="anchored"><a href="#Entity%20Ticking%20Area%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Ticking Area JS API Object</span></p></h1>
 
 <h2></h2>
 
@@ -123,7 +120,7 @@ Here you can find the definition of some objects returned by the script API.<br>
 </tr>
 </tbody></table>
 
-<h1><p id="ItemStack JS API Object"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#ItemStack%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>ItemStack JS API Object</span></p></h1>
+<h1><p id="ItemStack JS API Object"><span class="anchored"><a href="#ItemStack%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>ItemStack JS API Object</span></p></h1>
 
 <h2></h2>
 
@@ -155,7 +152,7 @@ Here you can find the definition of some objects returned by the script API.<br>
 </tr>
 </tbody></table>
 
-<h1><p id="Level JS API Object"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Level%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Level JS API Object</span></p></h1>
+<h1><p id="Level JS API Object"><span class="anchored"><a href="#Level%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Level JS API Object</span></p></h1>
 
 <h2></h2>
 
@@ -175,7 +172,7 @@ Here you can find the definition of some objects returned by the script API.<br>
 </tr>
 </tbody></table>
 
-<h1><p id="Level Ticking Area JS API Object"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Level%20Ticking%20Area%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Level Ticking Area JS API Object</span></p></h1>
+<h1><p id="Level Ticking Area JS API Object"><span class="anchored"><a href="#Level%20Ticking%20Area%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Level Ticking Area JS API Object</span></p></h1>
 
 <h2></h2>
 
@@ -195,7 +192,7 @@ Here you can find the definition of some objects returned by the script API.<br>
 </tr>
 </tbody></table>
 
-<h1><p id="Query JS API Object"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Query%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Query JS API Object</span></p></h1>
+<h1><p id="Query JS API Object"><span class="anchored"><a href="#Query%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Query JS API Object</span></p></h1>
 
 <h2></h2>
 
@@ -215,18 +212,18 @@ Here you can find the definition of some objects returned by the script API.<br>
 </tr>
 </tbody></table>
 
-<h1><p id="Ticking Area JS API Object"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Ticking%20Area%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Ticking Area JS API Object</span></p></h1>
+<h1><p id="Ticking Area JS API Object"><span class="anchored"><a href="#Ticking%20Area%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Ticking Area JS API Object</span></p></h1>
 
 There are two types of ticking area objects. Entity and Level. When a function calls for a ticking area it can take either type as an argument.<br>
 <br><br>
 
-<h1><p id="Script Bindings"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Script%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Script Bindings</span></p></h1>
+<h1><p id="Script Bindings"><span class="anchored"><a href="#Script%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Script Bindings</span></p></h1>
 
-Bindings are the capabilities of the Minecraft Script Engine to change or modify things in the game.<br><h1><p id="Block Bindings"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Block%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Block Bindings</span></p></h1>
+Bindings are the capabilities of the Minecraft Script Engine to change or modify things in the game.<br><h1><p id="Block Bindings"><span class="anchored"><a href="#Block%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Block Bindings</span></p></h1>
 
 These functions define how you interact with blocks.<br><h2></h2>
 
-<h2><p id="getBlock(Ticking Area, PositionObject)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#getBlock(Ticking%20Area%2C%20PositionObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlock(Ticking Area, PositionObject)</span></p></h2>
+<h2><p id="getBlock(Ticking Area, PositionObject)"><span class="anchored"><a href="#getBlock(Ticking%20Area%2C%20PositionObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlock(Ticking Area, PositionObject)</span></p></h2>
 
 Allows you to get a block from the world when provided a JavaScript object containing a position. The block must be within a ticking area.<br><h3></h3>
 
@@ -271,7 +268,7 @@ Allows you to get a block from the world when provided a JavaScript object conta
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -285,7 +282,7 @@ Allows you to get a block from the world when provided a JavaScript object conta
 
 <br><br>
 
-<h2><p id="getBlock(Ticking Area, x, y, z)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#getBlock(Ticking%20Area%2C%20x%2C%20y%2C%20z)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlock(Ticking Area, x, y, z)</span></p></h2>
+<h2><p id="getBlock(Ticking Area, x, y, z)"><span class="anchored"><a href="#getBlock(Ticking%20Area%2C%20x%2C%20y%2C%20z)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlock(Ticking Area, x, y, z)</span></p></h2>
 
 Allows you to get a block from the world when provided an x, y, and z position. The block must be within a ticking area.<br><h3></h3>
 
@@ -317,7 +314,7 @@ Allows you to get a block from the world when provided an x, y, and z position. 
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -335,7 +332,7 @@ Allows you to get a block from the world when provided an x, y, and z position. 
 
 <br><br>
 
-<h2><p id="getBlocks(Ticking Area, Minimum PositionObject, Maximum PositionObject)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#getBlocks(Ticking%20Area%2C%20Minimum%20PositionObject%2C%20Maximum%20PositionObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlocks(Ticking Area, Minimum PositionObject, Maximum PositionObject)</span></p></h2>
+<h2><p id="getBlocks(Ticking Area, Minimum PositionObject, Maximum PositionObject)"><span class="anchored"><a href="#getBlocks(Ticking%20Area%2C%20Minimum%20PositionObject%2C%20Maximum%20PositionObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlocks(Ticking Area, Minimum PositionObject, Maximum PositionObject)</span></p></h2>
 
 Allows you to get an array of blocks from the world when provided a minimum and maximum position. The blocks must be within a ticking area. This call can be slow if given a lot of blocks, and should be used infrequently.<br><h3></h3>
 
@@ -408,7 +405,7 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -426,7 +423,7 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 
 <br><br>
 
-<h2><p id="getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#getBlocks(Ticking%20Area%2C%20x%20min%2C%20y%20min%2C%20z%20min%2C%20x%20max%2C%20y%20max%2C%20z%20max)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)</span></p></h2>
+<h2><p id="getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)"><span class="anchored"><a href="#getBlocks(Ticking%20Area%2C%20x%20min%2C%20y%20min%2C%20z%20min%2C%20x%20max%2C%20y%20max%2C%20z%20max)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)</span></p></h2>
 
 Allows you to get an array of blocks from the world when provided a minimum and maximum x, y, and z position. The blocks must be within a ticking area. This call can be slow if given a lot of blocks, and should be used infrequently.<br><h3></h3>
 
@@ -473,7 +470,7 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -493,11 +490,11 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 
 <br><br>
 
-<h1><p id="Component Bindings"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Component%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Component Bindings</span></p></h1>
+<h1><p id="Component Bindings"><span class="anchored"><a href="#Component%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Component Bindings</span></p></h1>
 
 <h2></h2>
 
-<h2><p id="applyComponentChanges(EntityObject, ComponentObject)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#applyComponentChanges(EntityObject%2C%20ComponentObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>applyComponentChanges(EntityObject, ComponentObject)</span></p></h2>
+<h2><p id="applyComponentChanges(EntityObject, ComponentObject)"><span class="anchored"><a href="#applyComponentChanges(EntityObject%2C%20ComponentObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>applyComponentChanges(EntityObject, ComponentObject)</span></p></h2>
 
 Applies the component and any changes made to it in script back to the entity. What this means for each component can be slightly different: it makes the component reload on the entity with the new data as if it had just been added to the entity.<br><h3></h3>
 
@@ -519,7 +516,7 @@ Applies the component and any changes made to it in script back to the entity. W
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -551,7 +548,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 </pre> <br>
 <br><br>
 
-<h2><p id="createComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#createComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createComponent(EntityObject, ComponentIdentifier)</span></p></h2>
+<h2><p id="createComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="#createComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createComponent(EntityObject, ComponentIdentifier)</span></p></h2>
 
 Creates the specified component and adds it to the entity. This should only be used with custom components which need to be registered first. If the entity already has the component, this will retrieve the component already there instead.<br><h3></h3>
 
@@ -573,7 +570,7 @@ Creates the specified component and adds it to the entity. This should only be u
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -608,7 +605,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 </pre> <br>
 <br><br>
 
-<h2><p id="destroyComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#destroyComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>destroyComponent(EntityObject, ComponentIdentifier)</span></p></h2>
+<h2><p id="destroyComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="#destroyComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>destroyComponent(EntityObject, ComponentIdentifier)</span></p></h2>
 
 Removes the specified component from the given entity. If the entity has the component, it will be removed. Currently this only works with custom components and can't be used to remove components defined for an entity in JSON.<br><h3></h3>
 
@@ -630,7 +627,7 @@ Removes the specified component from the given entity. If the entity has the com
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -669,7 +666,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 </pre> <br>
 <br><br>
 
-<h2><p id="getComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#getComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getComponent(EntityObject, ComponentIdentifier)</span></p></h2>
+<h2><p id="getComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="#getComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getComponent(EntityObject, ComponentIdentifier)</span></p></h2>
 
 Looks for the specified component in the entity. If it exists, retrieves the data from the component and returns it.<br><h3></h3>
 
@@ -691,7 +688,7 @@ Looks for the specified component in the entity. If it exists, retrieves the dat
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -699,7 +696,7 @@ Looks for the specified component in the entity. If it exists, retrieves the dat
 <tbody><tr> <th style="border-style:solid; border-width:1;">Type</th> <th style="border-style:solid; border-width:1;">Value</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Component JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">An object with the following fields, and additionally, all the fields as defined in the component<br><h5><p id="Component JS API Object"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Component%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Component JS API Object</span></p></h5>
+<td style="border-style:solid; border-width:1; padding:9px">An object with the following fields, and additionally, all the fields as defined in the component<br><h5><p id="Component JS API Object"><span class="anchored"><a href="#Component%20JS%20API%20Object" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Component JS API Object</span></p></h5>
 
 <h6></h6>
 
@@ -745,7 +742,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 </pre> <br>
 <br><br>
 
-<h2><p id="hasComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#hasComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>hasComponent(EntityObject, ComponentIdentifier)</span></p></h2>
+<h2><p id="hasComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="#hasComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>hasComponent(EntityObject, ComponentIdentifier)</span></p></h2>
 
 Checks if the given entity has the specified component.<br><h3></h3>
 
@@ -767,7 +764,7 @@ Checks if the given entity has the specified component.<br><h3></h3>
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -798,7 +795,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 </pre> <br>
 <br><br>
 
-<h2><p id="registerComponent(ComponentIdentifier, ComponentData)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#registerComponent(ComponentIdentifier%2C%20ComponentData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerComponent(ComponentIdentifier, ComponentData)</span></p></h2>
+<h2><p id="registerComponent(ComponentIdentifier, ComponentData)"><span class="anchored"><a href="#registerComponent(ComponentIdentifier%2C%20ComponentData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerComponent(ComponentIdentifier, ComponentData)</span></p></h2>
 
 Creates a custom component that only exists in script. It can be then added, removed, and updated from entities. These custom components only exist while the Script Engine is running.<br><h3></h3>
 
@@ -820,7 +817,7 @@ Creates a custom component that only exists in script. It can be then added, rem
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -843,15 +840,15 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <br><br>
 
-<h1><p id="Entity Bindings"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Entity%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Bindings</span></p></h1>
+<h1><p id="Entity Bindings"><span class="anchored"><a href="#Entity%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Bindings</span></p></h1>
 
 <h2></h2>
 
-<h2><p id="createEntity()"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#createEntity()" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEntity()</span></p></h2>
+<h2><p id="createEntity()"><span class="anchored"><a href="#createEntity()" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEntity()</span></p></h2>
 
 Creates an empty entity with no components and does not place it in the world. The empty entity will be of type custom and have a blank identifier. This is NOT a valid entity that exists in the world, just an empty one that only scripts know about.<br><br>NOTE: Entities are created first on the server, with the client notified of new entities afterwards. Be aware that if you send the result object to the client right away, the created entity might not exist on the client yet.<br><h3></h3>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -865,7 +862,7 @@ Creates an empty entity with no components and does not place it in the world. T
 
 <br><br>
 
-<h2><p id="createEntity(Type, TemplateIdentifier)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#createEntity(Type%2C%20TemplateIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEntity(Type, TemplateIdentifier)</span></p></h2>
+<h2><p id="createEntity(Type, TemplateIdentifier)"><span class="anchored"><a href="#createEntity(Type%2C%20TemplateIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEntity(Type, TemplateIdentifier)</span></p></h2>
 
 Creates an entity and applies the specified template as defined in JSON. This allows you to quickly create an entity from the applied Behavior Packs as the base for an entity created in scripting. The entity will be spawned into the world with all the components, component groups, and event triggers that are defined in the JSON file of the identifier specified. Only works on scripts registered on the server.NOTE: Entities are created first on the server, with the client notified of new entities afterwards. Be aware that if you send the result object to the client right away, the created entity might not exist on the client yet.<br><h3></h3>
 
@@ -887,7 +884,7 @@ Creates an entity and applies the specified template as defined in JSON. This al
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -901,7 +898,7 @@ Creates an entity and applies the specified template as defined in JSON. This al
 
 <br><br>
 
-<h2><p id="destroyEntity(EntityObject)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#destroyEntity(EntityObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>destroyEntity(EntityObject)</span></p></h2>
+<h2><p id="destroyEntity(EntityObject)"><span class="anchored"><a href="#destroyEntity(EntityObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>destroyEntity(EntityObject)</span></p></h2>
 
 Destroys an entity identified by the EntityObject. If the entity exists in the world this will remove it from the world and destroy it. This also makes the EntityObject no longer valid - you should only destroy an entity after you are done with it and no longer need to reference it again. This does NOT kill the entity. There won't be an event for its death: it will be removed.<br><h3></h3>
 
@@ -918,7 +915,7 @@ Destroys an entity identified by the EntityObject. If the entity exists in the w
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -932,7 +929,7 @@ Destroys an entity identified by the EntityObject. If the entity exists in the w
 
 <br><br>
 
-<h2><p id="isValidEntity(EntityObject)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#isValidEntity(EntityObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>isValidEntity(EntityObject)</span></p></h2>
+<h2><p id="isValidEntity(EntityObject)"><span class="anchored"><a href="#isValidEntity(EntityObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>isValidEntity(EntityObject)</span></p></h2>
 
 Checks if the given EntityObject corresponds to a valid entity.<br><h3></h3>
 
@@ -949,7 +946,7 @@ Checks if the given EntityObject corresponds to a valid entity.<br><h3></h3>
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -965,11 +962,11 @@ Checks if the given EntityObject corresponds to a valid entity.<br><h3></h3>
 
 <br><br>
 
-<h1><p id="Entity Queries"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Entity%20Queries" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Queries</span></p></h1>
+<h1><p id="Entity Queries"><span class="anchored"><a href="#Entity%20Queries" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Queries</span></p></h1>
 
 Entity Queries are a way for you to filter for entities based on their components. Once you have registered a query, you can request all the entities that are captured by it. Entity Queries will only ever return entities that are currently active in the level. If your query extends into chunks that are not currently loaded, entities there will not be included in the query.<br><h2></h2>
 
-<h2><p id="addFilterToQuery(Query, ComponentIdentifier)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#addFilterToQuery(Query%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>addFilterToQuery(Query, ComponentIdentifier)</span></p></h2>
+<h2><p id="addFilterToQuery(Query, ComponentIdentifier)"><span class="anchored"><a href="#addFilterToQuery(Query%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>addFilterToQuery(Query, ComponentIdentifier)</span></p></h2>
 
 Allows you to add filters to your query. The query will only contain entities that have all the components specified.<br>By default no filters are added. This will allow queries to capture all entities.<br><h3>Parameters</h3>
 
@@ -1005,7 +1002,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h2><p id="getEntitiesFromQuery(Query)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#getEntitiesFromQuery(Query)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getEntitiesFromQuery(Query)</span></p></h2>
+<h2><p id="getEntitiesFromQuery(Query)"><span class="anchored"><a href="#getEntitiesFromQuery(Query)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getEntitiesFromQuery(Query)</span></p></h2>
 
 Allows you to fetch the entities captured by a query.<br><h3></h3>
 
@@ -1022,7 +1019,7 @@ Allows you to fetch the entities captured by a query.<br><h3></h3>
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -1047,7 +1044,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 </pre> <br>
 <br><br>
 
-<h2><p id="getEntitiesFromQuery(Query, ComponentField1_Min, ComponentField2_Min, ComponentField3_Min, ComponentField1_Max, ComponentField2_Max, ComponentField3_Max)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#getEntitiesFromQuery(Query%2C%20ComponentField1_Min%2C%20ComponentField2_Min%2C%20ComponentField3_Min%2C%20ComponentField1_Max%2C%20ComponentField2_Max%2C%20ComponentField3_Max)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getEntitiesFromQuery(Query, ComponentField1_Min, ComponentField2_Min, ComponentField3_Min, ComponentField1_Max, ComponentField2_Max, ComponentField3_Max)</span></p></h2>
+<h2><p id="getEntitiesFromQuery(Query, ComponentField1_Min, ComponentField2_Min, ComponentField3_Min, ComponentField1_Max, ComponentField2_Max, ComponentField3_Max)"><span class="anchored"><a href="#getEntitiesFromQuery(Query%2C%20ComponentField1_Min%2C%20ComponentField2_Min%2C%20ComponentField3_Min%2C%20ComponentField1_Max%2C%20ComponentField2_Max%2C%20ComponentField3_Max)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getEntitiesFromQuery(Query, ComponentField1_Min, ComponentField2_Min, ComponentField3_Min, ComponentField1_Max, ComponentField2_Max, ComponentField3_Max)</span></p></h2>
 
 Allows you to fetch the entities captured by a query that was created with a component filter built-in. The only entities that will be returned are those entities that have the component that was defined when the query was registered and that have a value in the three fields on that component that were defined in the query within the values specified in the call to getEntitiesFromQuery.<br><h3></h3>
 
@@ -1094,7 +1091,7 @@ Allows you to fetch the entities captured by a query that was created with a com
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -1126,11 +1123,11 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 </pre> <br>
 <br><br>
 
-<h2><p id="registerQuery()"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#registerQuery()" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerQuery()</span></p></h2>
+<h2><p id="registerQuery()"><span class="anchored"><a href="#registerQuery()" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerQuery()</span></p></h2>
 
 Allows you to register a query. A query will contain all entities that meet the filter requirement.<br>No filters are added by default when you register a query so it will capture all entities.<br><h3></h3>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -1151,7 +1148,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 </pre> <br>
 <br><br>
 
-<h2><p id="registerQuery(Component, ComponentField1, ComponentField2, ComponentField3)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#registerQuery(Component%2C%20ComponentField1%2C%20ComponentField2%2C%20ComponentField3)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerQuery(Component, ComponentField1, ComponentField2, ComponentField3)</span></p></h2>
+<h2><p id="registerQuery(Component, ComponentField1, ComponentField2, ComponentField3)"><span class="anchored"><a href="#registerQuery(Component%2C%20ComponentField1%2C%20ComponentField2%2C%20ComponentField3)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerQuery(Component, ComponentField1, ComponentField2, ComponentField3)</span></p></h2>
 
 Allows you to register a query that will only show entities that have the given component and define which fields of that component will be used as a filter when getting the entities from the query. You can either provide just the component identifier, or the component identifier and the name of 3 properties on that component to be tested (If you do specify property names, you must specify 3).<br><h3></h3>
 
@@ -1187,7 +1184,7 @@ Allows you to register a query that will only show entities that have the given 
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -1210,11 +1207,11 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <br><br>
 
-<h1><p id="Event Bindings"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Event%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Event Bindings</span></p></h1>
+<h1><p id="Event Bindings"><span class="anchored"><a href="#Event%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Event Bindings</span></p></h1>
 
 These are the bindings used to handle events. For a list of events you can react to or trigger, check the Events section of this document.<br><h2></h2>
 
-<h2><p id="broadcastEvent(EventIdentifier, EventData)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#broadcastEvent(EventIdentifier%2C%20EventData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>broadcastEvent(EventIdentifier, EventData)</span></p></h2>
+<h2><p id="broadcastEvent(EventIdentifier, EventData)"><span class="anchored"><a href="#broadcastEvent(EventIdentifier%2C%20EventData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>broadcastEvent(EventIdentifier, EventData)</span></p></h2>
 
 Allows you to trigger an event with the desired data from script. Anything that signed up to listen for the event will be notified and the given data delivered to them.<br><h3></h3>
 
@@ -1236,7 +1233,7 @@ Allows you to trigger an event with the desired data from script. Anything that 
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -1260,7 +1257,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 </pre> <br>
 <br><br>
 
-<h2><p id="createEventData(EventIdentifier)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#createEventData(EventIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEventData(EventIdentifier)</span></p></h2>
+<h2><p id="createEventData(EventIdentifier)"><span class="anchored"><a href="#createEventData(EventIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEventData(EventIdentifier)</span></p></h2>
 
 Creates an object with all the required fields and default data for the specified event. If the event is a custom event, it needs to have been previously registered.<br><h3></h3>
 
@@ -1277,7 +1274,7 @@ Creates an object with all the required fields and default data for the specifie
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -1291,7 +1288,7 @@ Creates an object with all the required fields and default data for the specifie
 
 <br><br>
 
-<h2><p id="listenForEvent(EventIdentifier, CallbackObject)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#listenForEvent(EventIdentifier%2C%20CallbackObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>listenForEvent(EventIdentifier, CallbackObject)</span></p></h2>
+<h2><p id="listenForEvent(EventIdentifier, CallbackObject)"><span class="anchored"><a href="#listenForEvent(EventIdentifier%2C%20CallbackObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>listenForEvent(EventIdentifier, CallbackObject)</span></p></h2>
 
 Allows you to register a JavaScript object that gets called whenever the specified event is broadcast. The event can either be a built-in event or an event specified in script.<br><h3></h3>
 
@@ -1313,7 +1310,7 @@ Allows you to register a JavaScript object that gets called whenever the specifi
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -1340,7 +1337,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 </pre> <br>
 <br><br>
 
-<h2><p id="registerEventData(EventIdentifier, EventData)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#registerEventData(EventIdentifier%2C%20EventData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerEventData(EventIdentifier, EventData)</span></p></h2>
+<h2><p id="registerEventData(EventIdentifier, EventData)"><span class="anchored"><a href="#registerEventData(EventIdentifier%2C%20EventData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerEventData(EventIdentifier, EventData)</span></p></h2>
 
 Registers the Event to the script engine. This allows you to create Event Data by calling createEventData and have it initialized with the correct default data and fields. Only custom events need to be registered.<br><h3></h3>
 
@@ -1362,7 +1359,7 @@ Registers the Event to the script engine. This allows you to create Event Data b
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
+<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Return Value</span></p></h3>
 
 <h4></h4>
 
@@ -1378,11 +1375,11 @@ Registers the Event to the script engine. This allows you to create Event Data b
 
 <br><br>
 
-<h1><p id="Logging Bindings"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Logging%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Logging Bindings</span></p></h1>
+<h1><p id="Logging Bindings"><span class="anchored"><a href="#Logging%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Logging Bindings</span></p></h1>
 
 <h2></h2>
 
-<h2><p id="log(Message)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#log(Message)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>log(Message)</span></p></h2>
+<h2><p id="log(Message)"><span class="anchored"><a href="#log(Message)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>log(Message)</span></p></h2>
 
 The log function is accessed through the server or client objects and allows for logging a message to the ContentLog file. On Windows 10 devices it is located at ' %APPDATA%\..\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\logs '<br><h3></h3>
 
@@ -1408,11 +1405,11 @@ Log<br><pre class="language-javascript">system<span class="token punctuation">.<
 
 <br><br>
 
-<h1><p id="Slash Commands"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Slash%20Commands" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Slash Commands</span></p></h1>
+<h1><p id="Slash Commands"><span class="anchored"><a href="#Slash%20Commands" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Slash Commands</span></p></h1>
 
 You can use the traditional Slash Command system from scripts. Currently you can either trigger an event ("minecraft:execute_command") or use the executeCommand binding. Commands in scripts are restricted to server scripts, they can't be run from the client's side at the moment.<br><h2></h2>
 
-<h2><p id="executeCommand(Command, Callback)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#executeCommand(Command%2C%20Callback)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>executeCommand(Command, Callback)</span></p></h2>
+<h2><p id="executeCommand(Command, Callback)"><span class="anchored"><a href="#executeCommand(Command%2C%20Callback)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>executeCommand(Command, Callback)</span></p></h2>
 
 Allows you to execute a Slash Command on the server. The command will be queried and executed at the end of the current frame. All data output from the command will be compiled on a JavaScript Object and sent to the Callback object specified in the second parameter.<br><h3>Parameters</h3>
 
@@ -1446,13 +1443,13 @@ system<span class="token punctuation">.</span><span class="token function-variab
 
 <br><br>
 
-<h1><p id="Script Components"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Script%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Script Components</span></p></h1>
+<h1><p id="Script Components"><span class="anchored"><a href="#Script%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Script Components</span></p></h1>
 
-This is the documentation for the attributes, properties, and components available from the Minecraft Script Engine.<br>There are two kinds of components: server components and client components. We will go into a bit more detail on what they are in their respective sections below.<br>Components can be added, retrieved, updated, and removed from entities. They do not exist on their own. Currently only user-defined components can be added and removed from entities. A component must be in an entity in order to retrieve or update it.<br>Check the Script Engine Bindings section to see how to add, remove, retrieve, and update components. This section deals with the specific API of each component.<br><h1><p id="Block Components"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Block%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Block Components</span></p></h1>
+This is the documentation for the attributes, properties, and components available from the Minecraft Script Engine.<br>There are two kinds of components: server components and client components. We will go into a bit more detail on what they are in their respective sections below.<br>Components can be added, retrieved, updated, and removed from entities. They do not exist on their own. Currently only user-defined components can be added and removed from entities. A component must be in an entity in order to retrieve or update it.<br>Check the Script Engine Bindings section to see how to add, remove, retrieve, and update components. This section deals with the specific API of each component.<br><h1><p id="Block Components"><span class="anchored"><a href="#Block%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Block Components</span></p></h1>
 
 These components are only found on block objects and can only be on block objects<br><h2></h2>
 
-<h2><p id="minecraft:blockstate"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ablockstate" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:blockstate</span></p></h2>
+<h2><p id="minecraft:blockstate"><span class="anchored"><a href="#minecraft%3Ablockstate" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:blockstate</span></p></h2>
 
 This component contains all the blockstates on a block object. Blockstates control all different aspects of blocks from their orientation to the type of wood they are. Blockstates are represented by numbers, bools, or strings. Please see the Blockstates Documentation to see the valid values for each state. This component allows for the getting and setting of these states.<br><h3>Code Example:</h3>
 <br><pre class="language-javascript"><span class="token keyword">let</span> blockstateComponent <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getComponent</span><span class="token punctuation">(</span>block<span class="token punctuation">,</span> <span class="token string">"minecraft:blockstate"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1463,11 +1460,11 @@ blockstateComponent<span class="token punctuation">.</span>data<span class="toke
 
 <br><br>
 
-<h1><p id="Client Components"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Client%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Client Components</span></p></h1>
+<h1><p id="Client Components"><span class="anchored"><a href="#Client%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Client Components</span></p></h1>
 
 These components only run on the client where the script ran and can only be used from client scripts.<br><h2></h2>
 
-<h2><p id="minecraft:molang"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Amolang" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:molang</span></p></h2>
+<h2><p id="minecraft:molang"><span class="anchored"><a href="#minecraft%3Amolang" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:molang</span></p></h2>
 
 The MoLang component gives access to the MoLang variables in an entity. To learn more about MoLang varibles review the add-on documentation. In scripts, you can get and set these varibles that are defined in the entity's JSON files. Because of how the MoLang variables are formatted (variable.isgrazing for example) you must use the [] operator on the object to access the variable. The example below shows how to use the [] operator to access the variable.<br><h3>Code Example:</h3>
 <br><pre class="language-javascript"><span class="token keyword">let</span> molangComponent <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createComponent</span><span class="token punctuation">(</span>entity<span class="token punctuation">,</span> <span class="token string">"minecraft:molang"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
@@ -1478,14 +1475,14 @@ molangComponent<span class="token punctuation">[</span><span class="token string
 
 <br><br>
 
-<h1><p id="Level Components"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Level%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Level Components</span></p></h1>
+<h1><p id="Level Components"><span class="anchored"><a href="#Level%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Level Components</span></p></h1>
 
 These are the components that belong to the level. They can only belong on the level object and cannot be removed from it. You can get the components and change their data through the global server object.<br><br>let levelComponent = this.getComponent(server.level, "minecraft:example_level_component");<br><h2></h2>
 
-<h2><p id="minecraft:ticking_areas"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aticking_areas" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:ticking_areas</span></p></h2>
+<h2><p id="minecraft:ticking_areas"><span class="anchored"><a href="#minecraft%3Aticking_areas" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:ticking_areas</span></p></h2>
 
 This component gives access to the static ticking areas in the level. The component contains an array of ticking areas. The ticking areas can be accessed by name or by UUID if they were not given a name.<br>
-<h2><p id="minecraft:weather"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aweather" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:weather</span></p></h2>
+<h2><p id="minecraft:weather"><span class="anchored"><a href="#minecraft%3Aweather" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:weather</span></p></h2>
 
 The weather component allows users to change the level's weather. Rain and lightning levels can be changed independently and the default weather cycle can be turned off completely.<br><h3>Parameters</h3>
 
@@ -1520,11 +1517,11 @@ The weather component allows users to change the level's weather. Rain and light
 
 <br><br>
 
-<h1><p id="Server Components"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Server%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Server Components</span></p></h1>
+<h1><p id="Server Components"><span class="anchored"><a href="#Server%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Server Components</span></p></h1>
 
 These are the components that run on the server and are synced with all the clients (players) in the world.<br>As much as possible, the API of each component matches its JSON counterpart (with some differences noted).<br><h2></h2>
 
-<h2><p id="minecraft:armor_container"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aarmor_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:armor_container</span></p></h2>
+<h2><p id="minecraft:armor_container"><span class="anchored"><a href="#minecraft%3Aarmor_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:armor_container</span></p></h2>
 
 This component represents the armor contents of an entity. The component contains an array of ItemStack JS API Objects representing each slot in the armor container. NOTE: Currently items and containers are read-only. Slots are ordered from head to feet.<br><h3></h3>
 <br><pre class="language-javascript"><span class="token comment">// This example will check the players helmet armor slot for a specific item after the player attacks an entity.</span>
@@ -1540,7 +1537,7 @@ system<span class="token punctuation">.</span><span class="token function">liste
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h2><p id="minecraft:attack"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aattack" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:attack</span></p></h2>
+<h2><p id="minecraft:attack"><span class="anchored"><a href="#minecraft%3Aattack" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:attack</span></p></h2>
 
 This component controls the Attack Damage attribute from the entity. It allows you to change the current minimum and maximum values. Once the changes are applied, the current attack of the entity will be reset to the minimum specified. With the minimum and maximum changed to the values specified. Any buffs or debuffs will be left intact.<br><h3>Parameters</h3>
 
@@ -1569,7 +1566,7 @@ This component controls the Attack Damage attribute from the entity. It allows y
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:collision_box"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Acollision_box" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:collision_box</span></p></h2>
+<h2><p id="minecraft:collision_box"><span class="anchored"><a href="#minecraft%3Acollision_box" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:collision_box</span></p></h2>
 
 Controls the collision box of the entity. When changes to the component are applied the entity's collision box is immediately updated to reflect the new dimensions. WARNING: If the change of the collision box dimensions would cause the entity to be inside a block, the entity might become stuck there and start suffocating.<br><h3>Parameters</h3>
 
@@ -1589,7 +1586,7 @@ Controls the collision box of the entity. When changes to the component are appl
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:container"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Acontainer" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:container</span></p></h2>
+<h2><p id="minecraft:container"><span class="anchored"><a href="#minecraft%3Acontainer" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:container</span></p></h2>
 
 This component represents the container of a block. The component contains an array of ItemStack JS API Objects representing each slot in the container. This specific component is used for blocks. Refer to inventory components for entities. NOTE: Currently items and containers are read-only. Slots are ordered left to right.<br><h3></h3>
 <br><pre class="language-javascript"><span class="token comment">// This example will check if a block has a container.</span>
@@ -1601,7 +1598,7 @@ This component represents the container of a block. The component contains an ar
 
 </pre> <br>
 
-<h2><p id="minecraft:damage_sensor"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Adamage_sensor" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:damage_sensor</span></p></h2>
+<h2><p id="minecraft:damage_sensor"><span class="anchored"><a href="#minecraft%3Adamage_sensor" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:damage_sensor</span></p></h2>
 
 Defines what events to call when this entity is damaged by specific entities or items.<br><h3>Parameters</h3>
 
@@ -1657,7 +1654,7 @@ Defines what events to call when this entity is damaged by specific entities or 
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h2><p id="minecraft:equipment"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aequipment" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:equipment</span></p></h2>
+<h2><p id="minecraft:equipment"><span class="anchored"><a href="#minecraft%3Aequipment" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:equipment</span></p></h2>
 
 Defines the loot table the entity uses to defines its equipment. Once the changes are applied, the equipment is re-rolled and a new set of equipment is chosen for the entity.<br><h3>Parameters</h3>
 
@@ -1677,11 +1674,11 @@ Defines the loot table the entity uses to defines its equipment. Once the change
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:equippable"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aequippable" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:equippable</span></p></h2>
+<h2><p id="minecraft:equippable"><span class="anchored"><a href="#minecraft%3Aequippable" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:equippable</span></p></h2>
 
 Defines an entity's behavior for having items equipped to it.<br><h3>Parameters</h3>
 
-<h3><p id="slots"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#slots" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>slots</span></p></h3>
+<h3><p id="slots"><span class="anchored"><a href="#slots" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>slots</span></p></h3>
 
 List of slots and the item that can be equipped.<br><h4>Parameters</h4>
 
@@ -1727,7 +1724,7 @@ List of slots and the item that can be equipped.<br><h4>Parameters</h4>
 
 <br><br>
 
-<h2><p id="minecraft:explode"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aexplode" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:explode</span></p></h2>
+<h2><p id="minecraft:explode"><span class="anchored"><a href="#minecraft%3Aexplode" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:explode</span></p></h2>
 
 Defines how the entity explodes.<br><h3>Parameters</h3>
 
@@ -1783,7 +1780,7 @@ Defines how the entity explodes.<br><h3>Parameters</h3>
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:hand_container"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ahand_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:hand_container</span></p></h2>
+<h2><p id="minecraft:hand_container"><span class="anchored"><a href="#minecraft%3Ahand_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:hand_container</span></p></h2>
 
 This component represents the contents of an entity's hands. The component contains an array of ItemStack JS API Objects representing each slot in the hand container. NOTE: Currently items and containers are read-only. Slot 0 is main-hand Slot 1 is off-hand.<br><h3></h3>
 <br><pre class="language-javascript"><span class="token comment">// This example will check the players offhand slot for a specific item after the player attacks an entity.</span>
@@ -1799,7 +1796,7 @@ system<span class="token punctuation">.</span><span class="token function">liste
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h2><p id="minecraft:healable"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ahealable" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:healable</span></p></h2>
+<h2><p id="minecraft:healable"><span class="anchored"><a href="#minecraft%3Ahealable" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:healable</span></p></h2>
 
 Defines the interactions with this entity for healing it.<br><h3>Parameters</h3>
 
@@ -1840,7 +1837,7 @@ Defines the interactions with this entity for healing it.<br><h3>Parameters</h3>
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:health"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ahealth" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:health</span></p></h2>
+<h2><p id="minecraft:health"><span class="anchored"><a href="#minecraft%3Ahealth" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:health</span></p></h2>
 
 Defines the current and maximum possible health of the entity. Upon applying the component back to the entity the health will change. If it reaches 0 or below the entity will die.<br><h3>Parameters</h3>
 
@@ -1860,7 +1857,7 @@ Defines the current and maximum possible health of the entity. Upon applying the
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:hotbar_container"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ahotbar_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:hotbar_container</span></p></h2>
+<h2><p id="minecraft:hotbar_container"><span class="anchored"><a href="#minecraft%3Ahotbar_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:hotbar_container</span></p></h2>
 
 This component represents the hotbar contents of a player. The component contains an array of ItemStack JS API Objects representing each slot in the hotbar. NOTE: Currently items and containers are read-only. Slots are ordered left to right.<br><h3></h3>
 <br><pre class="language-javascript"><span class="token comment">// This example will check the players first hotbar item slot for a specific item after the player attacks an entity.</span>
@@ -1876,7 +1873,7 @@ system<span class="token punctuation">.</span><span class="token function">liste
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h2><p id="minecraft:interact"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ainteract" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:interact</span></p></h2>
+<h2><p id="minecraft:interact"><span class="anchored"><a href="#minecraft%3Ainteract" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:interact</span></p></h2>
 
 Defines the ways the player can interact with the entity to which this component is applied.<br><h3>Parameters</h3>
 
@@ -1995,7 +1992,7 @@ Defines the ways the player can interact with the entity to which this component
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:inventory"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ainventory" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:inventory</span></p></h2>
+<h2><p id="minecraft:inventory"><span class="anchored"><a href="#minecraft%3Ainventory" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:inventory</span></p></h2>
 
 Defines the entity's inventory (size, restrictions, etc.). Currently this does not allow changing the entity's inventory contents.<br><h3>Parameters</h3>
 
@@ -2039,7 +2036,7 @@ Defines the entity's inventory (size, restrictions, etc.). Currently this does n
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:inventory_container"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ainventory_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:inventory_container</span></p></h2>
+<h2><p id="minecraft:inventory_container"><span class="anchored"><a href="#minecraft%3Ainventory_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:inventory_container</span></p></h2>
 
 This component represents the inventory contents of an entity. The component contains an array of ItemStack JS API Objects representing each slot in the inventory. NOTE: Currently items and containers are read-only.Slot 0-8 is the hotbar, 9-16 is the top row of the player's inventory, 17-24 is the middle row, 25-32 is the bottom row<br><h3></h3>
 <br><pre class="language-javascript"><span class="token comment">// This example will check the players third inventory item slot for a specific item after the player attacks an entity.</span>
@@ -2055,7 +2052,7 @@ system<span class="token punctuation">.</span><span class="token function">liste
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h2><p id="minecraft:lookat"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Alookat" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:lookat</span></p></h2>
+<h2><p id="minecraft:lookat"><span class="anchored"><a href="#minecraft%3Alookat" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:lookat</span></p></h2>
 
 Defines the behavior when another entity looks at this entity.<br><h3>Parameters</h3>
 
@@ -2099,7 +2096,7 @@ Defines the behavior when another entity looks at this entity.<br><h3>Parameters
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:nameable"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Anameable" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:nameable</span></p></h2>
+<h2><p id="minecraft:nameable"><span class="anchored"><a href="#minecraft%3Anameable" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:nameable</span></p></h2>
 
 Nameable component describes an entity's ability to be named using a nametag and whether the name shows up or not once applied. Additionally, scripting allows setting the name of the entity directly with the property 'name'.<br><h3>Parameters</h3>
 
@@ -2152,7 +2149,7 @@ Nameable component describes an entity's ability to be named using a nametag and
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:position"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aposition" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:position</span></p></h2>
+<h2><p id="minecraft:position"><span class="anchored"><a href="#minecraft%3Aposition" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:position</span></p></h2>
 
 This component allows you to control an entity's current position in the world. Once applied the entity will be teleported to the new position specified.<br><h3>Parameters</h3>
 
@@ -2178,7 +2175,7 @@ This component allows you to control an entity's current position in the world. 
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:rotation"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Arotation" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:rotation</span></p></h2>
+<h2><p id="minecraft:rotation"><span class="anchored"><a href="#minecraft%3Arotation" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:rotation</span></p></h2>
 
 This component allows you to control an entity's current rotation in the world as well as the entity's head rotation. Once applied, the entity will be rotated as specified.<br><h3>Parameters</h3>
 
@@ -2198,7 +2195,7 @@ This component allows you to control an entity's current rotation in the world a
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:shooter"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ashooter" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:shooter</span></p></h2>
+<h2><p id="minecraft:shooter"><span class="anchored"><a href="#minecraft%3Ashooter" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:shooter</span></p></h2>
 
 Defines the entity's ranged attacks. This doesn't allow the entity to use a ranged attack: it only defines what kind of projectile it shoots.<br><h3>Parameters</h3>
 
@@ -2218,7 +2215,7 @@ Defines the entity's ranged attacks. This doesn't allow the entity to use a rang
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:spawn_entity"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aspawn_entity" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:spawn_entity</span></p></h2>
+<h2><p id="minecraft:spawn_entity"><span class="anchored"><a href="#minecraft%3Aspawn_entity" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:spawn_entity</span></p></h2>
 
 Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior).<br><h3>Parameters</h3>
 
@@ -2292,10 +2289,10 @@ Adds a timer after which this entity will spawn another entity or item (similar 
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:tag"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Atag" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:tag</span></p></h2>
+<h2><p id="minecraft:tag"><span class="anchored"><a href="#minecraft%3Atag" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:tag</span></p></h2>
 
 The tag component gives access to the array of entity tags that an entity may have. With this component you can add and remove any of the entity tags.<br>
-<h2><p id="minecraft:teleport"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ateleport" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:teleport</span></p></h2>
+<h2><p id="minecraft:teleport"><span class="anchored"><a href="#minecraft%3Ateleport" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:teleport</span></p></h2>
 
 This controls the entity's ability to teleport itself (similar to the Enderman). If you wish to teleport the entity once use the Position component instead.<br><h3>Parameters</h3>
 
@@ -2351,7 +2348,7 @@ This controls the entity's ability to teleport itself (similar to the Enderman).
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:tick_world"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Atick_world" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:tick_world</span></p></h2>
+<h2><p id="minecraft:tick_world"><span class="anchored"><a href="#minecraft%3Atick_world" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:tick_world</span></p></h2>
 
 The tick world component is a read-only component that allows users to access the ticking areas on entities as well as the ticking area's data.<br><h3>Parameters</h3>
 
@@ -2379,7 +2376,7 @@ The tick world component is a read-only component that allows users to access th
 </tr>
 </tbody></table>
 
-<h2><p id="minecraft:ticking_area_description"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aticking_area_description" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:ticking_area_description</span></p></h2>
+<h2><p id="minecraft:ticking_area_description"><span class="anchored"><a href="#minecraft%3Aticking_area_description" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:ticking_area_description</span></p></h2>
 
 Describes the ticking area's region.<br><h3>Parameters</h3>
 
@@ -2421,20 +2418,20 @@ Describes the ticking area's region.<br><h3>Parameters</h3>
 
 <br><br>
 
-<h1><p id="Script Events"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Script%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Script Events</span></p></h1>
+<h1><p id="Script Events"><span class="anchored"><a href="#Script%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Script Events</span></p></h1>
 
-Here you can find the list of events that you can listen for and respond to in your scripts.<br><h1><p id="Client Events"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Client%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Client Events</span></p></h1>
+Here you can find the list of events that you can listen for and respond to in your scripts.<br><h1><p id="Client Events"><span class="anchored"><a href="#Client%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Client Events</span></p></h1>
 
 <h2></h2>
 
-<h2><p id="Listening Events"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Listening%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Listening Events</span></p></h2>
+<h2><p id="Listening Events"><span class="anchored"><a href="#Listening%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Listening Events</span></p></h2>
 
 The following Minecraft events are events the Script Engine is listening for and to which you can react in scripts.<br><h3></h3>
 
-<h3><p id="minecraft:client_entered_world"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aclient_entered_world" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:client_entered_world</span></p></h3>
+<h3><p id="minecraft:client_entered_world"><span class="anchored"><a href="#minecraft%3Aclient_entered_world" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:client_entered_world</span></p></h3>
 
 This event is fired whenever a player joins the world. The event data contains the player entity object.<br>
-<h3><p id="minecraft:hit_result_changed"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ahit_result_changed" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:hit_result_changed</span></p></h3>
+<h3><p id="minecraft:hit_result_changed"><span class="anchored"><a href="#minecraft%3Ahit_result_changed" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:hit_result_changed</span></p></h3>
 
 This event is triggered whenever the reticle changes from pointing at a block or air to pointing at an entity and the other way around. Up to 1000 blocks away.<br><h4>Parameters</h4>
 
@@ -2467,7 +2464,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h3><p id="minecraft:hit_result_continuous"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ahit_result_continuous" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:hit_result_continuous</span></p></h3>
+<h3><p id="minecraft:hit_result_continuous"><span class="anchored"><a href="#minecraft%3Ahit_result_continuous" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:hit_result_continuous</span></p></h3>
 
 This event is triggered every update and tells you what entity the reticle is pointing to in the world up to 1000 blocks away.<br><h4>Parameters</h4>
 
@@ -2500,7 +2497,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h3><p id="minecraft:pick_hit_result_changed"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Apick_hit_result_changed" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:pick_hit_result_changed</span></p></h3>
+<h3><p id="minecraft:pick_hit_result_changed"><span class="anchored"><a href="#minecraft%3Apick_hit_result_changed" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:pick_hit_result_changed</span></p></h3>
 
 This event is triggered whenever the mouse pointer changes from pointing at a block or air to pointing at an entity and the other way around. Up to 1000 blocks away.<br><h4>Parameters</h4>
 
@@ -2533,7 +2530,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h3><p id="minecraft:pick_hit_result_continuous"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Apick_hit_result_continuous" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:pick_hit_result_continuous</span></p></h3>
+<h3><p id="minecraft:pick_hit_result_continuous"><span class="anchored"><a href="#minecraft%3Apick_hit_result_continuous" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:pick_hit_result_continuous</span></p></h3>
 
 This event is triggered every update and tells you what entity the mouse pointer is pointing to in the world up to 1000 blocks away.<br><h4>Parameters</h4>
 
@@ -2568,11 +2565,11 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <br><br>
 
-<h2><p id="Trigger-able Events"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Trigger-able%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Trigger-able Events</span></p></h2>
+<h2><p id="Trigger-able Events"><span class="anchored"><a href="#Trigger-able%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Trigger-able Events</span></p></h2>
 
 The following Minecraft Events can be triggered from scripting and cause the game to respond accordingly.<br><h3></h3>
 
-<h3><p id="minecraft:display_chat_event"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Adisplay_chat_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:display_chat_event</span></p></h3>
+<h3><p id="minecraft:display_chat_event"><span class="anchored"><a href="#minecraft%3Adisplay_chat_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:display_chat_event</span></p></h3>
 
 This event is used to display a chat message to the specific player that is running the client script. The event data is the message to be displayed in plain text. Special formatting is supported the same way it would be if a player was sending the message.<br><h4>Parameters</h4>
 
@@ -2595,7 +2592,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h3><p id="minecraft:load_ui"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aload_ui" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:load_ui</span></p></h3>
+<h3><p id="minecraft:load_ui"><span class="anchored"><a href="#minecraft%3Aload_ui" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:load_ui</span></p></h3>
 
 This event is used to show a UI screen to the specific player running the client script. This event will add the UI screen to the top of the UI screen stack. The screen will be shown immediately after the event is triggered. Only screens defined in a HTML file can be shown using this event.<br><h4>Event Data Parameters</h4>
 
@@ -2605,25 +2602,25 @@ This event is used to show a UI screen to the specific player running the client
 <td style="border-style:solid; border-width:1; padding:9px">options</td>
 <td style="border-style:solid; border-width:1; padding:9px">JSON Object</td>
 <td style="border-style:solid; border-width:1; padding:9px"></td>
-<td style="border-style:solid; border-width:1; padding:9px">You can define the following options for the screen by setting their value to true or false:<br><h5><p id="absorbs_input"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#absorbs_input" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>absorbs_input</span></p></h5>
+<td style="border-style:solid; border-width:1; padding:9px">You can define the following options for the screen by setting their value to true or false:<br><h5><p id="absorbs_input"><span class="anchored"><a href="#absorbs_input" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>absorbs_input</span></p></h5>
 
 If true, input will not be passed down to any other screens underneath<br>
-<h5><p id="always_accepts_input"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#always_accepts_input" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>always_accepts_input</span></p></h5>
+<h5><p id="always_accepts_input"><span class="anchored"><a href="#always_accepts_input" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>always_accepts_input</span></p></h5>
 
 If true, the screen will always accept and process input for as long as it is in the stack, even if other custom UI screens appear on top of it<br>
-<h5><p id="force_render_below"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#force_render_below" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>force_render_below</span></p></h5>
+<h5><p id="force_render_below"><span class="anchored"><a href="#force_render_below" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>force_render_below</span></p></h5>
 
 If true, this screen will be rendered even if another screen is on top of it and will render over them, including the HUD<br>
-<h5><p id="is_showing_menu"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#is_showing_menu" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>is_showing_menu</span></p></h5>
+<h5><p id="is_showing_menu"><span class="anchored"><a href="#is_showing_menu" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>is_showing_menu</span></p></h5>
 
 If true, the screen will be treated as the pause menu and the pause menu won't be allowed to show on top of this screen<br>
-<h5><p id="render_game_behind"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#render_game_behind" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>render_game_behind</span></p></h5>
+<h5><p id="render_game_behind"><span class="anchored"><a href="#render_game_behind" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>render_game_behind</span></p></h5>
 
 If true, the game will continue to be rendered underneath this screen<br>
-<h5><p id="render_only_when_topmost"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#render_only_when_topmost" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>render_only_when_topmost</span></p></h5>
+<h5><p id="render_only_when_topmost"><span class="anchored"><a href="#render_only_when_topmost" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>render_only_when_topmost</span></p></h5>
 
 If true, this screen will only be rendered if it is the screen at the top of the stack<br>
-<h5><p id="should_steal_mouse"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#should_steal_mouse" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>should_steal_mouse</span></p></h5>
+<h5><p id="should_steal_mouse"><span class="anchored"><a href="#should_steal_mouse" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>should_steal_mouse</span></p></h5>
 
 If true, the screen will capture the mouse pointer and limit its movement to the UI screen<br>
 </td>
@@ -2636,7 +2633,7 @@ If true, the screen will capture the mouse pointer and limit its movement to the
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:script_logger_config"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ascript_logger_config" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:script_logger_config</span></p></h3>
+<h3><p id="minecraft:script_logger_config"><span class="anchored"><a href="#minecraft%3Ascript_logger_config" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:script_logger_config</span></p></h3>
 
 This event is used to turn various levels of logging on and off for client scripts. Note that turning logging on/off is not limited to the script that broadcasted the event. It will affect ALL client scripts including those in other Behavior Packs that are applied to the world. See the Debugging section for more information on logging.<br><h4>Parameters</h4>
 
@@ -2662,7 +2659,7 @@ This event is used to turn various levels of logging on and off for client scrip
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:send_ui_event"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Asend_ui_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:send_ui_event</span></p></h3>
+<h3><p id="minecraft:send_ui_event"><span class="anchored"><a href="#minecraft%3Asend_ui_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:send_ui_event</span></p></h3>
 
 This event is used to send UI events to the UI Engine for the specific player running the script. After the event is triggered, the UI event will be sent immediately.<br>Custom UI is based on HTML 5. Review the scripting demo for an example of a custom UI file.<br><h4>Parameters</h4>
 
@@ -2680,7 +2677,7 @@ This event is used to send UI events to the UI Engine for the specific player ru
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:spawn_particle_attached_entity"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aspawn_particle_attached_entity" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:spawn_particle_attached_entity</span></p></h3>
+<h3><p id="minecraft:spawn_particle_attached_entity"><span class="anchored"><a href="#minecraft%3Aspawn_particle_attached_entity" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:spawn_particle_attached_entity</span></p></h3>
 
 This event is used to create a particle effect that will follow an entity around. This particle effect is only visible to the specific player that is running the client script where you fired the event. Any effect defined in a JSON file (both in your resource pack and in Minecraft) can be used here. MoLang variables defined in the JSON of the effect can then be used to control that effect by changing them in the entity to which it is attached.<br><h4>Parameters</h4>
 
@@ -2706,7 +2703,7 @@ This event is used to create a particle effect that will follow an entity around
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:spawn_particle_in_world"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aspawn_particle_in_world" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:spawn_particle_in_world</span></p></h3>
+<h3><p id="minecraft:spawn_particle_in_world"><span class="anchored"><a href="#minecraft%3Aspawn_particle_in_world" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:spawn_particle_in_world</span></p></h3>
 
 This event is used to create a static particle effect in the world. This particle effect is only visible to the specific player that is running the client script where you fired the event. Any effect defined in a JSON file (both in your resource pack and in Minecraft) can be used here. Once the effect is spawned you won't be able to control it further. Unlike the server version of the event, the client version will spawn the particle in the dimension the player is currently in.<br><h4>Parameters</h4>
 
@@ -2726,22 +2723,22 @@ This event is used to create a static particle effect in the world. This particl
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:unload_ui"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aunload_ui" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:unload_ui</span></p></h3>
+<h3><p id="minecraft:unload_ui"><span class="anchored"><a href="#minecraft%3Aunload_ui" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:unload_ui</span></p></h3>
 
 This event is used to remove a UI screen from the stack of the specific player running the client script. The event data contains the name of the screen to remove as a string. After the event is triggered the screen will be scheduled to be removed from the stack the next time the UI Engine can do so. Only screens defined in a HTML file can be removed using this event.<br>
 <br><br>
 
 <br><br>
 
-<h1><p id="Server Events"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Server%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Server Events</span></p></h1>
+<h1><p id="Server Events"><span class="anchored"><a href="#Server%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Server Events</span></p></h1>
 
 <h2></h2>
 
-<h2><p id="Listening Events"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Listening%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Listening Events</span></p></h2>
+<h2><p id="Listening Events"><span class="anchored"><a href="#Listening%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Listening Events</span></p></h2>
 
 The following Minecraft events are events the Script Engine is listening for and to which you can react in scripts.<br><h3></h3>
 
-<h3><p id="minecraft:block_destruction_started"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ablock_destruction_started" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:block_destruction_started</span></p></h3>
+<h3><p id="minecraft:block_destruction_started"><span class="anchored"><a href="#minecraft%3Ablock_destruction_started" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:block_destruction_started</span></p></h3>
 
 This event is triggered whenever a player starts to destroy a block.<br><h4>Parameters</h4>
 
@@ -2759,7 +2756,7 @@ This event is triggered whenever a player starts to destroy a block.<br><h4>Para
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:block_destruction_stopped"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ablock_destruction_stopped" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:block_destruction_stopped</span></p></h3>
+<h3><p id="minecraft:block_destruction_stopped"><span class="anchored"><a href="#minecraft%3Ablock_destruction_stopped" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:block_destruction_stopped</span></p></h3>
 
 This event is triggered whenever a player stops destroying a block.<br><h4>Parameters</h4>
 
@@ -2782,7 +2779,7 @@ This event is triggered whenever a player stops destroying a block.<br><h4>Param
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:block_exploded"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ablock_exploded" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:block_exploded</span></p></h3>
+<h3><p id="minecraft:block_exploded"><span class="anchored"><a href="#minecraft%3Ablock_exploded" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:block_exploded</span></p></h3>
 
 This event is triggered whenever a block is destroyed by an explosion.<br><h4>Parameters</h4>
 
@@ -2810,7 +2807,7 @@ This event is triggered whenever a block is destroyed by an explosion.<br><h4>Pa
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:block_interacted_with"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ablock_interacted_with" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:block_interacted_with</span></p></h3>
+<h3><p id="minecraft:block_interacted_with"><span class="anchored"><a href="#minecraft%3Ablock_interacted_with" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:block_interacted_with</span></p></h3>
 
 This event is triggered whenever a player interacts with a block.<br><h4>Parameters</h4>
 
@@ -2828,7 +2825,7 @@ This event is triggered whenever a player interacts with a block.<br><h4>Paramet
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_acquired_item"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_acquired_item" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_acquired_item</span></p></h3>
+<h3><p id="minecraft:entity_acquired_item"><span class="anchored"><a href="#minecraft%3Aentity_acquired_item" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_acquired_item</span></p></h3>
 
 This event is triggered whenever an entity acquires an item.<br><h4>Parameters</h4>
 
@@ -2861,7 +2858,7 @@ This event is triggered whenever an entity acquires an item.<br><h4>Parameters</
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_attack"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_attack" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_attack</span></p></h3>
+<h3><p id="minecraft:entity_attack"><span class="anchored"><a href="#minecraft%3Aentity_attack" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_attack</span></p></h3>
 
 This event is triggered whenever an entity is being attacked by another entity. This does not guarantee the entity was or will be hurt by the attack.<br><h4>Parameters</h4>
 
@@ -2879,7 +2876,7 @@ This event is triggered whenever an entity is being attacked by another entity. 
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_carried_item_changed"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_carried_item_changed" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_carried_item_changed</span></p></h3>
+<h3><p id="minecraft:entity_carried_item_changed"><span class="anchored"><a href="#minecraft%3Aentity_carried_item_changed" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_carried_item_changed</span></p></h3>
 
 This event is triggered whenever an entity changes the item carried in their hand.<br><h4>Parameters</h4>
 
@@ -2907,7 +2904,7 @@ This event is triggered whenever an entity changes the item carried in their han
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_created"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_created" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_created</span></p></h3>
+<h3><p id="minecraft:entity_created"><span class="anchored"><a href="#minecraft%3Aentity_created" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_created</span></p></h3>
 
 This event is triggered whenever an entity is added to the world.<br><h4>Parameters</h4>
 
@@ -2920,7 +2917,7 @@ This event is triggered whenever an entity is added to the world.<br><h4>Paramet
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_death"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_death" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_death</span></p></h3>
+<h3><p id="minecraft:entity_death"><span class="anchored"><a href="#minecraft%3Aentity_death" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_death</span></p></h3>
 
 This event is triggered whenever an entity dies. This won't be triggered when an entity is removed (such as when using destroyEntity). Not all of these values are present with every entity death.<br><h4>Parameters</h4>
 
@@ -2953,7 +2950,7 @@ This event is triggered whenever an entity dies. This won't be triggered when an
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_definition_event"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_definition_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_definition_event</span></p></h3>
+<h3><p id="minecraft:entity_definition_event"><span class="anchored"><a href="#minecraft%3Aentity_definition_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_definition_event</span></p></h3>
 
 This event is triggered whenever an entity definition event is triggered by either script or the entity's JSON.<br><h4>Parameters</h4>
 
@@ -2971,7 +2968,7 @@ This event is triggered whenever an entity definition event is triggered by eith
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_dropped_item"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_dropped_item" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_dropped_item</span></p></h3>
+<h3><p id="minecraft:entity_dropped_item"><span class="anchored"><a href="#minecraft%3Aentity_dropped_item" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_dropped_item</span></p></h3>
 
 This event is triggered whenever an entity drops an item.<br><h4>Parameters</h4>
 
@@ -2989,7 +2986,7 @@ This event is triggered whenever an entity drops an item.<br><h4>Parameters</h4>
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_equipped_armor"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_equipped_armor" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_equipped_armor</span></p></h3>
+<h3><p id="minecraft:entity_equipped_armor"><span class="anchored"><a href="#minecraft%3Aentity_equipped_armor" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_equipped_armor</span></p></h3>
 
 This event is triggered whenever an entity equips an item in their armor slots.<br><h4>Parameters</h4>
 
@@ -3012,7 +3009,7 @@ This event is triggered whenever an entity equips an item in their armor slots.<
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_hurt"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_hurt" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_hurt</span></p></h3>
+<h3><p id="minecraft:entity_hurt"><span class="anchored"><a href="#minecraft%3Aentity_hurt" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_hurt</span></p></h3>
 
 This event is triggered whenever an entity is hurt.<br><h4>Parameters</h4>
 
@@ -3055,7 +3052,7 @@ This event is triggered whenever an entity is hurt.<br><h4>Parameters</h4>
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_sneak"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_sneak" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_sneak</span></p></h3>
+<h3><p id="minecraft:entity_sneak"><span class="anchored"><a href="#minecraft%3Aentity_sneak" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_sneak</span></p></h3>
 
 This event is triggered whenever an entity flag's value changes.<br><h4>Parameters</h4>
 
@@ -3073,7 +3070,7 @@ This event is triggered whenever an entity flag's value changes.<br><h4>Paramete
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_start_riding"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_start_riding" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_start_riding</span></p></h3>
+<h3><p id="minecraft:entity_start_riding"><span class="anchored"><a href="#minecraft%3Aentity_start_riding" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_start_riding</span></p></h3>
 
 This event is triggered whenever an entity becomes a rider on another entity.<br><h4>Parameters</h4>
 
@@ -3091,7 +3088,7 @@ This event is triggered whenever an entity becomes a rider on another entity.<br
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_stop_riding"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_stop_riding" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_stop_riding</span></p></h3>
+<h3><p id="minecraft:entity_stop_riding"><span class="anchored"><a href="#minecraft%3Aentity_stop_riding" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_stop_riding</span></p></h3>
 
 This event is triggered whenever an entity stops riding another entity.<br><h4>Parameters</h4>
 
@@ -3119,7 +3116,7 @@ This event is triggered whenever an entity stops riding another entity.<br><h4>P
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_tick"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_tick" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_tick</span></p></h3>
+<h3><p id="minecraft:entity_tick"><span class="anchored"><a href="#minecraft%3Aentity_tick" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_tick</span></p></h3>
 
 This event is triggered whenever an entity is ticked. This event will not fire when a player is ticked.<br><h4>Parameters</h4>
 
@@ -3132,7 +3129,7 @@ This event is triggered whenever an entity is ticked. This event will not fire w
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_use_item"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_use_item" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_use_item</span></p></h3>
+<h3><p id="minecraft:entity_use_item"><span class="anchored"><a href="#minecraft%3Aentity_use_item" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_use_item</span></p></h3>
 
 This event is triggered whenever an entity uses an item.<br><h4>Parameters</h4>
 
@@ -3155,7 +3152,7 @@ This event is triggered whenever an entity uses an item.<br><h4>Parameters</h4>
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:piston_moved_block"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Apiston_moved_block" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:piston_moved_block</span></p></h3>
+<h3><p id="minecraft:piston_moved_block"><span class="anchored"><a href="#minecraft%3Apiston_moved_block" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:piston_moved_block</span></p></h3>
 
 This event is triggered whenever a piston moves a block.<br><h4>Parameters</h4>
 
@@ -3178,7 +3175,7 @@ This event is triggered whenever a piston moves a block.<br><h4>Parameters</h4>
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:play_sound"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aplay_sound" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:play_sound</span></p></h3>
+<h3><p id="minecraft:play_sound"><span class="anchored"><a href="#minecraft%3Aplay_sound" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:play_sound</span></p></h3>
 
 This event is used to play a sound effect. Currently, sounds can only be played at a fixed position in the world. Global sounds and sounds played by an entity will be supported in a later update.<br><h4>Parameters</h4>
 
@@ -3210,7 +3207,7 @@ This event is used to play a sound effect. Currently, sounds can only be played 
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:player_attacked_entity"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aplayer_attacked_entity" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:player_attacked_entity</span></p></h3>
+<h3><p id="minecraft:player_attacked_entity"><span class="anchored"><a href="#minecraft%3Aplayer_attacked_entity" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:player_attacked_entity</span></p></h3>
 
 This event is triggered whenever a player attacks an entity.<br><h4>Parameters</h4>
 
@@ -3228,7 +3225,7 @@ This event is triggered whenever a player attacks an entity.<br><h4>Parameters</
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:player_destroyed_block"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aplayer_destroyed_block" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:player_destroyed_block</span></p></h3>
+<h3><p id="minecraft:player_destroyed_block"><span class="anchored"><a href="#minecraft%3Aplayer_destroyed_block" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:player_destroyed_block</span></p></h3>
 
 This event is triggered whenever a player destroys a block.<br><h4>Parameters</h4>
 
@@ -3251,7 +3248,7 @@ This event is triggered whenever a player destroys a block.<br><h4>Parameters</h
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:player_placed_block"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aplayer_placed_block" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:player_placed_block</span></p></h3>
+<h3><p id="minecraft:player_placed_block"><span class="anchored"><a href="#minecraft%3Aplayer_placed_block" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:player_placed_block</span></p></h3>
 
 This event is triggered whenever a player places a block.<br><h4>Parameters</h4>
 
@@ -3269,7 +3266,7 @@ This event is triggered whenever a player places a block.<br><h4>Parameters</h4>
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:projectile_hit"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aprojectile_hit" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:projectile_hit</span></p></h3>
+<h3><p id="minecraft:projectile_hit"><span class="anchored"><a href="#minecraft%3Aprojectile_hit" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:projectile_hit</span></p></h3>
 
 This event is triggered whenever a projectile hits something.<br><h4>Parameters</h4>
 
@@ -3297,7 +3294,7 @@ This event is triggered whenever a projectile hits something.<br><h4>Parameters<
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:weather_changed"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aweather_changed" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:weather_changed</span></p></h3>
+<h3><p id="minecraft:weather_changed"><span class="anchored"><a href="#minecraft%3Aweather_changed" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:weather_changed</span></p></h3>
 
 This event is triggered whenever the weather changes. It contains information about the weather it is changing to.<br><h4>Parameters</h4>
 
@@ -3322,11 +3319,11 @@ This event is triggered whenever the weather changes. It contains information ab
 
 <br><br>
 
-<h2><p id="Trigger-able Events"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Trigger-able%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Trigger-able Events</span></p></h2>
+<h2><p id="Trigger-able Events"><span class="anchored"><a href="#Trigger-able%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Trigger-able Events</span></p></h2>
 
 The following Minecraft events can be triggered from scripting and the game will respond, accordingly.<br><h3></h3>
 
-<h3><p id="minecraft:display_chat_event"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Adisplay_chat_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:display_chat_event</span></p></h3>
+<h3><p id="minecraft:display_chat_event"><span class="anchored"><a href="#minecraft%3Adisplay_chat_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:display_chat_event</span></p></h3>
 
 This event is used to send a chat message from the server to the players. The event data is the message being sent as a string. Special formatting is supported the same way it would be if a player was sending the message.<br><h4>Parameters</h4>
 
@@ -3340,7 +3337,7 @@ This event is used to send a chat message from the server to the players. The ev
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:entity_definition_event"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aentity_definition_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_definition_event</span></p></h3>
+<h3><p id="minecraft:entity_definition_event"><span class="anchored"><a href="#minecraft%3Aentity_definition_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:entity_definition_event</span></p></h3>
 
 This event is used to trigger events that Entity Definition JSON files are listening for. For example, you can trigger the minecraft:become_charged event on a creeper to turn it into a charged creeper.<br><h4>Parameters</h4>
 
@@ -3360,7 +3357,7 @@ This event is used to trigger events that Entity Definition JSON files are liste
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:execute_command"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aexecute_command" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:execute_command</span></p></h3>
+<h3><p id="minecraft:execute_command"><span class="anchored"><a href="#minecraft%3Aexecute_command" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:execute_command</span></p></h3>
 
 This event is used to execute a slash command on the server with the World Owner permission level. The event data contains the slash command as a string. The slash command will be processed and will run after the event is sent.<br><h4>Parameters</h4>
 
@@ -3374,7 +3371,7 @@ This event is used to execute a slash command on the server with the World Owner
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:play_sound"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aplay_sound" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:play_sound</span></p></h3>
+<h3><p id="minecraft:play_sound"><span class="anchored"><a href="#minecraft%3Aplay_sound" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:play_sound</span></p></h3>
 
 This event is used to play a sound effect. Currently, sounds can only be played at a fixed position in the world. Global sounds and sounds played by an entity will be supported in a later update.<br><h4>Parameters</h4>
 
@@ -3406,7 +3403,7 @@ This event is used to play a sound effect. Currently, sounds can only be played 
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:script_logger_config"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Ascript_logger_config" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:script_logger_config</span></p></h3>
+<h3><p id="minecraft:script_logger_config"><span class="anchored"><a href="#minecraft%3Ascript_logger_config" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:script_logger_config</span></p></h3>
 
 This event is used to turn various levels of logging on and off for server scripts. Note that turning logging on/off is not limited to the script that broadcasted the event. It will affect ALL server scripts including those in other Behavior Packs that are applied to the world. See the Debugging section for more information on logging.<br><h4>Parameters</h4>
 
@@ -3432,7 +3429,7 @@ This event is used to turn various levels of logging on and off for server scrip
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:spawn_particle_attached_entity"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aspawn_particle_attached_entity" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:spawn_particle_attached_entity</span></p></h3>
+<h3><p id="minecraft:spawn_particle_attached_entity"><span class="anchored"><a href="#minecraft%3Aspawn_particle_attached_entity" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:spawn_particle_attached_entity</span></p></h3>
 
 This event is used to create a particle effect that will follow an entity around. This particle effect is visible to all players. Any effect defined in a JSON file (both in your resource pack and in Minecraft) can be used here. MoLang variables defined in the JSON of the effect can then be used to control that effect by changing them in the entity to which it is attached.<br><h4>Parameters</h4>
 
@@ -3458,7 +3455,7 @@ This event is used to create a particle effect that will follow an entity around
 </tr>
 </tbody></table>
 
-<h3><p id="minecraft:spawn_particle_in_world"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#minecraft%3Aspawn_particle_in_world" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:spawn_particle_in_world</span></p></h3>
+<h3><p id="minecraft:spawn_particle_in_world"><span class="anchored"><a href="#minecraft%3Aspawn_particle_in_world" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:spawn_particle_in_world</span></p></h3>
 
 This event is used to create a static particle effect in the world. This particle effect is visible to all players. Any effect defined in a JSON file (both in your resource pack and in Minecraft) can be used here. Once the effect is spawned you won't be able to control it further.<br><h4>Parameters</h4>
 
@@ -3490,9 +3487,9 @@ This event is used to create a static particle effect in the world. This particl
 
 <br><br>
 
-<h1><p id="Scripting System"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Scripting%20System" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Scripting System</span></p></h1>
+<h1><p id="Scripting System"><span class="anchored"><a href="#Scripting%20System" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Scripting System</span></p></h1>
 
-The Minecraft Script Engine uses the JavaScript language.<br>You can write JavaScript scripts and bundle them with Behavior Packs to listen and respond to game events, get and modify data in components that entities have, and affect different parts of the game.<br><h1><p id="Breaking Changes"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Breaking%20Changes" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Breaking Changes</span></p></h1>
+The Minecraft Script Engine uses the JavaScript language.<br>You can write JavaScript scripts and bundle them with Behavior Packs to listen and respond to game events, get and modify data in components that entities have, and affect different parts of the game.<br><h1><p id="Breaking Changes"><span class="anchored"><a href="#Breaking%20Changes" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Breaking Changes</span></p></h1>
 
 While we continue to work and refine the experimental Scripting API we might need to make changes that will break your current scripts. Please check this section if your scripts aren't working as expected.<br><h2></h2>
 
@@ -3512,19 +3509,19 @@ While we continue to work and refine the experimental Scripting API we might nee
 </tr>
 </tbody></table>
 
-<h1><p id="Debugging"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Debugging" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Debugging</span></p></h1>
+<h1><p id="Debugging"><span class="anchored"><a href="#Debugging" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Debugging</span></p></h1>
 
 Your script isn't working or doing what you want it to do? Fret not! We have built some debugging capabilities into the Script Engine to help you figure out what's going on with your script. If you are new to programming or want to learn more about debugging we suggest checking out the documentation about debugging with Visual Studio available here: https://docs.microsoft.com/visualstudio/debugger <br><br>There are two ways to tell what happened when something goes wrong with a script: in-game and advanced, which we will describe below. You only need the game and your script to debug in-game, but you will need a Windows 10 PC and Visual Studio installed for the advanced debugging.<br><h2></h2>
 
-<h2><p id="In-Game"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#In-Game" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>In-Game</span></p></h2>
+<h2><p id="In-Game"><span class="anchored"><a href="#In-Game" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>In-Game</span></p></h2>
 
 When you run a script in the game, the Script Engine will print out error messages whenever something goes wrong. For example, if you try to get a component that the script engine doesn't know about you will get an error.<br>To look at these messages you can open the chat screen which will have all the generated error messages there; or you can open the log file that the game generated. The location of the log file varies by platform. On Windows 10 you can find the log file in ' %APPDATA%\..\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\logs '<br>We strongly encourage you to build further debug messages and tools into your scripts while working on them. This will help you discern when something isn't working quite right. Reach out on the official Discord channel if you need additional help: https://discord.gg/Minecraft<br>
-<h2><p id="Real-Time (Advanced)"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Real-Time%20(Advanced)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Real-Time (Advanced)</span></p></h2>
+<h2><p id="Real-Time (Advanced)"><span class="anchored"><a href="#Real-Time%20(Advanced)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Real-Time (Advanced)</span></p></h2>
 
 If you have a Windows 10 PC with Visual Studio installed, you can attach the Visual Studio debugger and debug your script in real-time.<br>If you installed Visual Studio with the components mentioned in the "Recommended" section of this document you will have installed and enabled the Just-In-Time Debugger. This tool will pop-up a message from Visual Studio whenever an exception occurs in your script and allow you to open Visual Studio on the line of your script that broke.<br><br>Additionally, you can connect to the Script Engine manually and debug your code. You can use remote debugging to connect and debug Minecraft running on another device. Please refer to the Visual Studio Debugger documentation above for instructions on how to use remote debugging.<br>First you need to start up Visual Studio. If this is the first time you have launched Visual Studio after installation, we suggest setting up your environment for JavaScript development and logging in to your Microsoft account when prompted. This will set up the Visual Studio interface with the most important tools you will need.<br>Once you have Visual Studio open you should launch Minecraft. Then create a new world with Experimental Gameplay enabled and apply the Behavior Pack containing your scripts.<br>After creating the world go back to Visual Studio and click on the Debug menu. Then click on "Attach to Process". In the window that opens there will be a search box titled Filter Process. Click on it and type Minecraft.<br>Once the list is narrowed down to only the instance of Minecraft running, you can verify that the Script Engine is running by looking at the Type column. This will say Script and either x86 or x64.<br><br>Select the process and click on Attach to attach the debugger to the game. Now you will be able to press the Pause button to pause the Script Engine when the next line of script code runs. This allows you to inspect the values of variables in your script and break into Visual Studio if an error occurs in your code.<br>WARNING: When you hit a breakpoint to step through code with a debugger, it is possible for a client to time out and disconnect or for the server to disconnect all players.<br>
 <br><br>
 
-<h1><p id="Demos"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Demos" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Demos</span></p></h1>
+<h1><p id="Demos"><span class="anchored"><a href="#Demos" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Demos</span></p></h1>
 
 Here are some demos from your friends at Minecraft to help you get started with scripting. Simply unzip them to check out the code, or import them as a .mcpack to play with them<br><h2></h2>
 
@@ -3542,7 +3539,7 @@ Here are some demos from your friends at Minecraft to help you get started with 
 </tr>
 </tbody></table>
 
-<h1><p id="Getting Started"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Getting%20Started" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Getting Started</span></p></h1>
+<h1><p id="Getting Started"><span class="anchored"><a href="#Getting%20Started" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Getting Started</span></p></h1>
 
 First you will need to download the latest Vanilla Behavior Pack. You can get this from the following link: https://aka.ms/behaviorpacktemplate <br>Once you have downloaded the Behavior Pack, unzip it to a folder. Inside the Behavior Pack you will find the scripts folder which contains all the scripting files you want to run.<br>In the scripts folder you will find two folders: one for client scripts and one for server scripts.<br>-Server Scripts: These scripts run on the server side of the game. This includes spawning new entities, adding components, or modifying components on an entity.<br>-Client Scripts: These scripts run on each individual player's side of the game. This is a good place to respond to events and manage anything specific to the player.<br>Once you have chosen whether you are making a client or server script, simply add a new blank text file with .js extension to the appropriate folder, and open it in your preferred code editor. Then code away! You can have as many or as few JavaScript files as you want here (the name of the files doesn't matter) and they will all be run independently of each other!<br><br> NOTE: For scripts to be run by the game, you need to enable Experimental Gameplay on the world where you will run scripts on. This will be necessary while scripting is still in beta.<br>When entering a world that has client scripts in it, you will be prompted to accept that you wish to run scripts on your device (this will show up both for local worlds as well as multiplayer worlds).<br>Additionally, if your pack contains client scripts, you need to include a client_data module in the pack's manifest. This tells the game anything in the scripts/client folder needs to be sent over to the clients. Please refer to the Add-on Documentation page for more information on the pack's manifest contents.<br><h2>Folder Structure</h2>
 Example of manifest module needed for client scripts<br><pre class="language-javascript">
@@ -3563,7 +3560,7 @@ vanilla_behavior_pack<br><pre class="language-javascript"><span class="token ope
 <span class="token operator">|</span><span class="token operator">-</span>pack_icon<span class="token punctuation">.</span>png
 </pre> <br>
 
-<h1><p id="Known Issues"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Known%20Issues" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Known Issues</span></p></h1>
+<h1><p id="Known Issues"><span class="anchored"><a href="#Known%20Issues" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Known Issues</span></p></h1>
 
 This is the list of currently known issues with the Minecraft Script Engine<br><h2></h2>
 
@@ -3591,7 +3588,7 @@ This is the list of currently known issues with the Minecraft Script Engine<br><
 </tr>
 </tbody></table>
 
-<h1><p id="Pre-Requisites"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Pre-Requisites" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Pre-Requisites</span></p></h1>
+<h1><p id="Pre-Requisites"><span class="anchored"><a href="#Pre-Requisites" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Pre-Requisites</span></p></h1>
 
 So you want to make your own Scripts? That's awesome! In this section you will find the list of minimum and recommended software you will need.<br>NOTE: Scripts are only supported on Windows 10 PCs at the moment. If you try to open a world with scripts on a device that doesn't support scripts, you will see an error message letting you know you can't enter the world.<br><h2></h2>
 
@@ -3624,11 +3621,11 @@ So you want to make your own Scripts? That's awesome! In this section you will f
 </tr>
 </tbody></table>
 
-<h1><p id="Structure of a Script"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#Structure%20of%20a%20Script" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Structure of a Script</span></p></h1>
+<h1><p id="Structure of a Script"><span class="anchored"><a href="#Structure%20of%20a%20Script" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Structure of a Script</span></p></h1>
 
 In this section you can find a quick description of the basic structure of a JavaScript script file for the Minecraft Script Engine. If you would like to learn more about JavaScript or want to follow a fundamentals tutorial, you can check the official documentation on the Mozilla Developer Network here: https://developer.mozilla.org/docs/Web/JavaScript <br>These are, in a way, the required parts of a script but they are by no means the only parts you can have. You can create additional methods as needed - just make sure they are called from somewhere in one of the methods below!<br><h2></h2>
 
-<h2><p id="1. System Registration"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#1.%20System%20Registration" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>1. System Registration</span></p></h2>
+<h2><p id="1. System Registration"><span class="anchored"><a href="#1.%20System%20Registration" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>1. System Registration</span></p></h2>
 
 First off we need to register the system for our file. This signs up our script to be set-up either on the client or server threads of the game. Generally speaking, you will choose based on whether you put the script file in the client or server folders. To do that simply call registerSystem on either the client or server and give it the version of the API you require.<br><h3>Parameters</h3>
 
@@ -3651,7 +3648,7 @@ Client System<br><pre class="language-javascript"><span class="token keyword">le
 Server System<br><pre class="language-javascript"><span class="token keyword">let</span> sampleServerSystem <span class="token operator">=</span> server<span class="token punctuation">.</span><span class="token function">registerSystem</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h2><p id="2. System Initialization"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#2.%20System%20Initialization" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>2. System Initialization</span></p></h2>
+<h2><p id="2. System Initialization"><span class="anchored"><a href="#2.%20System%20Initialization" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>2. System Initialization</span></p></h2>
 
 This is the first method that gets called immediately after the system is registered. It will run as soon as the script loads at world start.<br>You can use this to set up the environment for your script: register custom components and events, sign up event listeners, etc. This will run BEFORE the world is ready and the player has been added to it. This function should be used to initialize variables and setup event listeners. 					You shouldn't try to spawn or interact with any entities at this point! You should also avoid interaction with UI elements or sending messages to the chat window since this is called before the player is ready.<br><h3>Code Example:</h3>
 <br><pre class="language-javascript">sampleSystem<span class="token punctuation">.</span><span class="token function-variable function">initialize</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -3659,7 +3656,7 @@ This is the first method that gets called immediately after the system is regist
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h2><p id="3. System Update"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#3.%20System%20Update" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>3. System Update</span></p></h2>
+<h2><p id="3. System Update"><span class="anchored"><a href="#3.%20System%20Update" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>3. System Update</span></p></h2>
 
 This method gets called once every game tick. The server and client tick at 20 times per second. This is a good place to get, check, and react to component changes.<br><h3>Code Example:</h3>
 <br><pre class="language-javascript">sampleSystem<span class="token punctuation">.</span><span class="token function-variable function">update</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -3667,7 +3664,7 @@ This method gets called once every game tick. The server and client tick at 20 t
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </pre> <br>
 
-<h2><p id="4. System Shutdown"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#4.%20System%20Shutdown" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>4. System Shutdown</span></p></h2>
+<h2><p id="4. System Shutdown"><span class="anchored"><a href="#4.%20System%20Shutdown" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>4. System Shutdown</span></p></h2>
 
 This method gets called when the Minecraft Script Engine is shutting down. For the client this is when they leave the world; for the server this is after the last player has exited the world.<br><h3>Code Example:</h3>
 <br><pre class="language-javascript">sampleSystem<span class="token punctuation">.</span><span class="token function-variable function">shutdown</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -3679,7 +3676,7 @@ This method gets called when the Minecraft Script Engine is shutting down. For t
 
 <br><br>
 
-<h1><p id="User-Defined Components"><span class="anchored"><a href="https://bedrock.dev/docs/stable/Scripting#User-Defined%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>User-Defined Components</span></p></h1>
+<h1><p id="User-Defined Components"><span class="anchored"><a href="#User-Defined%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>User-Defined Components</span></p></h1>
 
 User-Defined components are a special kind of component that can be defined in script and no built-in game system acts on it.<br>The component needs to be registered with the Script Engine by giving it a name and a set of fields in the format name:value. Once applied, the component behaves like any of the built-in components: you can get it from an entity, modify its values, and apply the changes.<br>Currently User-Defined components are the only components that can be dynamically added and removed from an entity using scripts. They don't need to be previously defined in an entity's JSON file. In the current version these components will NOT be saved out or loaded back in: they only exist while the entity is there and need to be added back when reloading the level.<br><h2>Code Example:</h2>
 Component Registration<br><pre class="language-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">registerComponent</span><span class="token punctuation">(</span><span class="token string">"myNamespace:myComponent"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> myString<span class="token operator">:</span> <span class="token string">"TamerJeison"</span><span class="token punctuation">,</span> myInt<span class="token operator">:</span> <span class="token number">42</span><span class="token punctuation">,</span> myFloat<span class="token operator">:</span> <span class="token number">1.0</span><span class="token punctuation">,</span> myArray<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
