@@ -190,11 +190,7 @@
 <h2><span style="color:#FFFFFF; background-color:#000000">2、 Functions</span></h2>
 <h2>getBlock(常加载区域ID, 坐标对象)</span></p></h2>
 获取方块的NBT信息，指定方块需要在常加载区域内。<br>
-
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-<h4></h4>
-
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
@@ -227,7 +223,7 @@
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Ticking Area</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript常加载区域对象（1-4.1-7）</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript常加载区域对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">方块所在的常加载区域<br></td>
 </tr>
 </tbody></table>
@@ -238,17 +234,15 @@
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript方块对象（1-1）</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript方块对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">包含指定方块的对象<br></td>
 </tr>
 </tbody></table>
 
 <br><br>
 
-<h2><p id="getBlock(Ticking Area, x, y, z)"><span class="anchored"><a href="#getBlock(Ticking%20Area%2C%20x%2C%20y%2C%20z)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlock(Ticking Area, x, y, z)</span></p></h2>
-
-Allows you to get a block from the world when provided an x, y, and z position. The block must be within a ticking area.<br><h3></h3>
-
+<h2><p id="getBlock(Ticking Area, x, y, z)"><span class="anchored">getBlock(常加载区域ID, x, y, z)</span></p></h2>
+提供方块位置时，你可以在世界中获取指定方块的NBT信息，但指定方块必须在常加载区域内。<br><h3></h3>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
 <h4></h4>
@@ -257,38 +251,38 @@ Allows you to get a block from the world when provided an x, y, and z position. 
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Ticking Area</td>
-<td style="border-style:solid; border-width:1; padding:9px">Ticking Area JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">The ticking area the block is in<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">常加载区域的JSAPI对象（1-4,1-7）</td>
+<td style="border-style:solid; border-width:1; padding:9px">方块所在的常加载区域<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">x</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
-<td style="border-style:solid; border-width:1; padding:9px">The x position of the block you want<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
+<td style="border-style:solid; border-width:1; padding:9px">指定方块的x坐标值<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">y</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
-<td style="border-style:solid; border-width:1; padding:9px">The y position of the block you want<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
+<td style="border-style:solid; border-width:1; padding:9px">指定方块的y坐标值<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">z</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
-<td style="border-style:solid; border-width:1; padding:9px">The z position of the block you want<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
+<td style="border-style:solid; border-width:1; padding:9px">指定方块的z坐标值<br></td>
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 <h4></h4>
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px"></td>
-<td style="border-style:solid; border-width:1; padding:9px">object<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">对象<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px"></td>
-<td style="border-style:solid; border-width:1; padding:9px">null<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">NULL<br></td>
 </tr>
 </tbody></table>
 
@@ -401,32 +395,32 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">x max</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
 <td style="border-style:solid; border-width:1; padding:9px">The maximum x position of the blocks you want<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">x min</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
 <td style="border-style:solid; border-width:1; padding:9px">The minimum x position of the blocks you want<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">y max</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
 <td style="border-style:solid; border-width:1; padding:9px">The maximum y position of the blocks you want<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">y min</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
 <td style="border-style:solid; border-width:1; padding:9px">The minimum y position of the blocks you want<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">z max</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
 <td style="border-style:solid; border-width:1; padding:9px">The maximum z position of the blocks you want<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">z min</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
 <td style="border-style:solid; border-width:1; padding:9px">The minimum z position of the blocks you want<br></td>
 </tr>
 </tbody></table>
@@ -1658,7 +1652,7 @@ List of slots and the item that can be equipped.<br><h4>Parameters</h4>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">slot</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
 <td style="border-style:solid; border-width:1; padding:9px">0</td>
 <td style="border-style:solid; border-width:1; padding:9px">The slot number of this slot.<br></td>
 </tr>
@@ -1764,7 +1758,7 @@ Defines the interactions with this entity for healing it.<br><h3>Parameters</h3>
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">Default Value</th> <th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">heal_amount</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
 <td style="border-style:solid; border-width:1; padding:9px">1</td>
 <td style="border-style:solid; border-width:1; padding:9px">The amount of health this entity gains when fed this item.<br></td>
 </tr>
@@ -2775,7 +2769,7 @@ This event is triggered whenever an entity acquires an item.<br><h4>Parameters</
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">acquired_amount</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
 <td style="border-style:solid; border-width:1; padding:9px">The total number of items acquired by the entity during this event<br></td>
 </tr>
 <tr>
@@ -2959,7 +2953,7 @@ This event is triggered whenever an entity is hurt.<br><h4>Parameters</h4>
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">absorbed_damage</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
 <td style="border-style:solid; border-width:1; padding:9px">The amount the damage was reduced by by the entity's absorption effect<br></td>
 </tr>
 <tr>
@@ -2979,7 +2973,7 @@ This event is triggered whenever an entity is hurt.<br><h4>Parameters</h4>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">damage</td>
-<td style="border-style:solid; border-width:1; padding:9px">Integer</td>
+<td style="border-style:solid; border-width:1; padding:9px">整数</td>
 <td style="border-style:solid; border-width:1; padding:9px">The amount of damage the entity took after immunity and armor are taken into account<br></td>
 </tr>
 <tr>
