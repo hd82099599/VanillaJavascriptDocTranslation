@@ -7,7 +7,7 @@
 在这里，你可以找到一些Script API关于对象和返回类型的定义<br>
 
 <!-- 书目：Index -->
-<h2><span style="color:#FFFFFF; background-color:#000000">1、 Index</span></h2>
+<h2><span style="color:#FFFFFF; background-color:#000000">1、 首先需要了解</span></h2>
 <h1><p id="Block JS API Object"><span class="anchored">1-1 [对象] JavaScript 方块</span></p></h1>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
 <tbody><tr> <th style="border-style:solid; border-width:3;">名称</th> <th style="border-style:solid; border-width:3;">类型</th><th style="border-style:solid; border-width:3;">备注</th> </tr>
@@ -26,7 +26,7 @@
 <td style="border-style:solid; border-width:3; padding:7px">JavaScript对象</td>
 <td style="border-style:solid; border-width:3; padding:7px">[只读] 这是方块的位置。是它唯一标识符的一部分。<br><h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -177,9 +177,7 @@
 </tbody></table>
 
 <h1><p id="Ticking Area JS API Object"><span class="anchored">1-2-1 常加载区域的JSAPI对象</span></p></h1>
-常加载区域有两种类型，实体(Entity)和区域(level)。当你的函数需要常加载区域时，您可以使用任意一种作为参数。<br>
-<br>
-
+常加载区域有两种类型，实体(Entity)和区域(level)。当你的函数需要常加载区域时，您可以使用任意一种作为参数。<br><br>
 <h1><p id="Script Bindings"><span class="anchored">1-2-2 内容绑定</span></p></h1>
 绑定是Vanilla Script引擎修改游戏中内容的功能。<br>
 
@@ -187,8 +185,8 @@
 方块绑定定义玩家如何与方块交互。<br>
 
 <!-- 书目：Functions -->
-<h2><span style="color:#FFFFFF; background-color:#000000">2、 Functions</span></h2>
-<h2>getBlock(常加载区域ID, 坐标对象)</span></p></h2>
+<h2><span style="color:#FFFFFF; background-color:#000000">2、 获得方块！</span></h2>
+<h2>getBlock(通过方块对象)</span></p></h2>
 获取方块的NBT信息，指定方块需要在常加载区域内。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -227,26 +225,20 @@
 <td style="border-style:solid; border-width:1; padding:9px">方块所在的常加载区域<br></td>
 </tr>
 </tbody></table>
-
 <h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
-<h4></h4>
-
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">JavaScript方块对象</td>
-<td style="border-style:solid; border-width:1; padding:9px">包含指定方块的对象<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">具有指定方块的对象<br></td>
 </tr>
 </tbody></table>
 
 <br><br>
 
-<h2><p id="getBlock(Ticking Area, x, y, z)"><span class="anchored">getBlock(常加载区域ID, x, y, z)</span></p></h2>
-提供方块位置时，你可以在世界中获取指定方块的NBT信息，但指定方块必须在常加载区域内。<br><h3></h3>
+<h2><p id="getBlock(Ticking Area, x, y, z)"><span class="anchored">getBlock(通过一个坐标对象选定)</span></p></h2>
+提供方块位置时，你可以在世界中获取指定方块的NBT信息，但指定方块必须在常加载区域内。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-<h4></h4>
-
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
@@ -270,10 +262,7 @@
 <td style="border-style:solid; border-width:1; padding:9px">指定方块的z坐标值<br></td>
 </tr>
 </tbody></table>
-
 <h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
-<h4></h4>
-
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
@@ -288,20 +277,15 @@
 
 <br><br>
 
-<h2><p id="getBlocks(Ticking Area, Minimum PositionObject, Maximum PositionObject)"><span class="anchored"><a href="#getBlocks(Ticking%20Area%2C%20Minimum%20PositionObject%2C%20Maximum%20PositionObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlocks(Ticking Area, Minimum PositionObject, Maximum PositionObject)</span></p></h2>
-
-Allows you to get an array of blocks from the world when provided a minimum and maximum position. The blocks must be within a ticking area. This call can be slow if given a lot of blocks, and should be used infrequently.<br><h3></h3>
-
+<h2><p id="getBlocks(Ticking Area, Minimum PositionObject, Maximum PositionObject)"><span class="anchored">getBlocks(通过两个坐标对象框选)</span></p></h2>
+提供最小和最大坐标时，您可以从世界上获得贼多方块的NBT信息。方块必须在常加载区域内。 如果最终选定了很多块，此调用可能会很慢，因此应不经常使用。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-<h4></h4>
-
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Maximum PositionObject</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">A JavaScript object with the maximum x, y, and z position of the blocks you want<br><h5><p id="Parameters"><span class="anchored">参数</span></p></h5>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">具有所需最小坐标(x,y与z)的JSAPI坐标对象<br><h5><p id="Parameters"><span class="anchored">参数</span></p></h5>
 
 <h6></h6>
 
@@ -310,17 +294,17 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 <tr>
 <td style="border-style:solid; border-width:1; padding:10px">x</td>
 <td style="border-style:solid; border-width:1; padding:10px">整数</td>
-<td style="border-style:solid; border-width:1; padding:10px">The x position<br></td>
+<td style="border-style:solid; border-width:1; padding:10px">x坐标<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:10px">y</td>
 <td style="border-style:solid; border-width:1; padding:10px">整数</td>
-<td style="border-style:solid; border-width:1; padding:10px">The y position<br></td>
+<td style="border-style:solid; border-width:1; padding:10px">y坐标<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:10px">z</td>
 <td style="border-style:solid; border-width:1; padding:10px">整数</td>
-<td style="border-style:solid; border-width:1; padding:10px">The z position<br></td>
+<td style="border-style:solid; border-width:1; padding:10px">z坐标<br></td>
 </tr>
 </tbody></table>
 
@@ -328,8 +312,8 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Minimum PositionObject</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">A JavaScript object with the minimum x, y, and z position of the blocks you want<br><h5><p id="Parameters"><span class="anchored">参数</span></p></h5>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">具有所需最大坐标(x,y与z)的JSAPI坐标对象<br><h5><p id="Parameters"><span class="anchored">参数</span></p></h5>
 
 <h6></h6>
 
@@ -338,17 +322,17 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 <tr>
 <td style="border-style:solid; border-width:1; padding:10px">x</td>
 <td style="border-style:solid; border-width:1; padding:10px">整数</td>
-<td style="border-style:solid; border-width:1; padding:10px">The x position<br></td>
+<td style="border-style:solid; border-width:1; padding:10px">x坐标<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:10px">y</td>
 <td style="border-style:solid; border-width:1; padding:10px">整数</td>
-<td style="border-style:solid; border-width:1; padding:10px">The y position<br></td>
+<td style="border-style:solid; border-width:1; padding:10px">y坐标<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:10px">z</td>
 <td style="border-style:solid; border-width:1; padding:10px">整数</td>
-<td style="border-style:solid; border-width:1; padding:10px">The z position<br></td>
+<td style="border-style:solid; border-width:1; padding:10px">z坐标<br></td>
 </tr>
 </tbody></table>
 
@@ -356,23 +340,23 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Ticking Area</td>
-<td style="border-style:solid; border-width:1; padding:9px">Ticking Area JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">The ticking area the blocks are in<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">常加载区域的JSAPI对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">指定方块所在的常加载区域<br></td>
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">Array</td>
-<td style="border-style:solid; border-width:1; padding:9px">A 3D array of block objects. Indexs are the blocks positions relative to the min position given<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">数组</td>
+<td style="border-style:solid; border-width:1; padding:9px">一个方块对象的3D数组，索引是相对于给定最小坐标的方块位置<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px"></td>
-<td style="border-style:solid; border-width:1; padding:9px">null<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">NULL<br></td>
 </tr>
 </tbody></table>
 
@@ -380,11 +364,11 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 
 <h2><p id="getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)"><span class="anchored"><a href="#getBlocks(Ticking%20Area%2C%20x%20min%2C%20y%20min%2C%20z%20min%2C%20x%20max%2C%20y%20max%2C%20z%20max)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)</span></p></h2>
 
-Allows you to get an array of blocks from the world when provided a minimum and maximum x, y, and z position. The blocks must be within a ticking area. This call can be slow if given a lot of blocks, and should be used infrequently.<br><h3></h3>
+Allows you to get an array of blocks from the world when provided a minimum and maximum x, y, and z position. The blocks must be within a ticking area. This call can be slow if given a lot of blocks, and should be used infrequently.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -426,7 +410,7 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -446,15 +430,15 @@ Allows you to get an array of blocks from the world when provided a minimum and 
 
 <h1><p id="Component Bindings"><span class="anchored"><a href="#Component%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Component Bindings</span></p></h1>
 
-<h2></h2>
+
 
 <h2><p id="applyComponentChanges(EntityObject, ComponentObject)"><span class="anchored"><a href="#applyComponentChanges(EntityObject%2C%20ComponentObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>applyComponentChanges(EntityObject, ComponentObject)</span></p></h2>
 
-Applies the component and any changes made to it in script back to the entity. What this means for each component can be slightly different: it makes the component reload on the entity with the new data as if it had just been added to the entity.<br><h3></h3>
+Applies the component and any changes made to it in script back to the entity. What this means for each component can be slightly different: it makes the component reload on the entity with the new data as if it had just been added to the entity.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -471,7 +455,7 @@ Applies the component and any changes made to it in script back to the entity. W
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -503,11 +487,11 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="createComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="#createComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createComponent(EntityObject, ComponentIdentifier)</span></p></h2>
 
-Creates the specified component and adds it to the entity. This should only be used with custom components which need to be registered first. If the entity already has the component, this will retrieve the component already there instead.<br><h3></h3>
+Creates the specified component and adds it to the entity. This should only be used with custom components which need to be registered first. If the entity already has the component, this will retrieve the component already there instead.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -524,7 +508,7 @@ Creates the specified component and adds it to the entity. This should only be u
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -559,11 +543,11 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="destroyComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="#destroyComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>destroyComponent(EntityObject, ComponentIdentifier)</span></p></h2>
 
-Removes the specified component from the given entity. If the entity has the component, it will be removed. Currently this only works with custom components and can't be used to remove components defined for an entity in JSON.<br><h3></h3>
+Removes the specified component from the given entity. If the entity has the component, it will be removed. Currently this only works with custom components and can't be used to remove components defined for an entity in JSON.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -580,7 +564,7 @@ Removes the specified component from the given entity. If the entity has the com
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -619,11 +603,11 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="getComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="#getComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getComponent(EntityObject, ComponentIdentifier)</span></p></h2>
 
-Looks for the specified component in the entity. If it exists, retrieves the data from the component and returns it.<br><h3></h3>
+Looks for the specified component in the entity. If it exists, retrieves the data from the component and returns it.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -640,7 +624,7 @@ Looks for the specified component in the entity. If it exists, retrieves the dat
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -694,11 +678,11 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="hasComponent(EntityObject, ComponentIdentifier)"><span class="anchored"><a href="#hasComponent(EntityObject%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>hasComponent(EntityObject, ComponentIdentifier)</span></p></h2>
 
-Checks if the given entity has the specified component.<br><h3></h3>
+Checks if the given entity has the specified component.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -715,7 +699,7 @@ Checks if the given entity has the specified component.<br><h3></h3>
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -746,17 +730,17 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="registerComponent(ComponentIdentifier, ComponentData)"><span class="anchored"><a href="#registerComponent(ComponentIdentifier%2C%20ComponentData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerComponent(ComponentIdentifier, ComponentData)</span></p></h2>
 
-Creates a custom component that only exists in script. It can be then added, removed, and updated from entities. These custom components only exist while the Script Engine is running.<br><h3></h3>
+Creates a custom component that only exists in script. It can be then added, removed, and updated from entities. These custom components only exist while the Script Engine is running.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">ComponentData</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">A JavaScript Object that defines the name of the fields and the data each field holds inside the component.<br></td>
 </tr>
 <tr>
@@ -767,7 +751,7 @@ Creates a custom component that only exists in script. It can be then added, rem
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -790,14 +774,14 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h1><p id="Entity Bindings"><span class="anchored"><a href="#Entity%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Bindings</span></p></h1>
 
-<h2></h2>
+
 
 <h2><p id="createEntity()"><span class="anchored"><a href="#createEntity()" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEntity()</span></p></h2>
 
-Creates an empty entity with no components and does not place it in the world. The empty entity will be of type custom and have a blank identifier. This is NOT a valid entity that exists in the world, just an empty one that only scripts know about.<br><br>NOTE: Entities are created first on the server, with the client notified of new entities afterwards. Be aware that if you send the result object to the client right away, the created entity might not exist on the client yet.<br><h3></h3>
+Creates an empty entity with no components and does not place it in the world. The empty entity will be of type custom and have a blank identifier. This is NOT a valid entity that exists in the world, just an empty one that only scripts know about.<br><br>NOTE: Entities are created first on the server, with the client notified of new entities afterwards. Be aware that if you send the result object to the client right away, the created entity might not exist on the client yet.<br>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -811,11 +795,11 @@ Creates an empty entity with no components and does not place it in the world. T
 
 <h2><p id="createEntity(Type, TemplateIdentifier)"><span class="anchored"><a href="#createEntity(Type%2C%20TemplateIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEntity(Type, TemplateIdentifier)</span></p></h2>
 
-Creates an entity and applies the specified template as defined in JSON. This allows you to quickly create an entity from the applied Behavior Packs as the base for an entity created in scripting. The entity will be spawned into the world with all the components, component groups, and event triggers that are defined in the JSON file of the identifier specified. Only works on scripts registered on the server.NOTE: Entities are created first on the server, with the client notified of new entities afterwards. Be aware that if you send the result object to the client right away, the created entity might not exist on the client yet.<br><h3></h3>
+Creates an entity and applies the specified template as defined in JSON. This allows you to quickly create an entity from the applied Behavior Packs as the base for an entity created in scripting. The entity will be spawned into the world with all the components, component groups, and event triggers that are defined in the JSON file of the identifier specified. Only works on scripts registered on the server.NOTE: Entities are created first on the server, with the client notified of new entities afterwards. Be aware that if you send the result object to the client right away, the created entity might not exist on the client yet.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -832,7 +816,7 @@ Creates an entity and applies the specified template as defined in JSON. This al
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -846,11 +830,11 @@ Creates an entity and applies the specified template as defined in JSON. This al
 
 <h2><p id="destroyEntity(EntityObject)"><span class="anchored"><a href="#destroyEntity(EntityObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>destroyEntity(EntityObject)</span></p></h2>
 
-Destroys an entity identified by the EntityObject. If the entity exists in the world this will remove it from the world and destroy it. This also makes the EntityObject no longer valid - you should only destroy an entity after you are done with it and no longer need to reference it again. This does NOT kill the entity. There won't be an event for its death: it will be removed.<br><h3></h3>
+Destroys an entity identified by the EntityObject. If the entity exists in the world this will remove it from the world and destroy it. This also makes the EntityObject no longer valid - you should only destroy an entity after you are done with it and no longer need to reference it again. This does NOT kill the entity. There won't be an event for its death: it will be removed.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -862,7 +846,7 @@ Destroys an entity identified by the EntityObject. If the entity exists in the w
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -876,11 +860,11 @@ Destroys an entity identified by the EntityObject. If the entity exists in the w
 
 <h2><p id="isValidEntity(EntityObject)"><span class="anchored"><a href="#isValidEntity(EntityObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>isValidEntity(EntityObject)</span></p></h2>
 
-Checks if the given EntityObject corresponds to a valid entity.<br><h3></h3>
+Checks if the given EntityObject corresponds to a valid entity.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -892,7 +876,7 @@ Checks if the given EntityObject corresponds to a valid entity.<br><h3></h3>
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -908,7 +892,7 @@ Checks if the given EntityObject corresponds to a valid entity.<br><h3></h3>
 
 <h1><p id="Entity Queries"><span class="anchored"><a href="#Entity%20Queries" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Queries</span></p></h1>
 
-Entity Queries are a way for you to filter for entities based on their components. Once you have registered a query, you can request all the entities that are captured by it. Entity Queries will only ever return entities that are currently active in the level. If your query extends into chunks that are not currently loaded, entities there will not be included in the query.<br><h2></h2>
+Entity Queries are a way for you to filter for entities based on their components. Once you have registered a query, you can request all the entities that are captured by it. Entity Queries will only ever return entities that are currently active in the level. If your query extends into chunks that are not currently loaded, entities there will not be included in the query.<br>
 
 <h2><p id="addFilterToQuery(Query, ComponentIdentifier)"><span class="anchored"><a href="#addFilterToQuery(Query%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>addFilterToQuery(Query, ComponentIdentifier)</span></p></h2>
 
@@ -948,11 +932,11 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="getEntitiesFromQuery(Query)"><span class="anchored"><a href="#getEntitiesFromQuery(Query)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getEntitiesFromQuery(Query)</span></p></h2>
 
-Allows you to fetch the entities captured by a query.<br><h3></h3>
+Allows you to fetch the entities captured by a query.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -964,7 +948,7 @@ Allows you to fetch the entities captured by a query.<br><h3></h3>
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -989,11 +973,11 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="getEntitiesFromQuery(Query, ComponentField1_Min, ComponentField2_Min, ComponentField3_Min, ComponentField1_Max, ComponentField2_Max, ComponentField3_Max)"><span class="anchored"><a href="#getEntitiesFromQuery(Query%2C%20ComponentField1_Min%2C%20ComponentField2_Min%2C%20ComponentField3_Min%2C%20ComponentField1_Max%2C%20ComponentField2_Max%2C%20ComponentField3_Max)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getEntitiesFromQuery(Query, ComponentField1_Min, ComponentField2_Min, ComponentField3_Min, ComponentField1_Max, ComponentField2_Max, ComponentField3_Max)</span></p></h2>
 
-Allows you to fetch the entities captured by a query that was created with a component filter built-in. The only entities that will be returned are those entities that have the component that was defined when the query was registered and that have a value in the three fields on that component that were defined in the query within the values specified in the call to getEntitiesFromQuery.<br><h3></h3>
+Allows you to fetch the entities captured by a query that was created with a component filter built-in. The only entities that will be returned are those entities that have the component that was defined when the query was registered and that have a value in the three fields on that component that were defined in the query within the values specified in the call to getEntitiesFromQuery.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -1035,7 +1019,7 @@ Allows you to fetch the entities captured by a query that was created with a com
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -1067,10 +1051,10 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="registerQuery()"><span class="anchored"><a href="#registerQuery()" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerQuery()</span></p></h2>
 
-Allows you to register a query. A query will contain all entities that meet the filter requirement.<br>No filters are added by default when you register a query so it will capture all entities.<br><h3></h3>
+Allows you to register a query. A query will contain all entities that meet the filter requirement.<br>No filters are added by default when you register a query so it will capture all entities.<br>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -1091,11 +1075,11 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="registerQuery(Component, ComponentField1, ComponentField2, ComponentField3)"><span class="anchored"><a href="#registerQuery(Component%2C%20ComponentField1%2C%20ComponentField2%2C%20ComponentField3)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerQuery(Component, ComponentField1, ComponentField2, ComponentField3)</span></p></h2>
 
-Allows you to register a query that will only show entities that have the given component and define which fields of that component will be used as a filter when getting the entities from the query. You can either provide just the component identifier, or the component identifier and the name of 3 properties on that component to be tested (If you do specify property names, you must specify 3).<br><h3></h3>
+Allows you to register a query that will only show entities that have the given component and define which fields of that component will be used as a filter when getting the entities from the query. You can either provide just the component identifier, or the component identifier and the name of 3 properties on that component to be tested (If you do specify property names, you must specify 3).<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">Default Value</th> <th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -1126,7 +1110,7 @@ Allows you to register a query that will only show entities that have the given 
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -1149,21 +1133,21 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h1><p id="Event Bindings"><span class="anchored"><a href="#Event%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Event Bindings</span></p></h1>
 
-These are the bindings used to handle events. For a list of events you can react to or trigger, check the Events section of this document.<br><h2></h2>
+These are the bindings used to handle events. For a list of events you can react to or trigger, check the Events section of this document.<br>
 
 <h2><p id="broadcastEvent(EventIdentifier, EventData)"><span class="anchored"><a href="#broadcastEvent(EventIdentifier%2C%20EventData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>broadcastEvent(EventIdentifier, EventData)</span></p></h2>
 
-Allows you to trigger an event with the desired data from script. Anything that signed up to listen for the event will be notified and the given data delivered to them.<br><h3></h3>
+Allows you to trigger an event with the desired data from script. Anything that signed up to listen for the event will be notified and the given data delivered to them.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">EventData</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The data for the event. You can create a new JavaScript Object with the parameters you want to pass in to the listener and the engine will take care of delivering the data to them<br></td>
 </tr>
 <tr>
@@ -1174,7 +1158,7 @@ Allows you to trigger an event with the desired data from script. Anything that 
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -1198,11 +1182,11 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="createEventData(EventIdentifier)"><span class="anchored"><a href="#createEventData(EventIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEventData(EventIdentifier)</span></p></h2>
 
-Creates an object with all the required fields and default data for the specified event. If the event is a custom event, it needs to have been previously registered.<br><h3></h3>
+Creates an object with all the required fields and default data for the specified event. If the event is a custom event, it needs to have been previously registered.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -1214,12 +1198,12 @@ Creates an object with all the required fields and default data for the specifie
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The object containing the event data<br></td>
 </tr>
 </tbody></table>
@@ -1228,17 +1212,17 @@ Creates an object with all the required fields and default data for the specifie
 
 <h2><p id="listenForEvent(EventIdentifier, CallbackObject)"><span class="anchored"><a href="#listenForEvent(EventIdentifier%2C%20CallbackObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>listenForEvent(EventIdentifier, CallbackObject)</span></p></h2>
 
-Allows you to register a JavaScript object that gets called whenever the specified event is broadcast. The event can either be a built-in event or an event specified in script.<br><h3></h3>
+Allows you to register a JavaScript object that gets called whenever the specified event is broadcast. The event can either be a built-in event or an event specified in script.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">CallbackObject</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The JavaScript object that will get called whenever the event is broadcast<br></td>
 </tr>
 <tr>
@@ -1249,7 +1233,7 @@ Allows you to register a JavaScript object that gets called whenever the specifi
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -1276,17 +1260,17 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="registerEventData(EventIdentifier, EventData)"><span class="anchored"><a href="#registerEventData(EventIdentifier%2C%20EventData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerEventData(EventIdentifier, EventData)</span></p></h2>
 
-Registers the Event to the script engine. This allows you to create Event Data by calling createEventData and have it initialized with the correct default data and fields. Only custom events need to be registered.<br><h3></h3>
+Registers the Event to the script engine. This allows you to create Event Data by calling createEventData and have it initialized with the correct default data and fields. Only custom events need to be registered.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">EventData</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The JavaScript object with the correct fields and default values for the event<br></td>
 </tr>
 <tr>
@@ -1297,7 +1281,7 @@ Registers the Event to the script engine. This allows you to create Event Data b
 </tbody></table>
 
 <h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -1313,15 +1297,15 @@ Registers the Event to the script engine. This allows you to create Event Data b
 
 <h1><p id="Logging Bindings"><span class="anchored"><a href="#Logging%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Logging Bindings</span></p></h1>
 
-<h2></h2>
+
 
 <h2><p id="log(Message)"><span class="anchored"><a href="#log(Message)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>log(Message)</span></p></h2>
 
-The log function is accessed through the server or client objects and allows for logging a message to the ContentLog file. On Windows 10 devices it is located at ' %APPDATA%\..\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\logs '<br><h3></h3>
+The log function is accessed through the server or client objects and allows for logging a message to the ContentLog file. On Windows 10 devices it is located at ' %APPDATA%\..\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\logs '<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 
-<h4></h4>
+
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -1343,7 +1327,7 @@ Log<br><pre class="language-javascript">system<span class="token punctuation">.<
 
 <h1><p id="Slash Commands"><span class="anchored"><a href="#Slash%20Commands" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Slash Commands</span></p></h1>
 
-You can use the traditional Slash Command system from scripts. Currently you can either trigger an event ("minecraft:execute_command") or use the executeCommand binding. Commands in scripts are restricted to server scripts, they can't be run from the client's side at the moment.<br><h2></h2>
+You can use the traditional Slash Command system from scripts. Currently you can either trigger an event ("minecraft:execute_command") or use the executeCommand binding. Commands in scripts are restricted to server scripts, they can't be run from the client's side at the moment.<br>
 
 <h2><p id="executeCommand(Command, Callback)"><span class="anchored"><a href="#executeCommand(Command%2C%20Callback)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>executeCommand(Command, Callback)</span></p></h2>
 
@@ -1383,7 +1367,7 @@ system<span class="token punctuation">.</span><span class="token function-variab
 
 This is the documentation for the attributes, properties, and components available from the Minecraft Script Engine.<br>There are two kinds of components: server components and client components. We will go into a bit more detail on what they are in their respective sections below.<br>Components can be added, retrieved, updated, and removed from entities. They do not exist on their own. Currently only user-defined components can be added and removed from entities. A component must be in an entity in order to retrieve or update it.<br>Check the Script Engine Bindings section to see how to add, remove, retrieve, and update components. This section deals with the specific API of each component.<br><h1><p id="Block Components"><span class="anchored"><a href="#Block%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Block Components</span></p></h1>
 
-These components are only found on block objects and can only be on block objects<br><h2></h2>
+These components are only found on block objects and can only be on block objects<br>
 
 <h2><p id="minecraft:blockstate"><span class="anchored"><a href="#minecraft%3Ablockstate" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:blockstate</span></p></h2>
 
@@ -1398,7 +1382,7 @@ blockstateComponent<span class="token punctuation">.</span>data<span class="toke
 
 <h1><p id="Client Components"><span class="anchored"><a href="#Client%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Client Components</span></p></h1>
 
-These components only run on the client where the script ran and can only be used from client scripts.<br><h2></h2>
+These components only run on the client where the script ran and can only be used from client scripts.<br>
 
 <h2><p id="minecraft:molang"><span class="anchored"><a href="#minecraft%3Amolang" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:molang</span></p></h2>
 
@@ -1413,7 +1397,7 @@ molangComponent<span class="token punctuation">[</span><span class="token string
 
 <h1><p id="Level Components"><span class="anchored"><a href="#Level%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Level Components</span></p></h1>
 
-These are the components that belong to the level. They can only belong on the level object and cannot be removed from it. You can get the components and change their data through the global server object.<br><br>let levelComponent = this.getComponent(server.level, "minecraft:example_level_component");<br><h2></h2>
+These are the components that belong to the level. They can only belong on the level object and cannot be removed from it. You can get the components and change their data through the global server object.<br><br>let levelComponent = this.getComponent(server.level, "minecraft:example_level_component");<br>
 
 <h2><p id="minecraft:ticking_areas"><span class="anchored"><a href="#minecraft%3Aticking_areas" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:ticking_areas</span></p></h2>
 
@@ -1455,11 +1439,11 @@ The weather component allows users to change the level's weather. Rain and light
 
 <h1><p id="Server Components"><span class="anchored"><a href="#Server%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Server Components</span></p></h1>
 
-These are the components that run on the server and are synced with all the clients (players) in the world.<br>As much as possible, the API of each component matches its JSON counterpart (with some differences noted).<br><h2></h2>
+These are the components that run on the server and are synced with all the clients (players) in the world.<br>As much as possible, the API of each component matches its JSON counterpart (with some differences noted).<br>
 
 <h2><p id="minecraft:armor_container"><span class="anchored"><a href="#minecraft%3Aarmor_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:armor_container</span></p></h2>
 
-This component represents the armor contents of an entity. The component contains an array of ItemStack JS API Objects representing each slot in the armor container. NOTE: Currently items and containers are read-only. Slots are ordered from head to feet.<br><h3></h3>
+This component represents the armor contents of an entity. The component contains an array of ItemStack JS API Objects representing each slot in the armor container. NOTE: Currently items and containers are read-only. Slots are ordered from head to feet.<br>
 <br><pre class="language-javascript"><span class="token comment">// This example will check the players helmet armor slot for a specific item after the player attacks an entity.</span>
 system<span class="token punctuation">.</span><span class="token function">listenForEvent</span><span class="token punctuation">(</span><span class="token string">"minecraft:player_attacked_entity"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">eventData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// Get the players armor container</span>
@@ -1524,7 +1508,7 @@ Controls the collision box of the entity. When changes to the component are appl
 
 <h2><p id="minecraft:container"><span class="anchored"><a href="#minecraft%3Acontainer" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:container</span></p></h2>
 
-This component represents the container of a block. The component contains an array of ItemStack JS API Objects representing each slot in the container. This specific component is used for blocks. Refer to inventory components for entities. NOTE: Currently items and containers are read-only. Slots are ordered left to right.<br><h3></h3>
+This component represents the container of a block. The component contains an array of ItemStack JS API Objects representing each slot in the container. This specific component is used for blocks. Refer to inventory components for entities. NOTE: Currently items and containers are read-only. Slots are ordered left to right.<br>
 <br><pre class="language-javascript"><span class="token comment">// This example will check if a block has a container.</span>
 <span class="token keyword">let</span> block<span class="token punctuation">;</span> <span class="token comment">// check getBlock API on how to access a block</span>
 <span class="token keyword">let</span> has_container <span class="token operator">=</span> system<span class="token punctuation">.</span><span class="token function">hasComponent</span><span class="token punctuation">(</span>block<span class="token punctuation">,</span> <span class="token string">"minecraft:container"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1580,7 +1564,7 @@ Defines what events to call when this entity is damaged by specific entities or 
 </td>
 </tr>
 </tbody></table>
-<h3></h3>
+
 <br><pre class="language-javascript"><span class="token comment">// This example will cause an entity (in this case, a creeper) to start exploding when the player attacks it.</span>
 <span class="token comment">// Note: the entity must have the damage_sensor component and the associated events defined in their JSON description.</span>
 <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">listenForEvent</span><span class="token punctuation">(</span><span class="token string">"minecraft:player_attacked_entity"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">eventData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1718,7 +1702,7 @@ Defines how the entity explodes.<br><h3>Parameters</h3>
 
 <h2><p id="minecraft:hand_container"><span class="anchored"><a href="#minecraft%3Ahand_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:hand_container</span></p></h2>
 
-This component represents the contents of an entity's hands. The component contains an array of ItemStack JS API Objects representing each slot in the hand container. NOTE: Currently items and containers are read-only. Slot 0 is main-hand Slot 1 is off-hand.<br><h3></h3>
+This component represents the contents of an entity's hands. The component contains an array of ItemStack JS API Objects representing each slot in the hand container. NOTE: Currently items and containers are read-only. Slot 0 is main-hand Slot 1 is off-hand.<br>
 <br><pre class="language-javascript"><span class="token comment">// This example will check the players offhand slot for a specific item after the player attacks an entity.</span>
 system<span class="token punctuation">.</span><span class="token function">listenForEvent</span><span class="token punctuation">(</span><span class="token string">"minecraft:player_attacked_entity"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">eventData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// Get the players hand container</span>
@@ -1795,7 +1779,7 @@ Defines the current and maximum possible health of the entity. Upon applying the
 
 <h2><p id="minecraft:hotbar_container"><span class="anchored"><a href="#minecraft%3Ahotbar_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:hotbar_container</span></p></h2>
 
-This component represents the hotbar contents of a player. The component contains an array of ItemStack JS API Objects representing each slot in the hotbar. NOTE: Currently items and containers are read-only. Slots are ordered left to right.<br><h3></h3>
+This component represents the hotbar contents of a player. The component contains an array of ItemStack JS API Objects representing each slot in the hotbar. NOTE: Currently items and containers are read-only. Slots are ordered left to right.<br>
 <br><pre class="language-javascript"><span class="token comment">// This example will check the players first hotbar item slot for a specific item after the player attacks an entity.</span>
 system<span class="token punctuation">.</span><span class="token function">listenForEvent</span><span class="token punctuation">(</span><span class="token string">"minecraft:player_attacked_entity"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">eventData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// Get the players hotbar</span>
@@ -1974,7 +1958,7 @@ Defines the entity's inventory (size, restrictions, etc.). Currently this does n
 
 <h2><p id="minecraft:inventory_container"><span class="anchored"><a href="#minecraft%3Ainventory_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:inventory_container</span></p></h2>
 
-This component represents the inventory contents of an entity. The component contains an array of ItemStack JS API Objects representing each slot in the inventory. NOTE: Currently items and containers are read-only.Slot 0-8 is the hotbar, 9-16 is the top row of the player's inventory, 17-24 is the middle row, 25-32 is the bottom row<br><h3></h3>
+This component represents the inventory contents of an entity. The component contains an array of ItemStack JS API Objects representing each slot in the inventory. NOTE: Currently items and containers are read-only.Slot 0-8 is the hotbar, 9-16 is the top row of the player's inventory, 17-24 is the middle row, 25-32 is the bottom row<br>
 <br><pre class="language-javascript"><span class="token comment">// This example will check the players third inventory item slot for a specific item after the player attacks an entity.</span>
 system<span class="token punctuation">.</span><span class="token function">listenForEvent</span><span class="token punctuation">(</span><span class="token string">"minecraft:player_attacked_entity"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">eventData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// Get the players inventory</span>
@@ -2358,11 +2342,11 @@ Describes the ticking area's region.<br><h3>Parameters</h3>
 
 Here you can find the list of events that you can listen for and respond to in your scripts.<br><h1><p id="Client Events"><span class="anchored"><a href="#Client%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Client Events</span></p></h1>
 
-<h2></h2>
+
 
 <h2><p id="Listening Events"><span class="anchored"><a href="#Listening%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Listening Events</span></p></h2>
 
-The following Minecraft events are events the Script Engine is listening for and to which you can react in scripts.<br><h3></h3>
+The following Minecraft events are events the Script Engine is listening for and to which you can react in scripts.<br>
 
 <h3><p id="minecraft:client_entered_world"><span class="anchored"><a href="#minecraft%3Aclient_entered_world" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:client_entered_world</span></p></h3>
 
@@ -2503,7 +2487,7 @@ mySystem<span class="token punctuation">.</span><span class="token function-vari
 
 <h2><p id="Trigger-able Events"><span class="anchored"><a href="#Trigger-able%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Trigger-able Events</span></p></h2>
 
-The following Minecraft Events can be triggered from scripting and cause the game to respond accordingly.<br><h3></h3>
+The following Minecraft Events can be triggered from scripting and cause the game to respond accordingly.<br>
 
 <h3><p id="minecraft:display_chat_event"><span class="anchored"><a href="#minecraft%3Adisplay_chat_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:display_chat_event</span></p></h3>
 
@@ -2668,11 +2652,11 @@ This event is used to remove a UI screen from the stack of the specific player r
 
 <h1><p id="Server Events"><span class="anchored"><a href="#Server%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Server Events</span></p></h1>
 
-<h2></h2>
+
 
 <h2><p id="Listening Events"><span class="anchored"><a href="#Listening%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Listening Events</span></p></h2>
 
-The following Minecraft events are events the Script Engine is listening for and to which you can react in scripts.<br><h3></h3>
+The following Minecraft events are events the Script Engine is listening for and to which you can react in scripts.<br>
 
 <h3><p id="minecraft:block_destruction_started"><span class="anchored"><a href="#minecraft%3Ablock_destruction_started" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:block_destruction_started</span></p></h3>
 
@@ -2682,7 +2666,7 @@ This event is triggered whenever a player starts to destroy a block.<br><h4>Para
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">block_position</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The position of the block that is being destroyed<br></td>
 </tr>
 <tr>
@@ -2700,7 +2684,7 @@ This event is triggered whenever a player stops destroying a block.<br><h4>Param
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">block_position</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The position of the block that was being destroyed<br></td>
 </tr>
 <tr>
@@ -2728,7 +2712,7 @@ This event is triggered whenever a block is destroyed by an explosion.<br><h4>Pa
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">block_position</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The position of the block that was destroyed by the explosion<br></td>
 </tr>
 <tr>
@@ -2751,7 +2735,7 @@ This event is triggered whenever a player interacts with a block.<br><h4>Paramet
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">block_position</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The position of the block that is being interacted with<br></td>
 </tr>
 <tr>
@@ -2861,7 +2845,7 @@ This event is triggered whenever an entity dies. This won't be triggered when an
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">block_position</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The position of the block that killed the entity<br></td>
 </tr>
 <tr>
@@ -3096,7 +3080,7 @@ This event is triggered whenever a piston moves a block.<br><h4>Parameters</h4>
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">block_position</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The position of the block that was moved<br></td>
 </tr>
 <tr>
@@ -3106,7 +3090,7 @@ This event is triggered whenever a piston moves a block.<br><h4>Parameters</h4>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">piston_position</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The position of the piston that moved the block<br></td>
 </tr>
 </tbody></table>
@@ -3174,7 +3158,7 @@ This event is triggered whenever a player destroys a block.<br><h4>Parameters</h
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">block_position</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The position of the block that was destroyed<br></td>
 </tr>
 <tr>
@@ -3192,7 +3176,7 @@ This event is triggered whenever a player places a block.<br><h4>Parameters</h4>
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">block_position</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript Object</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">The position of the block that was placed<br></td>
 </tr>
 <tr>
@@ -3257,7 +3241,7 @@ This event is triggered whenever the weather changes. It contains information ab
 
 <h2><p id="Trigger-able Events"><span class="anchored"><a href="#Trigger-able%20Events" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Trigger-able Events</span></p></h2>
 
-The following Minecraft events can be triggered from scripting and the game will respond, accordingly.<br><h3></h3>
+The following Minecraft events can be triggered from scripting and the game will respond, accordingly.<br>
 
 <h3><p id="minecraft:display_chat_event"><span class="anchored"><a href="#minecraft%3Adisplay_chat_event" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:display_chat_event</span></p></h3>
 
@@ -3427,7 +3411,7 @@ This event is used to create a static particle effect in the world. This particl
 
 The Minecraft Script Engine uses the JavaScript language.<br>You can write JavaScript scripts and bundle them with Behavior Packs to listen and respond to game events, get and modify data in components that entities have, and affect different parts of the game.<br><h1><p id="Breaking Changes"><span class="anchored"><a href="#Breaking%20Changes" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Breaking Changes</span></p></h1>
 
-While we continue to work and refine the experimental Scripting API we might need to make changes that will break your current scripts. Please check this section if your scripts aren't working as expected.<br><h2></h2>
+While we continue to work and refine the experimental Scripting API we might need to make changes that will break your current scripts. Please check this section if your scripts aren't working as expected.<br>
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
 <tbody><tr> <th style="border-style:solid; border-width:3;">Category</th> <th style="border-style:solid; border-width:3;">Change</th> </tr>
@@ -3447,7 +3431,7 @@ While we continue to work and refine the experimental Scripting API we might nee
 
 <h1><p id="Debugging"><span class="anchored"><a href="#Debugging" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Debugging</span></p></h1>
 
-Your script isn't working or doing what you want it to do? Fret not! We have built some debugging capabilities into the Script Engine to help you figure out what's going on with your script. If you are new to programming or want to learn more about debugging we suggest checking out the documentation about debugging with Visual Studio available here: https://docs.microsoft.com/visualstudio/debugger <br><br>There are two ways to tell what happened when something goes wrong with a script: in-game and advanced, which we will describe below. You only need the game and your script to debug in-game, but you will need a Windows 10 PC and Visual Studio installed for the advanced debugging.<br><h2></h2>
+Your script isn't working or doing what you want it to do? Fret not! We have built some debugging capabilities into the Script Engine to help you figure out what's going on with your script. If you are new to programming or want to learn more about debugging we suggest checking out the documentation about debugging with Visual Studio available here: https://docs.microsoft.com/visualstudio/debugger <br><br>There are two ways to tell what happened when something goes wrong with a script: in-game and advanced, which we will describe below. You only need the game and your script to debug in-game, but you will need a Windows 10 PC and Visual Studio installed for the advanced debugging.<br>
 
 <h2><p id="In-Game"><span class="anchored"><a href="#In-Game" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>In-Game</span></p></h2>
 
@@ -3459,7 +3443,7 @@ If you have a Windows 10 PC with Visual Studio installed, you can attach the Vis
 
 <h1><p id="Demos"><span class="anchored"><a href="#Demos" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Demos</span></p></h1>
 
-Here are some demos from your friends at Minecraft to help you get started with scripting. Simply unzip them to check out the code, or import them as a .mcpack to play with them<br><h2></h2>
+Here are some demos from your friends at Minecraft to help you get started with scripting. Simply unzip them to check out the code, or import them as a .mcpack to play with them<br>
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
 <tbody><tr> <th style="border-style:solid; border-width:3;">Demo</th> <th style="border-style:solid; border-width:3;">Last Updated</th> <th style="border-style:solid; border-width:3;">Download Link</th> </tr>
@@ -3498,7 +3482,7 @@ vanilla_behavior_pack<br><pre class="language-javascript"><span class="token ope
 
 <h1><p id="Known Issues"><span class="anchored"><a href="#Known%20Issues" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Known Issues</span></p></h1>
 
-This is the list of currently known issues with the Minecraft Script Engine<br><h2></h2>
+This is the list of currently known issues with the Minecraft Script Engine<br>
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
 <tbody><tr> <th style="border-style:solid; border-width:3;">Issue</th> <th style="border-style:solid; border-width:3;">Workaround</th> </tr>
@@ -3526,7 +3510,7 @@ This is the list of currently known issues with the Minecraft Script Engine<br><
 
 <h1><p id="Pre-Requisites"><span class="anchored"><a href="#Pre-Requisites" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Pre-Requisites</span></p></h1>
 
-So you want to make your own Scripts? That's awesome! In this section you will find the list of minimum and recommended software you will need.<br>NOTE: Scripts are only supported on Windows 10 PCs at the moment. If you try to open a world with scripts on a device that doesn't support scripts, you will see an error message letting you know you can't enter the world.<br><h2></h2>
+So you want to make your own Scripts? That's awesome! In this section you will find the list of minimum and recommended software you will need.<br>NOTE: Scripts are only supported on Windows 10 PCs at the moment. If you try to open a world with scripts on a device that doesn't support scripts, you will see an error message letting you know you can't enter the world.<br>
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
 <tbody><tr> <th style="border-style:solid; border-width:3;">Software</th> <th style="border-style:solid; border-width:3;">Minimum</th> <th style="border-style:solid; border-width:3;">Recommended</th> </tr>
@@ -3559,7 +3543,7 @@ So you want to make your own Scripts? That's awesome! In this section you will f
 
 <h1><p id="Structure of a Script"><span class="anchored"><a href="#Structure%20of%20a%20Script" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Structure of a Script</span></p></h1>
 
-In this section you can find a quick description of the basic structure of a JavaScript script file for the Minecraft Script Engine. If you would like to learn more about JavaScript or want to follow a fundamentals tutorial, you can check the official documentation on the Mozilla Developer Network here: https://developer.mozilla.org/docs/Web/JavaScript <br>These are, in a way, the required parts of a script but they are by no means the only parts you can have. You can create additional methods as needed - just make sure they are called from somewhere in one of the methods below!<br><h2></h2>
+In this section you can find a quick description of the basic structure of a JavaScript script file for the Minecraft Script Engine. If you would like to learn more about JavaScript or want to follow a fundamentals tutorial, you can check the official documentation on the Mozilla Developer Network here: https://developer.mozilla.org/docs/Web/JavaScript <br>These are, in a way, the required parts of a script but they are by no means the only parts you can have. You can create additional methods as needed - just make sure they are called from somewhere in one of the methods below!<br>
 
 <h2><p id="1. System Registration"><span class="anchored"><a href="#1.%20System%20Registration" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>1. System Registration</span></p></h2>
 
