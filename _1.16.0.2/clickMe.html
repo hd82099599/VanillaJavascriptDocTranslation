@@ -185,8 +185,8 @@
 方块绑定定义玩家如何与方块交互。<br>
 
 <!-- 书目：Functions -->
-<h2><span style="color:#FFFFFF; background-color:#000000">2、 获得方块！</span></h2>
-<h2>getBlock(通过方块对象)</span></p></h2>
+<h2><span style="color:#FFFFFF; background-color:#000000">2、 获得方块信息</span></h2>
+<h2>2-1 getBlock(通过方块对象)</span></p></h2>
 获取方块的NBT信息，指定方块需要在常加载区域内。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -236,7 +236,7 @@
 
 <br><br>
 
-<h2><p id="getBlock(Ticking Area, x, y, z)"><span class="anchored">getBlock(通过一个坐标对象选定)</span></p></h2>
+<h2><p id="getBlock(Ticking Area, x, y, z)"><span class="anchored">2-2 getBlock(通过一个坐标对象选定)</span></p></h2>
 提供方块位置时，你可以在世界中获取指定方块的NBT信息，但指定方块必须在常加载区域内。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -277,7 +277,7 @@
 
 <br><br>
 
-<h2><p id="getBlocks(Ticking Area, Minimum PositionObject, Maximum PositionObject)"><span class="anchored">getBlocks(通过两个坐标对象框选)</span></p></h2>
+<h2><p id="getBlocks(Ticking Area, Minimum PositionObject, Maximum PositionObject)"><span class="anchored">2-3 getBlocks(通过两个坐标对象框选)</span></p></h2>
 提供最小和最大坐标时，您可以从世界上获得贼多方块的NBT信息。方块必须在常加载区域内。 如果最终选定了很多块，此调用可能会很慢，因此应不经常使用。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -360,7 +360,7 @@
 
 <br><br>
 
-<h2><p id="getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)"><span class="anchored">getBlocks(直接传入坐标参数)</span></p></h2>
+<h2><p id="getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)"><span class="anchored">2-4 getBlocks(直接传入坐标参数)</span></p></h2>
 提供最小和最大坐标时，您可以从世界上获得贼多方块的NBT信息。方块必须在常加载区域内。 如果最终选定了很多块，此调用可能会很慢，因此应不经常使用。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -415,20 +415,13 @@
 </tbody></table>
 
 <br><br>
-<br><br>
 
-<h1><p id="Component Bindings"><span class="anchored"><a href="#Component%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Component Bindings</span></p></h1>
-
-
-
-<h2><p id="applyComponentChanges(EntityObject, ComponentObject)"><span class="anchored"><a href="#applyComponentChanges(EntityObject%2C%20ComponentObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>applyComponentChanges(EntityObject, ComponentObject)</span></p></h2>
+<h2><span style="color:#FFFFFF; background-color:#000000">3、 组件绑定</span></h2>
+<h2><p id="applyComponentChanges(EntityObject, ComponentObject)"><span class="anchored">applyComponentChanges(EntityObject, ComponentObject)</span></p></h2>
 
 Applies the component and any changes made to it in script back to the entity. What this means for each component can be slightly different: it makes the component reload on the entity with the new data as if it had just been added to the entity.<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
