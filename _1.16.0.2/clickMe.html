@@ -344,9 +344,7 @@
 <td style="border-style:solid; border-width:1; padding:9px">指定方块所在的常加载区域<br></td>
 </tr>
 </tbody></table>
-
 <h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
-
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -362,70 +360,61 @@
 
 <br><br>
 
-<h2><p id="getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)"><span class="anchored"><a href="#getBlocks(Ticking%20Area%2C%20x%20min%2C%20y%20min%2C%20z%20min%2C%20x%20max%2C%20y%20max%2C%20z%20max)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)</span></p></h2>
-
-Allows you to get an array of blocks from the world when provided a minimum and maximum x, y, and z position. The blocks must be within a ticking area. This call can be slow if given a lot of blocks, and should be used infrequently.<br>
-
+<h2><p id="getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)"><span class="anchored">getBlocks(直接传入坐标参数)</span></p></h2>
+提供最小和最大坐标时，您可以从世界上获得贼多方块的NBT信息。方块必须在常加载区域内。 如果最终选定了很多块，此调用可能会很慢，因此应不经常使用。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Ticking Area</td>
-<td style="border-style:solid; border-width:1; padding:9px">Ticking Area JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">The ticking area the blocks are in<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">常加载区域的JSAPI对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">指定方块所在的常加载区域<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">x max</td>
 <td style="border-style:solid; border-width:1; padding:9px">整数</td>
-<td style="border-style:solid; border-width:1; padding:9px">The maximum x position of the blocks you want<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">最大x的坐标值<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">x min</td>
 <td style="border-style:solid; border-width:1; padding:9px">整数</td>
-<td style="border-style:solid; border-width:1; padding:9px">The minimum x position of the blocks you want<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">最小x的坐标值<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">y max</td>
 <td style="border-style:solid; border-width:1; padding:9px">整数</td>
-<td style="border-style:solid; border-width:1; padding:9px">The maximum y position of the blocks you want<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">最大y的坐标值<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">y min</td>
 <td style="border-style:solid; border-width:1; padding:9px">整数</td>
-<td style="border-style:solid; border-width:1; padding:9px">The minimum y position of the blocks you want<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">最小y的坐标值<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">z max</td>
 <td style="border-style:solid; border-width:1; padding:9px">整数</td>
-<td style="border-style:solid; border-width:1; padding:9px">The maximum z position of the blocks you want<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">最大z的坐标值<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">z min</td>
 <td style="border-style:solid; border-width:1; padding:9px">整数</td>
-<td style="border-style:solid; border-width:1; padding:9px">The minimum z position of the blocks you want<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">最小z的坐标值<br></td>
 </tr>
 </tbody></table>
-
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-
-
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px"></td>
-<td style="border-style:solid; border-width:1; padding:9px">array<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">数组<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px"></td>
-<td style="border-style:solid; border-width:1; padding:9px">null<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">NULL<br></td>
 </tr>
 </tbody></table>
 
 <br><br>
-
 <br><br>
 
 <h1><p id="Component Bindings"><span class="anchored"><a href="#Component%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Component Bindings</span></p></h1>
