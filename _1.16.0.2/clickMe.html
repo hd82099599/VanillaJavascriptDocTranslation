@@ -415,8 +415,45 @@
 
 <!-- 书目：Components -->
 <h2><span style="color:#FFFFFF; background-color:#000000">3、 组件绑定</span></h2>
-<i><strong>译者注：</strong>【组件】 用于定义某种实体的共有行为属性。</i>
-<h2><p id="applyComponentChanges(EntityObject, ComponentObject)"><span class="anchored">applyComponentChanges（通过实体对象与组件对象）</span></p></h2>
+<i><strong>译者注：</strong>【关于'组件'】 用于定义某种实体的共有行为属性。</i><br>
+
+<h2><p id="registerComponent(ComponentIdentifier, ComponentData)"><span class="anchored">3-1 registerComponent（注册组件）-在create之前</span></p></h2>
+<i><strong>译者注：</strong>为了帮助理解，我将该条目提前了。（原文档安排在本栏目最后）</i><br>
+<i><strong>译者注：</strong>为了方便表述，本条目中大部分'register'翻译为'创建'。但本义为'注册'，请勿与createComponent()混淆。</i><br><br>
+使用此函数创建的组件仅在脚本引擎运行并且脚本加载时存在，反则不存在。然后可以从实体中添加，删除和更新它。<br>
+<h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
+<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
+<tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">ComponentData</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">该JS对象应当定义字段的名称和每个字段在组件内部保存的数据。<br></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">ComponentIdentifier</td>
+<td style="border-style:solid; border-width:1; padding:9px">字符串</td>
+<td style="border-style:solid; border-width:1; padding:9px">自定义组件的标识符。必须在命名空间中使用，既方便以后只有您才能引用它，又避免了内置组件重叠：例如“myPack：myCustomComponent”<br></td>
+</tr>
+</tbody></table>
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
+<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
+<tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">布尔</td>
+<td style="border-style:solid; border-width:1; padding:9px">组件是否注册成功？<br></td>
+</tr>
+</tbody></table>
+<h3>示例代码：</h3>
+注册自定义组件<br><br><pre>
+const mySystem = server.registerSystem(0, 0);
+
+ mySystem.initialize = function() {
+   this.registerComponent("myPack:myCustomComponent", { myString: "string", myNumber: 0, myBool: true, myArray: [1, 2, 3] });
+ };
+</pre> <br>
+<br><br>
+
+<h2><p id="applyComponentChanges(EntityObject, ComponentObject)"><span class="anchored">3-2 applyComponentChanges（通过实体对象与组件对象）</span></p></h2>
 将组件与它通过Script所做的动作（更改）应用回实体，并且立即生效。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -462,7 +499,7 @@ mySystem.update = function() {
 </pre> <br>
 <br><br>
 
-<h2><p id="createComponent(EntityObject, ComponentIdentifier)"><span class="anchored">createComponent（添加到实体对象...）</span></p></h2>
+<h2><p id="createComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-3 createComponent（添加到实体对象...）</span></p></h2>
 将组件添加到指定实体。在此之前请确保指定组件已注册，如果组件在此之前已添加到实体，则返回数据是那个已经存在的组件。<br><br>
 <i><strong>【待求证】</strong> 由于译者水平所限或原文档语言过于迷惑，本条目可能有错误的地方。</i>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
@@ -515,7 +552,7 @@ mySystem.update = function() {
 </pre> <br>
 <br><br>
 
-<h2><p id="destroyComponent(EntityObject, ComponentIdentifier)"><span class="anchored">destroyComponent（从实体对象中销毁...）</span></p></h2>
+<h2><p id="destroyComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-4 destroyComponent（从实体对象中销毁...）</span></p></h2>
 从给定的实体中删除指定的组件。目前这仅适用于自定义组件，不能删除为Json配置中的实体定义的组件。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -569,7 +606,7 @@ const mySystem = server.registerSystem(0, 0);
 </pre> <br>
 <br><br>
 
-<h2><p id="getComponent(EntityObject, ComponentIdentifier)"><span class="anchored">getComponent（在实体中获取...）</span></p></h2>
+<h2><p id="getComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-5 getComponent（在实体中获取...）</span></p></h2>
 在实体中检索指定的组件。如果组件的确存在于实体中，则返回实体中该组件的数据。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -585,10 +622,7 @@ const mySystem = server.registerSystem(0, 0);
 <td style="border-style:solid; border-width:1; padding:9px">可以通过创建一个实体“createEntity()”或从事件（event）中取得。<br></td>
 </tr>
 </tbody></table>
-
 <h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
@@ -614,7 +648,6 @@ const mySystem = server.registerSystem(0, 0);
 </td>
 </tr>
 </tbody></table>
-
 <h3>示例代码：</h3>
 从实体中获取指定的组件<br><br><pre class="language-javascript">
 let globals = {
@@ -638,14 +671,9 @@ let globals = {
 </pre> <br>
 <br><br>
 
-<h2><p id="hasComponent(EntityObject, ComponentIdentifier)"><span class="anchored">hasComponent（在指定实体中...）</span></p></h2>
-
+<h2><p id="hasComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-6 hasComponent（在指定实体中...）</span></p></h2>
 检索指定实体是否已添加指定组件。<br>
-
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
@@ -659,10 +687,7 @@ let globals = {
 <td style="border-style:solid; border-width:1; padding:9px">可以通过创建一个实体“createEntity()”或从事件（event）中取得。<br></td>
 </tr>
 </tbody></table>
-
 <h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
@@ -670,7 +695,6 @@ let globals = {
 <td style="border-style:solid; border-width:1; padding:9px">实体中是否真的有指定组件？<br></td>
 </tr>
 </tbody></table>
-
 <h3>示例代码：</h3>
 检索指定实体是否已添加指定组件。<br><br><pre>
 let globals = {
@@ -690,52 +714,10 @@ const mySystem = server.registerSystem(0, 0);
  };
 </pre> <br>
 <br><br>
-
-<h2><p id="registerComponent(ComponentIdentifier, ComponentData)"><span class="anchored">registerComponent（注册组件）-在create之前</span></p></h2>
-
-<i><strong>【译者注】</strong> 为了方便表述，本条目中大部分'register'翻译为'创建'。但本义为'注册'，请勿与createComponent()混淆。</i><br>
-使用此函数创建的组件仅在脚本引擎运行并且脚本加载时存在，反则不存在。然后可以从实体中添加，删除和更新它。<br>
-<h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
-<tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">ComponentData</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
-<td style="border-style:solid; border-width:1; padding:9px">该JS对象应当定义字段的名称和每个字段在组件内部保存的数据。<br></td>
-</tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">ComponentIdentifier</td>
-<td style="border-style:solid; border-width:1; padding:9px">字符串</td>
-<td style="border-style:solid; border-width:1; padding:9px">自定义组件的标识符。必须在命名空间中使用，既方便以后只有您才能引用它，又避免了内置组件重叠：例如“myPack：myCustomComponent”<br></td>
-</tr>
-</tbody></table>
-
-<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
-
-
-<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
-<tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">布尔</td>
-<td style="border-style:solid; border-width:1; padding:9px">组件是否注册成功？<br></td>
-</tr>
-</tbody></table>
-
-<h3>示例代码：</h3>
-注册自定义组件<br><br><pre>
-const mySystem = server.registerSystem(0, 0);
-
- mySystem.initialize = function() {
-   this.registerComponent("myPack:myCustomComponent", { myString: "string", myNumber: 0, myBool: true, myArray: [1, 2, 3] });
- };
-</pre> <br>
 <br><br>
-<br><br>
+
 
 <h1><p id="Entity Bindings"><span class="anchored"><a href="#Entity%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Bindings</span></p></h1>
-
-
-
 <h2><p id="createEntity()"><span class="anchored"><a href="#createEntity()" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEntity()</span></p></h2>
 
 Creates an empty entity with no components and does not place it in the world. The empty entity will be of type custom and have a blank identifier. This is NOT a valid entity that exists in the world, just an empty one that only scripts know about.<br><br>NOTE: Entities are created first on the server, with the client notified of new entities afterwards. Be aware that if you send the result object to the client right away, the created entity might not exist on the client yet.<br>
