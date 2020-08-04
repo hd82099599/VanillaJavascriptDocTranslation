@@ -716,20 +716,18 @@ const mySystem = server.registerSystem(0, 0);
 <br><br>
 <br><br>
 
-
-<h1><p id="Entity Bindings"><span class="anchored"><a href="#Entity%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Bindings</span></p></h1>
-<h2><p id="createEntity()"><span class="anchored"><a href="#createEntity()" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEntity()</span></p></h2>
-
-Creates an empty entity with no components and does not place it in the world. The empty entity will be of type custom and have a blank identifier. This is NOT a valid entity that exists in the world, just an empty one that only scripts know about.<br><br>NOTE: Entities are created first on the server, with the client notified of new entities afterwards. Be aware that if you send the result object to the client right away, the created entity might not exist on the client yet.<br>
-
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
+<!-- 书目：Entity -->
+<h2><span style="color:#FFFFFF; background-color:#000000">4、 实体绑定</span></h2>
+<h2><p id="createEntity()"><span class="anchored">createEntity()</span></p></h2>
+创建一个类型为“custom”且没有组件的空实体。该实体创建后不会出现在世界（level）中，该实体具有空白标识符。<br>
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">Entity JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">An object representing the newly created entity<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript实体对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">为新创建实体的对象<br></td>
 </tr>
 </tbody></table>
 
