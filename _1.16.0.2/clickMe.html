@@ -187,7 +187,7 @@
 
 <!-- 书目：Blocks -->
 <h2><span style="color:#FFFFFF; background-color:#000000">2、 获得方块信息</span></h2>
-<h2>2-1 getBlock(通过方块对象)</span></p></h2>
+<h2>2-1 getBlock()</span></p></h2>
 获取方块的NBT信息，指定方块需要在常加载区域内。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -236,7 +236,7 @@
 </tbody></table>
 <br><br>
 
-<h2><p id="getBlock(Ticking Area, x, y, z)"><span class="anchored">2-2 getBlock(通过一个坐标对象选定)</span></p></h2>
+<h2><p id="getBlock(Ticking Area, x, y, z)"><span class="anchored">2-2 getBlock(常加载区域, x, y, z)</span></p></h2>
 提供方块位置时，你可以在世界中获取指定方块的NBT信息，但指定方块必须在常加载区域内。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -276,7 +276,7 @@
 </tbody></table>
 <br><br>
 
-<h2><p id="getBlocks(Ticking Area, Minimum PositionObject, Maximum PositionObject)"><span class="anchored">2-3 getBlocks(通过两个坐标对象框选)</span></p></h2>
+<h2><p id="getBlocks(Ticking Area, Minimum PositionObject, Maximum PositionObject)"><span class="anchored">2-3 getBlocks(常加载区域, 最小坐标, 最大坐标)</span></p></h2>
 提供最小和最大坐标时，您可以从世界上获得贼多方块的NBT信息。方块必须在常加载区域内。 如果最终选定了很多块，此调用可能会很慢，因此应不经常使用。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -357,7 +357,7 @@
 
 <br><br>
 
-<h2><p id="getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)"><span class="anchored">2-4 getBlocks(直接传入坐标参数)</span></p></h2>
+<h2><p id="getBlocks(Ticking Area, x min, y min, z min, x max, y max, z max)"><span class="anchored">2-4 getBlocks(常加载区域, 最小x坐标, 最小y坐标, 最小z坐标, 最大x坐标, 最大y坐标, 最大z坐标)</span></p></h2>
 提供最小和最大坐标时，您可以从世界上获得贼多方块的NBT信息。方块必须在常加载区域内。 如果最终选定了很多块，此调用可能会很慢，因此应不经常使用。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -417,7 +417,7 @@
 <h2><span style="color:#FFFFFF; background-color:#000000">3、 组件绑定</span></h2>
 <i><strong>译者注：</strong>【关于'组件'】 用于定义某种实体的共有行为属性。</i><br>
 
-<h2><p id="registerComponent(ComponentIdentifier, ComponentData)"><span class="anchored">3-1 registerComponent（注册组件）-在create之前</span></p></h2>
+<h2><p id="registerComponent(ComponentIdentifier, ComponentData)"><span class="anchored">3-1 registerComponent(组件标识符, 组件数据) -在create之前</span></p></h2>
 <i><strong>译者注：</strong>为了帮助理解，我将该条目提前了。（原文档安排在本栏目最后）</i><br>
 <i><strong>译者注：</strong>为了方便表述，本条目中大部分'register'翻译为'创建'。但本义为'注册'，请勿与createComponent()混淆。</i><br><br>
 使用此函数创建的组件仅在脚本引擎运行并且脚本加载时存在，反则不存在。然后可以从实体中添加，删除和更新它。<br>
@@ -453,7 +453,7 @@ const mySystem = server.registerSystem(0, 0);
 </pre> <br>
 <br><br>
 
-<h2><p id="applyComponentChanges(EntityObject, ComponentObject)"><span class="anchored">3-2 applyComponentChanges（通过实体对象与组件对象）</span></p></h2>
+<h2><p id="applyComponentChanges(EntityObject, ComponentObject)"><span class="anchored">3-2 applyComponentChanges(实体, 组件)</span></p></h2>
 将组件与它通过Script所做的动作（更改）应用回实体，并且立即生效。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -499,7 +499,7 @@ mySystem.update = function() {
 </pre> <br>
 <br><br>
 
-<h2><p id="createComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-3 createComponent（添加到实体对象...）</span></p></h2>
+<h2><p id="createComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-3 createComponent(实体, 组件标识符)</span></p></h2>
 将组件添加到指定实体。在此之前请确保指定组件已注册，如果组件在此之前已添加到实体，则返回数据是那个已经存在的组件。<br><br>
 <i><strong>【待求证】</strong> 由于译者水平所限或原文档语言过于迷惑，本条目可能有错误的地方。</i>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
@@ -552,7 +552,7 @@ mySystem.update = function() {
 </pre> <br>
 <br><br>
 
-<h2><p id="destroyComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-4 destroyComponent（从实体对象中销毁...）</span></p></h2>
+<h2><p id="destroyComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-4 destroyComponent(实体, 组件标识符)</span></p></h2>
 从给定的实体中删除指定的组件。目前这仅适用于自定义组件，不能删除为Json配置中的实体定义的组件。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -606,7 +606,7 @@ const mySystem = server.registerSystem(0, 0);
 </pre> <br>
 <br><br>
 
-<h2><p id="getComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-5 getComponent（在实体中获取...）</span></p></h2>
+<h2><p id="getComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-5 getComponent(实体, 组件标识符)</span></p></h2>
 在实体中检索指定的组件。如果组件的确存在于实体中，则返回实体中该组件的数据。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -671,7 +671,7 @@ let globals = {
 </pre> <br>
 <br><br>
 
-<h2><p id="hasComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-6 hasComponent（在指定实体中...）</span></p></h2>
+<h2><p id="hasComponent(EntityObject, ComponentIdentifier)"><span class="anchored">3-6 hasComponent(实体, 组件标识符)</span></p></h2>
 检索指定实体是否已添加指定组件。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -719,10 +719,9 @@ const mySystem = server.registerSystem(0, 0);
 <!-- 书目：Entity -->
 <h2><span style="color:#FFFFFF; background-color:#000000">4、 实体绑定</span></h2>
 <h2><p id="createEntity()"><span class="anchored">createEntity()</span></p></h2>
-创建一个类型为“custom”且没有组件的空实体。该实体创建后不会出现在世界（level）中，该实体具有空白标识符。<br>
+创建一个类型为“custom”且没有组件的空实体。空实体不会出现在世界（level）中，并且具有空白标识符。<br>
+<strong>Note:</strong> 实体应该先在服务器上创建，随后发给客户端。如果您立即将刚创建的实体对象发送给客户端，则实体可能不会存在于客户端上。
 <h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
@@ -730,104 +729,79 @@ const mySystem = server.registerSystem(0, 0);
 <td style="border-style:solid; border-width:1; padding:9px">为新创建实体的对象<br></td>
 </tr>
 </tbody></table>
-
 <br><br>
 
-<h2><p id="createEntity(Type, TemplateIdentifier)"><span class="anchored"><a href="#createEntity(Type%2C%20TemplateIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEntity(Type, TemplateIdentifier)</span></p></h2>
-
-Creates an entity and applies the specified template as defined in JSON. This allows you to quickly create an entity from the applied Behavior Packs as the base for an entity created in scripting. The entity will be spawned into the world with all the components, component groups, and event triggers that are defined in the JSON file of the identifier specified. Only works on scripts registered on the server.NOTE: Entities are created first on the server, with the client notified of new entities afterwards. Be aware that if you send the result object to the client right away, the created entity might not exist on the client yet.<br>
+<h2><p id="createEntity(Type, TemplateIdentifier)"><span class="anchored">createEntity(类型, 模板标识符)</span></p></h2>
+创建一个实体并应用指定行为包（Json）中的模板，这使得您可以利用行为包作为在脚本中创建实体的基础。该实体将具有指定Json文件中定义的所有组件，组件组和事件触发器。<br>
+仅在服务器上注册的脚本上起作用。<strong>Note:</strong> 实体应该先在服务器上创建，随后发给客户端。如果您立即将刚创建的实体对象发送给客户端，则实体可能不会存在于客户端上。
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">TemplateIdentifier</td>
 <td style="border-style:solid; border-width:1; padding:9px">字符串</td>
-<td style="border-style:solid; border-width:1; padding:9px">This can be any of the entity identifiers from the applied Behavior Packs. For example specifying minecraft:cow here will make the provided entity a cow as defined in JSON<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">这可以是已启用行为包中的任意实体标识符。例如，使用“minecraft:cow”将使您的实体成为一只母牛。<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Type</td>
 <td style="border-style:solid; border-width:1; padding:9px">字符串</td>
-<td style="border-style:solid; border-width:1; padding:9px">Specifies the type of the entity that is being created by the template. Valid inputs are `entity` and `item_entity`<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">创建的实体的类型，只能是“entity”或“item_entity”。<br></td>
 </tr>
 </tbody></table>
-
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-
-
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">Entity JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">An object representing the newly created entity<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript实体对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">为新创建实体的对象<br></td>
 </tr>
 </tbody></table>
-
 <br><br>
 
-<h2><p id="destroyEntity(EntityObject)"><span class="anchored"><a href="#destroyEntity(EntityObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>destroyEntity(EntityObject)</span></p></h2>
-
-Destroys an entity identified by the EntityObject. If the entity exists in the world this will remove it from the world and destroy it. This also makes the EntityObject no longer valid - you should only destroy an entity after you are done with it and no longer need to reference it again. This does NOT kill the entity. There won't be an event for its death: it will be removed.<br>
+<h2><p id="destroyEntity(EntityObject)"><span class="anchored">destroyEntity(实体)</span></p></h2>
+通过提供实体对象销毁指定的实体，如果指定实体存在于世界（level）中，它将被立即从世界中删除。这也使指定实体对象不再有效，你只应当在彻底不需要这个实体的时候执行该函数。这不令实体“死亡”—— 不会触发死亡事件。
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">EntityObject</td>
-<td style="border-style:solid; border-width:1; padding:9px">Entity JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">The object that was retrieved from a call to createEntity() or retrieved from an entity event<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript实体对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">可以通过创建一个实体“createEntity()”或从事件（event）中取得。<br></td>
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-
-
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">Boolean</td>
-<td style="border-style:solid; border-width:1; padding:9px">The entity was successfully destroyed<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">布尔</td>
+<td style="border-style:solid; border-width:1; padding:9px">实体是否删除成功？<br></td>
 </tr>
 </tbody></table>
-
 <br><br>
 
-<h2><p id="isValidEntity(EntityObject)"><span class="anchored"><a href="#isValidEntity(EntityObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>isValidEntity(EntityObject)</span></p></h2>
-
-Checks if the given EntityObject corresponds to a valid entity.<br>
-
+<h2><p id="isValidEntity(EntityObject)"><span class="anchored">isValidEntity(EntityObject)</span></p></h2>
+检查指定实体对象是否正对应有效的实体。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">EntityObject</td>
-<td style="border-style:solid; border-width:1; padding:9px">Entity JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">The object that was retrieved from a call to createEntity() or retrieved from an entity event<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript实体对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">可以通过创建一个实体“createEntity()”或从事件（event）中取得。<br></td>
 </tr>
 </tbody></table>
-
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-
-
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">Boolean</td>
-<td style="border-style:solid; border-width:1; padding:9px">The entity is in the Script Engine's database of entities<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">布尔</td>
+<td style="border-style:solid; border-width:1; padding:9px">该实体是否存在于脚本引擎的实体数据库中？<br></td>
 </tr>
 </tbody></table>
-
 <br><br>
-
 <br><br>
 
 <h1><p id="Entity Queries"><span class="anchored"><a href="#Entity%20Queries" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Queries</span></p></h1>
