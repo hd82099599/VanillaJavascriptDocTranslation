@@ -718,7 +718,7 @@ const mySystem = server.registerSystem(0, 0);
 
 <!-- 书目：Entity -->
 <h2><span style="color:#FFFFFF; background-color:#000000">4、 实体绑定</span></h2>
-<h2><p id="createEntity()"><span class="anchored">createEntity()</span></p></h2>
+<h2><p id="createEntity()"><span class="anchored">4-1 createEntity()</span></p></h2>
 创建一个类型为“custom”且没有组件的空实体。空实体不会出现在世界（level）中，并且具有空白标识符。<br>
 <strong>Note:</strong> 实体应该先在服务器上创建，随后发给客户端。如果您立即将刚创建的实体对象发送给客户端，则实体可能不会存在于客户端上。
 <h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
@@ -731,7 +731,7 @@ const mySystem = server.registerSystem(0, 0);
 </tbody></table>
 <br><br>
 
-<h2><p id="createEntity(Type, TemplateIdentifier)"><span class="anchored">createEntity(类型, 模板标识符)</span></p></h2>
+<h2><p id="createEntity(Type, TemplateIdentifier)"><span class="anchored">4-2 createEntity(类型, 模板标识符)</span></p></h2>
 创建一个实体并应用指定行为包（Json）中的模板，这使得您可以利用行为包作为在脚本中创建实体的基础。该实体将具有指定Json文件中定义的所有组件，组件组和事件触发器。<br>
 仅在服务器上注册的脚本上起作用。<strong>Note:</strong> 实体应该先在服务器上创建，随后发给客户端。如果您立即将刚创建的实体对象发送给客户端，则实体可能不会存在于客户端上。
 
@@ -759,7 +759,7 @@ const mySystem = server.registerSystem(0, 0);
 </tbody></table>
 <br><br>
 
-<h2><p id="destroyEntity(EntityObject)"><span class="anchored">destroyEntity(实体)</span></p></h2>
+<h2><p id="destroyEntity(EntityObject)"><span class="anchored">4-3 destroyEntity(实体)</span></p></h2>
 通过提供实体对象销毁指定的实体，如果指定实体存在于世界（level）中，它将被立即从世界中删除。这也使指定实体对象不再有效，你只应当在彻底不需要这个实体的时候执行该函数。这不令实体“死亡”—— 不会触发死亡事件。
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
@@ -782,7 +782,7 @@ const mySystem = server.registerSystem(0, 0);
 </tbody></table>
 <br><br>
 
-<h2><p id="isValidEntity(EntityObject)"><span class="anchored">isValidEntity(EntityObject)</span></p></h2>
+<h2><p id="isValidEntity(EntityObject)"><span class="anchored">4-4 isValidEntity(EntityObject)</span></p></h2>
 检查指定实体对象是否正对应有效的实体。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
