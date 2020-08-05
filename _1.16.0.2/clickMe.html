@@ -177,7 +177,7 @@
 </tr>
 </tbody></table>
 
-<h2><p id="Ticking Area JS API Object"><span class="anchored">1-2-1 常加载区域的JSAPI对象</span></p></h2>
+<h2><p id="Ticking Area JS API Object"><span class="anchored">1-2-1 JavaScript常加载区域对象</span></p></h2>
 常加载区域有两种类型，实体(Entity)和区域(level)。当你的函数需要常加载区域时，您可以使用任意一种作为参数。<br><br>
 <h2><p id="Script Bindings"><span class="anchored">1-2-2 内容绑定</span></p></h2>
 绑定是Vanilla Script引擎修改游戏中内容的功能。<br>
@@ -243,7 +243,7 @@
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Ticking Area</td>
-<td style="border-style:solid; border-width:1; padding:9px">常加载区域的JSAPI对象（1-4,1-7）</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript常加载区域对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">方块所在的常加载区域<br></td>
 </tr>
 <tr>
@@ -284,7 +284,7 @@
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Maximum PositionObject</td>
 <td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
-<td style="border-style:solid; border-width:1; padding:9px">具有所需最小坐标(x,y与z)的JSAPI坐标对象<br><h5><p id="Parameters"><span class="anchored">参数</span></p></h5>
+<td style="border-style:solid; border-width:1; padding:9px">具有所需最小坐标(x,y与z)的坐标对象<br><h5><p id="Parameters"><span class="anchored">参数</span></p></h5>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -310,7 +310,7 @@
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Minimum PositionObject</td>
 <td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
-<td style="border-style:solid; border-width:1; padding:9px">具有所需最大坐标(x,y与z)的JSAPI坐标对象<br><h5><p id="Parameters"><span class="anchored">参数</span></p></h5>
+<td style="border-style:solid; border-width:1; padding:9px">具有所需最大坐标(x,y与z)的坐标对象<br><h5><p id="Parameters"><span class="anchored">参数</span></p></h5>
 
 <h6></h6>
 
@@ -337,7 +337,7 @@
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Ticking Area</td>
-<td style="border-style:solid; border-width:1; padding:9px">常加载区域的JSAPI对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript常加载区域对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">指定方块所在的常加载区域<br></td>
 </tr>
 </tbody></table>
@@ -364,7 +364,7 @@
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Ticking Area</td>
-<td style="border-style:solid; border-width:1; padding:9px">常加载区域的JSAPI对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript常加载区域对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">指定方块所在的常加载区域<br></td>
 </tr>
 <tr>
@@ -415,11 +415,11 @@
 
 <!-- 书目：Components -->
 <h2><span style="color:#FFFFFF; background-color:#000000">3、 组件绑定</span></h2>
-<i><strong>译者注：</strong>【关于'组件'】 用于定义某种实体的共有行为属性。</i><br>
+<strong>译者注：</strong><i>【关于'组件'】 用于定义某种实体的共有行为属性。</i><br>
 
 <h2><p id="registerComponent(ComponentIdentifier, ComponentData)"><span class="anchored">3-1 registerComponent(组件标识符, 组件数据) -在create之前</span></p></h2>
-<i><strong>译者注：</strong>为了帮助理解，我将该条目提前了。（原文档安排在本栏目最后）</i><br>
-<i><strong>译者注：</strong>为了方便表述，本条目中大部分'register'翻译为'创建'。但本义为'注册'，请勿与createComponent()混淆。</i><br><br>
+<strong>译者注：</strong><i>为了帮助理解，我将该条目提前了。（原文档安排在本栏目最后）</i><br>
+<strong>译者注：</strong><i>为了方便表述，本条目中大部分'register'翻译为'创建'。但本义为'注册'，请勿与createComponent()混淆。</i><br><br>
 使用此函数创建的组件仅在脚本引擎运行并且脚本加载时存在，反则不存在。然后可以从实体中添加，删除和更新它。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -523,7 +523,7 @@ mySystem.update = function() {
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">JSAPI组件对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript组件对象</td>
 <td style="border-style:solid; border-width:1; padding:9px">包含以下字段的对象，以及组件中定义的所有字段 <br><i>我草，以下字段在哪儿啊fk?!</i></td>
 </tr>
 </tbody></table>
@@ -640,7 +640,7 @@ const mySystem = server.registerSystem(0, 0);
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:10px">data</td>
-<td style="border-style:solid; border-width:1; padding:10px">JavaScript对象/td>
+<td style="border-style:solid; border-width:1; padding:10px">JavaScript对象</td>
 <td style="border-style:solid; border-width:1; padding:10px">这是组件的数据。<br></td>
 </tr>
 </tbody></table>
@@ -804,245 +804,234 @@ const mySystem = server.registerSystem(0, 0);
 <br><br>
 <br><br>
 
-<h1><p id="Entity Queries"><span class="anchored"><a href="#Entity%20Queries" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Entity Queries</span></p></h1>
+<!-- 书目：Entity Queries -->
+<h2><span style="color:#FFFFFF; background-color:#000000">5、 实体查询</span></h2>
+实体查询是一种用于根据实体的组件筛选实体的方法。注册查询器后，您可以调用函数获得通过筛选捕获的所有实体。实体查询将仅支持查询当前在世界（level）中处于活跃状态的实体<br>
+<strong>Note:</strong>未加载区块中的实体均为不活跃状态。<br>
 
-Entity Queries are a way for you to filter for entities based on their components. Once you have registered a query, you can request all the entities that are captured by it. Entity Queries will only ever return entities that are currently active in the level. If your query extends into chunks that are not currently loaded, entities there will not be included in the query.<br>
-
-<h2><p id="addFilterToQuery(Query, ComponentIdentifier)"><span class="anchored"><a href="#addFilterToQuery(Query%2C%20ComponentIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>addFilterToQuery(Query, ComponentIdentifier)</span></p></h2>
-
-Allows you to add filters to your query. The query will only contain entities that have all the components specified.<br>By default no filters are added. This will allow queries to capture all entities.<br><h3>Parameters</h3>
-
-<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
-<tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
-<tr>
-<td style="border-style:solid; border-width:2; padding:8px">ComponentIdentifier</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
-<td style="border-style:solid; border-width:2; padding:8px">This is the identifier of the component that will be added to the filter list. Only entities that have that component will be listed in the query<br></td>
-</tr>
-<tr>
-<td style="border-style:solid; border-width:2; padding:8px">Query</td>
-<td style="border-style:solid; border-width:2; padding:8px">Query JS API Object</td>
-<td style="border-style:solid; border-width:2; padding:8px">The object containing the ID of the query that you want to apply the filter to<br></td>
-</tr>
-</tbody></table>
-<h3>示例代码：</h3>
-Adding a filter to a query<br><pre class="language-javascript"><span class="token keyword">let</span> globals <span class="token operator">=</span> <span class="token punctuation">{</span>
-  simpleQuery<span class="token operator">:</span> <span class="token keyword">null</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> mySystem <span class="token operator">=</span> server<span class="token punctuation">.</span><span class="token function">registerSystem</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-mySystem<span class="token punctuation">.</span><span class="token function-variable function">initialize</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  globals<span class="token punctuation">.</span>simpleQuery <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">registerQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-mySystem<span class="token punctuation">.</span><span class="token function-variable function">update</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  globals<span class="token punctuation">.</span>simpleQuery <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">registerQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">addFilterToQuery</span><span class="token punctuation">(</span>globals<span class="token punctuation">.</span>simpleQuery<span class="token punctuation">,</span> <span class="token string">"minecraft:explode"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token keyword">let</span> explodingEntities <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getEntitiesFromQuery</span><span class="token punctuation">(</span>globals<span class="token punctuation">.</span>simpleQuery<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> entity <span class="token keyword">in</span> explodingEntities<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    server<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>entity<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre> <br>
-
-<h2><p id="getEntitiesFromQuery(Query)"><span class="anchored"><a href="#getEntitiesFromQuery(Query)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getEntitiesFromQuery(Query)</span></p></h2>
-
-Allows you to fetch the entities captured by a query.<br>
-
-<h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
-<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
-<tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">Query</td>
-<td style="border-style:solid; border-width:1; padding:9px">Query JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">This is the query you registered earlier using registerQuery()<br></td>
-</tr>
-</tbody></table>
-
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-
+<h2><p id="registerQuery()"><span class="anchored">registerQuery()</span></p></h2>
+<strong>译者注：</strong><i>为了帮助理解，我将该条目提前了。（原文档安排在本栏目最后）</i><br><br>
+注册一个查询器。查询器将包含所有符合过滤器要求的实体。<br>
+这样注册的查询器不包含任何过滤器，因此它将捕获所有实体。<br>
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">Array</td>
-<td style="border-style:solid; border-width:1; padding:9px">An array of EntityObjects representing the entities found within the query<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript查询器对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">提供查询ID的对象<br></td>
 </tr>
 </tbody></table>
 
 <h3>示例代码：</h3>
-Get a list of entities from a query<br><pre class="language-javascript"><span class="token keyword">const</span> mySystem <span class="token operator">=</span> server<span class="token punctuation">.</span><span class="token function">registerSystem</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+注册一个查询器<br><br><pre>
+const mySystem = server.registerSystem(0, 0);
 
-mySystem<span class="token punctuation">.</span><span class="token function-variable function">update</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> simpleQuery <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">registerQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> allEntities <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getEntitiesFromQuery</span><span class="token punctuation">(</span>simpleQuery<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> entity <span class="token keyword">in</span> allEntities<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    server<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>entity<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre> <br>
+mySystem.initialize = function() {
+  let myQuery = this.registerQuery();
+};
+</pre><br>
 <br><br>
 
-<h2><p id="getEntitiesFromQuery(Query, ComponentField1_Min, ComponentField2_Min, ComponentField3_Min, ComponentField1_Max, ComponentField2_Max, ComponentField3_Max)"><span class="anchored"><a href="#getEntitiesFromQuery(Query%2C%20ComponentField1_Min%2C%20ComponentField2_Min%2C%20ComponentField3_Min%2C%20ComponentField1_Max%2C%20ComponentField2_Max%2C%20ComponentField3_Max)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>getEntitiesFromQuery(Query, ComponentField1_Min, ComponentField2_Min, ComponentField3_Min, ComponentField1_Max, ComponentField2_Max, ComponentField3_Max)</span></p></h2>
-
-Allows you to fetch the entities captured by a query that was created with a component filter built-in. The only entities that will be returned are those entities that have the component that was defined when the query was registered and that have a value in the three fields on that component that were defined in the query within the values specified in the call to getEntitiesFromQuery.<br>
-
+<h2><p id="registerQuery(Component, ComponentField1, ComponentField2, ComponentField3)"><span class="anchored">registerQuery(组件标识符, 组件字段1, 组件字段2, 组件字段3)</span></p></h2>
+<strong>译者注：</strong><i>为了帮助理解，我将该条目提前了。（原文档安排在本栏目倒数第二）</i><br><br>
+注册一个带过滤器的查询器，并定义组件中的那些字段作为过滤器以获取实体。您可以只提供一个组件标识符，也可以提供组件标识符上三个字段共同作为过滤器（如果你选择提供字段，就必须提供3个）。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
-<tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">ComponentField1_Max</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
-<td style="border-style:solid; border-width:1; padding:9px">The maximum value that the first component field needs to be on an entity for that entity to be included in the query<br></td>
-</tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">ComponentField1_Min</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
-<td style="border-style:solid; border-width:1; padding:9px">The minimum value that the first component field needs to be on an entity for that entity to be included in the query<br></td>
-</tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">ComponentField2_Max</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
-<td style="border-style:solid; border-width:1; padding:9px">The maximum value that the second component field needs to be on an entity for that entity to be included in the query<br></td>
-</tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">ComponentField2_Min</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
-<td style="border-style:solid; border-width:1; padding:9px">The minimum value that the second component field needs to be on an entity for that entity to be included in the query<br></td>
-</tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">ComponentField3_Max</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
-<td style="border-style:solid; border-width:1; padding:9px">The maximum value that the third component field needs to be on an entity for that entity to be included in the query<br></td>
-</tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">ComponentField3_Min</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
-<td style="border-style:solid; border-width:1; padding:9px">The minimum value that the third component field needs to be on an entity for that entity to be included in the query<br></td>
-</tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">Query</td>
-<td style="border-style:solid; border-width:1; padding:9px">Query JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">This is the query you created earlier using registerQuery(...)<br></td>
-</tr>
-</tbody></table>
-
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-
-
-<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
-<tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">Array</td>
-<td style="border-style:solid; border-width:1; padding:9px">An array of EntityObjects representing the entities found within the query<br></td>
-</tr>
-</tbody></table>
-
-<h3>示例代码：</h3>
-Get a list of entities from a query<br><pre class="language-javascript"><span class="token keyword">let</span> globals <span class="token operator">=</span> <span class="token punctuation">{</span>
-  spatialQuery<span class="token operator">:</span> <span class="token keyword">null</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> mySystem <span class="token operator">=</span> server<span class="token punctuation">.</span><span class="token function">registerSystem</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-mySystem<span class="token punctuation">.</span><span class="token function-variable function">initialize</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  globals<span class="token punctuation">.</span>spatialQuery <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">registerQuery</span><span class="token punctuation">(</span><span class="token string">"minecraft:position"</span><span class="token punctuation">,</span> <span class="token string">"x"</span><span class="token punctuation">,</span> <span class="token string">"y"</span><span class="token punctuation">,</span> <span class="token string">"z"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-mySystem<span class="token punctuation">.</span><span class="token function-variable function">update</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> closeEntities <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getEntitiesFromQuery</span><span class="token punctuation">(</span>globals<span class="token punctuation">.</span>spatialQuery<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> entity <span class="token keyword">in</span> closeEntities<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    server<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>entity<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre> <br>
-<br><br>
-
-<h2><p id="registerQuery()"><span class="anchored"><a href="#registerQuery()" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerQuery()</span></p></h2>
-
-Allows you to register a query. A query will contain all entities that meet the filter requirement.<br>No filters are added by default when you register a query so it will capture all entities.<br>
-
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-
-
-<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
-<tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">Query JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">An object containing the ID of the query<br></td>
-</tr>
-</tbody></table>
-
-<h3>示例代码：</h3>
-Query Registration<br><pre class="language-javascript"><span class="token keyword">const</span> mySystem <span class="token operator">=</span> server<span class="token punctuation">.</span><span class="token function">registerSystem</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-mySystem<span class="token punctuation">.</span><span class="token function-variable function">initialize</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> myQuery <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">registerQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre> <br>
-<br><br>
-
-<h2><p id="registerQuery(Component, ComponentField1, ComponentField2, ComponentField3)"><span class="anchored"><a href="#registerQuery(Component%2C%20ComponentField1%2C%20ComponentField2%2C%20ComponentField3)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerQuery(Component, ComponentField1, ComponentField2, ComponentField3)</span></p></h2>
-
-Allows you to register a query that will only show entities that have the given component and define which fields of that component will be used as a filter when getting the entities from the query. You can either provide just the component identifier, or the component identifier and the name of 3 properties on that component to be tested (If you do specify property names, you must specify 3).<br>
-
-<h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
-<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
-<tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">Default Value</th> <th style="border-style:solid; border-width:1;">备注</th> </tr>
+<tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">默认值</th> <th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Component</td>
 <td style="border-style:solid; border-width:1; padding:9px">字符串</td>
 <td style="border-style:solid; border-width:1; padding:9px"></td>
-<td style="border-style:solid; border-width:1; padding:9px">This is the identifier of the component that will be used to filter entities when<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">用作过滤器的指定组件的标识符。<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">ComponentField1</td>
 <td style="border-style:solid; border-width:1; padding:9px">字符串</td>
 <td style="border-style:solid; border-width:1; padding:9px">"x"</td>
-<td style="border-style:solid; border-width:1; padding:9px">This is the name of the first field of the component that we want to filter entities by. By default this is set to x.<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">组件中用作过滤器的第一个字段，默认为“x”<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">ComponentField2</td>
 <td style="border-style:solid; border-width:1; padding:9px">字符串</td>
 <td style="border-style:solid; border-width:1; padding:9px">"y"</td>
-<td style="border-style:solid; border-width:1; padding:9px">This is the name of the second field of the component that we want to filter entities by. By default this is set to y.<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">组件中用作过滤器的第二个字段，默认为“y”<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">ComponentField3</td>
 <td style="border-style:solid; border-width:1; padding:9px">字符串</td>
 <td style="border-style:solid; border-width:1; padding:9px">"z"</td>
-<td style="border-style:solid; border-width:1; padding:9px">This is the name of the third field of the component that we want to filter entities by. By default this is set to z.<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">组件中用作过滤器的第三个字段，默认为“z”<br></td>
 </tr>
 </tbody></table>
 
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">Query JS API Object</td>
-<td style="border-style:solid; border-width:1; padding:9px">An object containing the ID of the query<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript查询器对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">提供查询器ID的对象<br></td>
 </tr>
 </tbody></table>
 
 <h3>示例代码：</h3>
-Query Registration<br><pre class="language-javascript"><span class="token keyword">const</span> mySystem <span class="token operator">=</span> server<span class="token punctuation">.</span><span class="token function">registerSystem</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+注册一个带过滤器的查询器<br><br><pre>
+const mySystem = server.registerSystem(0, 0);
 
-mySystem<span class="token punctuation">.</span><span class="token function-variable function">initialize</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> spatialQuery <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">registerQuery</span><span class="token punctuation">(</span><span class="token string">"minecraft:position"</span><span class="token punctuation">,</span> <span class="token string">"x"</span><span class="token punctuation">,</span> <span class="token string">"y"</span><span class="token punctuation">,</span> <span class="token string">"z"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+mySystem.initialize = function() {
+  let spatialQuery = this.registerQuery("minecraft:position", "x", "y", "z");
+};
 </pre> <br>
 <br><br>
 
+<h2><p id="addFilterToQuery(Query, ComponentIdentifier)"><span class="anchored">addFilterToQuery(查询器, 组件标识符)</span></p></h2>
+向已存在的查询器中添加过滤器（也就是组件）<br>
+
+<h3>参数</h3>
+<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
+<tbody><tr> <th style="border-style:solid; border-width:2;">名称</th> <th style="border-style:solid; border-width:2;">类型</th> <th style="border-style:solid; border-width:2;">备注</th> </tr>
+<tr>
+<td style="border-style:solid; border-width:2; padding:8px">ComponentIdentifier</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
+<td style="border-style:solid; border-width:2; padding:8px">要添加到查询器的指定组件的标识符。查询器将筛选出具有该组件的所有实体。<br></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:2; padding:8px">Query</td>
+<td style="border-style:solid; border-width:2; padding:8px">JavaScript查询器对象</td>
+<td style="border-style:solid; border-width:2; padding:8px">提供查询器ID的对象<br></td>
+</tr>
+</tbody></table>
+<h3>示例代码：</h3>
+向查询器添加过滤器（组件）<br><br><pre>
+let globals = {
+  simpleQuery: null
+};
+const mySystem = server.registerSystem(0, 0);
+
+mySystem.initialize = function() {
+  globals.simpleQuery = this.registerQuery();
+};
+
+mySystem.update = function() {
+  globals.simpleQuery = this.registerQuery();
+  this.addFilterToQuery(globals.simpleQuery, "minecraft:explode");  let explodingEntities = this.getEntitiesFromQuery(globals.simpleQuery);
+  for(var entity in explodingEntities) {
+    server.log(JSON.stringify(entity));
+  }
+};
+</pre> <br>
+
+<h2><p id="getEntitiesFromQuery(Query)"><span class="anchored">getEntitiesFromQuery(查询器)</span></p></h2>
+获取指定查询器捕获的所有实体。<br>
+
+<h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
+<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
+<tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">Query</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript查询器对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">使用 registerQuery()注册的查询器<br></td>
+</tr>
+</tbody></table>
+
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
+<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
+<tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">数组</td>
+<td style="border-style:solid; border-width:1; padding:9px">包含实体对象的数组，为查询器过滤得到的所有实体。<br></td>
+</tr>
+</tbody></table>
+
+<h3>示例代码：</h3>
+从查询器中获取实体<br><br><pre>
+const mySystem = server.registerSystem(0, 0);
+
+mySystem.update = function() {
+  let simpleQuery = this.registerQuery();
+  let allEntities = this.getEntitiesFromQuery(simpleQuery);
+  for(var entity in allEntities) {
+    server.log(JSON.stringify(entity));
+  }
+};
+</pre> <br>
+<br><br>
+
+<h2><p id="getEntitiesFromQuery(Query, ComponentField1_Min, ComponentField2_Min, ComponentField3_Min, ComponentField1_Max, ComponentField2_Max, ComponentField3_Max)"><span class="anchored">getEntitiesFromQuery(查询器, 组件字段1_最小, 组件字段2_最小, 组件字段3_最小, 组件字段1_最大, 组件字段2_最大, 组件字段3_最大)</span></p></h2>
+获取带组件（过滤器）的查询器所捕获的实体。通过该函数获取将只返回在过滤器（组件）指定的三个字段中具有要求值的实体。<br>
+<h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
+<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
+<tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">ComponentField1_Max</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
+<td style="border-style:solid; border-width:1; padding:9px">组件字段1在实体中的最大值<br></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">ComponentField1_Min</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
+<td style="border-style:solid; border-width:1; padding:9px">组件字段1在实体中的最小值<br></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">ComponentField2_Max</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
+<td style="border-style:solid; border-width:1; padding:9px">组件字段2在实体中的最大值<br></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">ComponentField2_Min</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
+<td style="border-style:solid; border-width:1; padding:9px">组件字段2在实体中的最小值<br></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">ComponentField3_Max</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
+<td style="border-style:solid; border-width:1; padding:9px">组件字段3在实体中的最大值<br></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">ComponentField3_Min</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
+<td style="border-style:solid; border-width:1; padding:9px">组件字段3在实体中的最小值<br></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">Query</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript查询器对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">使用 registerQuery(...)注册的查询器<br></td>
+</tr>
+</tbody></table>
+
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
+
+
+<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
+<tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">数组</td>
+<td style="border-style:solid; border-width:1; padding:9px">包含实体对象的数组，为查询器过滤得到的所有实体。<br></td>
+</tr>
+</tbody></table>
+
+<h3>示例代码：</h3>
+从查询器中获取实体<br><br><pre>
+let globals = {
+  spatialQuery: null
+};
+
+const mySystem = server.registerSystem(0, 0);
+
+mySystem.initialize = function() {
+  globals.spatialQuery = this.registerQuery("minecraft:position", "x", "y", "z");
+};
+
+mySystem.update = function() {
+  let closeEntities = this.getEntitiesFromQuery(globals.spatialQuery, 0, 10, 0, 5, 0, 10);
+  for(var entity in closeEntities) {
+    server.log(JSON.stringify(entity));
+  }
+};
+</pre> <br>
+<br><br>
 <br><br>
 
 <h1><p id="Event Bindings"><span class="anchored"><a href="#Event%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Event Bindings</span></p></h1>
@@ -1245,10 +1234,10 @@ You can use the traditional Slash Command system from scripts. Currently you can
 
 <h2><p id="executeCommand(Command, Callback)"><span class="anchored"><a href="#executeCommand(Command%2C%20Callback)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>executeCommand(Command, Callback)</span></p></h2>
 
-Allows you to execute a Slash Command on the server. The command will be queried and executed at the end of the current frame. All data output from the command will be compiled on a JavaScript Object and sent to the Callback object specified in the second parameter.<br><h3>Parameters</h3>
+Allows you to execute a Slash Command on the server. The command will be queried and executed at the end of the current frame. All data output from the command will be compiled on a JavaScript Object and sent to the Callback object specified in the second parameter.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
-<tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
+<tbody><tr> <th style="border-style:solid; border-width:2;">名称</th> <th style="border-style:solid; border-width:2;">类型</th> <th style="border-style:solid; border-width:2;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">Callback</td>
 <td style="border-style:solid; border-width:2; padding:8px">JSON Object</td>
@@ -1256,7 +1245,7 @@ Allows you to execute a Slash Command on the server. The command will be queried
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">Command</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px">The slash command to run<br></td>
 </tr>
 </tbody></table>
@@ -1318,10 +1307,10 @@ These are the components that belong to the level. They can only belong on the l
 This component gives access to the static ticking areas in the level. The component contains an array of ticking areas. The ticking areas can be accessed by name or by UUID if they were not given a name.<br>
 <h2><p id="minecraft:weather"><span class="anchored"><a href="#minecraft%3Aweather" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:weather</span></p></h2>
 
-The weather component allows users to change the level's weather. Rain and lightning levels can be changed independently and the default weather cycle can be turned off completely.<br><h3>Parameters</h3>
+The weather component allows users to change the level's weather. Rain and lightning levels can be changed independently and the default weather cycle can be turned off completely.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
-<tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
+<tbody><tr> <th style="border-style:solid; border-width:2;">名称</th> <th style="border-style:solid; border-width:2;">类型</th> <th style="border-style:solid; border-width:2;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">do_weather_cycle</td>
 <td style="border-style:solid; border-width:2; padding:8px">Boolean</td>
@@ -1373,7 +1362,7 @@ system<span class="token punctuation">.</span><span class="token function">liste
 
 <h2><p id="minecraft:attack"><span class="anchored"><a href="#minecraft%3Aattack" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:attack</span></p></h2>
 
-This component controls the Attack Damage attribute from the entity. It allows you to change the current minimum and maximum values. Once the changes are applied, the current attack of the entity will be reset to the minimum specified. With the minimum and maximum changed to the values specified. Any buffs or debuffs will be left intact.<br><h3>Parameters</h3>
+This component controls the Attack Damage attribute from the entity. It allows you to change the current minimum and maximum values. Once the changes are applied, the current attack of the entity will be reset to the minimum specified. With the minimum and maximum changed to the values specified. Any buffs or debuffs will be left intact.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -1385,13 +1374,13 @@ This component controls the Attack Damage attribute from the entity. It allows y
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">Default Value</th> <th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">range_max</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
 <td style="border-style:solid; border-width:1; padding:9px">0.0</td>
 <td style="border-style:solid; border-width:1; padding:9px">The maximum amount of damage the entity will deal<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">range_min</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
 <td style="border-style:solid; border-width:1; padding:9px">0.0</td>
 <td style="border-style:solid; border-width:1; padding:9px">The minimum amount of damage the entity will deal<br></td>
 </tr>
@@ -1402,7 +1391,7 @@ This component controls the Attack Damage attribute from the entity. It allows y
 
 <h2><p id="minecraft:collision_box"><span class="anchored"><a href="#minecraft%3Acollision_box" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:collision_box</span></p></h2>
 
-Controls the collision box of the entity. When changes to the component are applied the entity's collision box is immediately updated to reflect the new dimensions. WARNING: If the change of the collision box dimensions would cause the entity to be inside a block, the entity might become stuck there and start suffocating.<br><h3>Parameters</h3>
+Controls the collision box of the entity. When changes to the component are applied the entity's collision box is immediately updated to reflect the new dimensions. WARNING: If the change of the collision box dimensions would cause the entity to be inside a block, the entity might become stuck there and start suffocating.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -1434,7 +1423,7 @@ This component represents the container of a block. The component contains an ar
 
 <h2><p id="minecraft:damage_sensor"><span class="anchored"><a href="#minecraft%3Adamage_sensor" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:damage_sensor</span></p></h2>
 
-Defines what events to call when this entity is damaged by specific entities or items.<br><h3>Parameters</h3>
+Defines what events to call when this entity is damaged by specific entities or items.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -1452,7 +1441,7 @@ Defines what events to call when this entity is damaged by specific entities or 
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">damage_multiplier</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
 <td style="border-style:solid; border-width:1; padding:9px">1.0</td>
 <td style="border-style:solid; border-width:1; padding:9px">A multiplier that modifies the base damage from the damage cause. If deals_damage is true the multiplier can only reduce the damage the entity will take to a minimum of 1.<br></td>
 </tr>
@@ -1490,7 +1479,7 @@ Defines what events to call when this entity is damaged by specific entities or 
 
 <h2><p id="minecraft:equipment"><span class="anchored"><a href="#minecraft%3Aequipment" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:equipment</span></p></h2>
 
-Defines the loot table the entity uses to defines its equipment. Once the changes are applied, the equipment is re-rolled and a new set of equipment is chosen for the entity.<br><h3>Parameters</h3>
+Defines the loot table the entity uses to defines its equipment. Once the changes are applied, the equipment is re-rolled and a new set of equipment is chosen for the entity.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -1502,7 +1491,7 @@ Defines the loot table the entity uses to defines its equipment. Once the change
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">table</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px"></td>
 <td style="border-style:solid; border-width:2; padding:8px">The file path to the equipment table, relative to the behavior pack's root<br></td>
 </tr>
@@ -1510,7 +1499,7 @@ Defines the loot table the entity uses to defines its equipment. Once the change
 
 <h2><p id="minecraft:equippable"><span class="anchored"><a href="#minecraft%3Aequippable" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:equippable</span></p></h2>
 
-Defines an entity's behavior for having items equipped to it.<br><h3>Parameters</h3>
+Defines an entity's behavior for having items equipped to it.<br><h3>参数</h3>
 
 <h3><p id="slots"><span class="anchored"><a href="#slots" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>slots</span></p></h3>
 
@@ -1560,7 +1549,7 @@ List of slots and the item that can be equipped.<br><h4>Parameters</h4>
 
 <h2><p id="minecraft:explode"><span class="anchored"><a href="#minecraft%3Aexplode" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:explode</span></p></h2>
 
-Defines how the entity explodes.<br><h3>Parameters</h3>
+Defines how the entity explodes.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -1632,7 +1621,7 @@ system<span class="token punctuation">.</span><span class="token function">liste
 
 <h2><p id="minecraft:healable"><span class="anchored"><a href="#minecraft%3Ahealable" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:healable</span></p></h2>
 
-Defines the interactions with this entity for healing it.<br><h3>Parameters</h3>
+Defines the interactions with this entity for healing it.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -1673,7 +1662,7 @@ Defines the interactions with this entity for healing it.<br><h3>Parameters</h3>
 
 <h2><p id="minecraft:health"><span class="anchored"><a href="#minecraft%3Ahealth" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:health</span></p></h2>
 
-Defines the current and maximum possible health of the entity. Upon applying the component back to the entity the health will change. If it reaches 0 or below the entity will die.<br><h3>Parameters</h3>
+Defines the current and maximum possible health of the entity. Upon applying the component back to the entity the health will change. If it reaches 0 or below the entity will die.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -1709,7 +1698,7 @@ system<span class="token punctuation">.</span><span class="token function">liste
 
 <h2><p id="minecraft:interact"><span class="anchored"><a href="#minecraft%3Ainteract" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:interact</span></p></h2>
 
-Defines the ways the player can interact with the entity to which this component is applied.<br><h3>Parameters</h3>
+Defines the ways the player can interact with the entity to which this component is applied.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -1742,13 +1731,13 @@ Defines the ways the player can interact with the entity to which this component
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">interact_text</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px"></td>
 <td style="border-style:solid; border-width:2; padding:8px">Text to show when the player is able to interact in this way with this entity when playing with Touch-screen controls<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">on_interact</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px"></td>
 <td style="border-style:solid; border-width:2; padding:8px">An event identifier to fire when the interaction occurs<br></td>
 </tr>
@@ -1772,7 +1761,7 @@ Defines the ways the player can interact with the entity to which this component
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">particle_y_offset</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
 <td style="border-style:solid; border-width:1; padding:9px">0.0</td>
 <td style="border-style:solid; border-width:1; padding:9px">Will offset the particle this amount in the y direction<br></td>
 </tr>
@@ -1814,7 +1803,7 @@ Defines the ways the player can interact with the entity to which this component
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">transform_to_item</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px"></td>
 <td style="border-style:solid; border-width:2; padding:8px">The item used will transform to this item upon successful interaction. Format: itemName:auxValue<br></td>
 </tr>
@@ -1828,7 +1817,7 @@ Defines the ways the player can interact with the entity to which this component
 
 <h2><p id="minecraft:inventory"><span class="anchored"><a href="#minecraft%3Ainventory" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:inventory</span></p></h2>
 
-Defines the entity's inventory (size, restrictions, etc.). Currently this does not allow changing the entity's inventory contents.<br><h3>Parameters</h3>
+Defines the entity's inventory (size, restrictions, etc.). Currently this does not allow changing the entity's inventory contents.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -1846,7 +1835,7 @@ Defines the entity's inventory (size, restrictions, etc.). Currently this does n
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">container_type</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px">none</td>
 <td style="border-style:solid; border-width:2; padding:8px">Type of container this entity has. Can be horse, minecart_chest, minecart_hopper, inventory, container or hopper<br></td>
 </tr>
@@ -1888,7 +1877,7 @@ system<span class="token punctuation">.</span><span class="token function">liste
 
 <h2><p id="minecraft:lookat"><span class="anchored"><a href="#minecraft%3Alookat" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:lookat</span></p></h2>
 
-Defines the behavior when another entity looks at this entity.<br><h3>Parameters</h3>
+Defines the behavior when another entity looks at this entity.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -1912,7 +1901,7 @@ Defines the behavior when another entity looks at this entity.<br><h3>Parameters
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">look_event</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px"></td>
 <td style="border-style:solid; border-width:2; padding:8px">The event identifier to run when the entities specified in filters look at this entity.<br></td>
 </tr>
@@ -1932,7 +1921,7 @@ Defines the behavior when another entity looks at this entity.<br><h3>Parameters
 
 <h2><p id="minecraft:nameable"><span class="anchored"><a href="#minecraft%3Anameable" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:nameable</span></p></h2>
 
-Nameable component describes an entity's ability to be named using a nametag and whether the name shows up or not once applied. Additionally, scripting allows setting the name of the entity directly with the property 'name'.<br><h3>Parameters</h3>
+Nameable component describes an entity's ability to be named using a nametag and whether the name shows up or not once applied. Additionally, scripting allows setting the name of the entity directly with the property 'name'.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -1950,13 +1939,13 @@ Nameable component describes an entity's ability to be named using a nametag and
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">default_trigger</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px"></td>
 <td style="border-style:solid; border-width:2; padding:8px">Trigger to run when the entity gets named<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">name</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px"></td>
 <td style="border-style:solid; border-width:2; padding:8px">The current name of the entity, empty if the entity hasn't been named yet, making this non-empty will apply the name to the entity<br></td>
 </tr>
@@ -1985,7 +1974,7 @@ Nameable component describes an entity's ability to be named using a nametag and
 
 <h2><p id="minecraft:position"><span class="anchored"><a href="#minecraft%3Aposition" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:position</span></p></h2>
 
-This component allows you to control an entity's current position in the world. Once applied the entity will be teleported to the new position specified.<br><h3>Parameters</h3>
+This component allows you to control an entity's current position in the world. Once applied the entity will be teleported to the new position specified.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -2011,7 +2000,7 @@ This component allows you to control an entity's current position in the world. 
 
 <h2><p id="minecraft:rotation"><span class="anchored"><a href="#minecraft%3Arotation" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:rotation</span></p></h2>
 
-This component allows you to control an entity's current rotation in the world as well as the entity's head rotation. Once applied, the entity will be rotated as specified.<br><h3>Parameters</h3>
+This component allows you to control an entity's current rotation in the world as well as the entity's head rotation. Once applied, the entity will be rotated as specified.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -2031,7 +2020,7 @@ This component allows you to control an entity's current rotation in the world a
 
 <h2><p id="minecraft:shooter"><span class="anchored"><a href="#minecraft%3Ashooter" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:shooter</span></p></h2>
 
-Defines the entity's ranged attacks. This doesn't allow the entity to use a ranged attack: it only defines what kind of projectile it shoots.<br><h3>Parameters</h3>
+Defines the entity's ranged attacks. This doesn't allow the entity to use a ranged attack: it only defines what kind of projectile it shoots.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -2043,7 +2032,7 @@ Defines the entity's ranged attacks. This doesn't allow the entity to use a rang
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">def</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px"></td>
 <td style="border-style:solid; border-width:2; padding:8px">Entity identifier to use as projectile for the ranged attack. The entity must have the projectile component to be able to be shot as a projectile<br></td>
 </tr>
@@ -2051,7 +2040,7 @@ Defines the entity's ranged attacks. This doesn't allow the entity to use a rang
 
 <h2><p id="minecraft:spawn_entity"><span class="anchored"><a href="#minecraft%3Aspawn_entity" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:spawn_entity</span></p></h2>
 
-Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior).<br><h3>Parameters</h3>
+Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior).<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -2093,31 +2082,31 @@ Adds a timer after which this entity will spawn another entity or item (similar 
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">spawn_entity</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px"></td>
 <td style="border-style:solid; border-width:2; padding:8px">Identifier of the entity to spawn, leave empty to spawn the item defined above instead.<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">spawn_event</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px">minecraft:entity_born</td>
 <td style="border-style:solid; border-width:2; padding:8px">Event to call when the entity is spawned.<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">spawn_item</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px">egg</td>
 <td style="border-style:solid; border-width:2; padding:8px">Item identifier of the item to spawn.<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">spawn_method</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px">born</td>
 <td style="border-style:solid; border-width:2; padding:8px">Method to use to spawn the entity.<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">spawn_sound</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px">plop</td>
 <td style="border-style:solid; border-width:2; padding:8px">Identifier of the sound effect to play when the entity is spawned.<br></td>
 </tr>
@@ -2128,7 +2117,7 @@ Adds a timer after which this entity will spawn another entity or item (similar 
 The tag component gives access to the array of entity tags that an entity may have. With this component you can add and remove any of the entity tags.<br>
 <h2><p id="minecraft:teleport"><span class="anchored"><a href="#minecraft%3Ateleport" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:teleport</span></p></h2>
 
-This controls the entity's ability to teleport itself (similar to the Enderman). If you wish to teleport the entity once use the Position component instead.<br><h3>Parameters</h3>
+This controls the entity's ability to teleport itself (similar to the Enderman). If you wish to teleport the entity once use the Position component instead.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -2184,10 +2173,10 @@ This controls the entity's ability to teleport itself (similar to the Enderman).
 
 <h2><p id="minecraft:tick_world"><span class="anchored"><a href="#minecraft%3Atick_world" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:tick_world</span></p></h2>
 
-The tick world component is a read-only component that allows users to access the ticking areas on entities as well as the ticking area's data.<br><h3>Parameters</h3>
+The tick world component is a read-only component that allows users to access the ticking areas on entities as well as the ticking area's data.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
-<tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
+<tbody><tr> <th style="border-style:solid; border-width:2;">名称</th> <th style="border-style:solid; border-width:2;">类型</th> <th style="border-style:solid; border-width:2;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">distance_to_players</td>
 <td style="border-style:solid; border-width:2; padding:8px">Decimal</td>
@@ -2212,7 +2201,7 @@ The tick world component is a read-only component that allows users to access th
 
 <h2><p id="minecraft:ticking_area_description"><span class="anchored"><a href="#minecraft%3Aticking_area_description" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:ticking_area_description</span></p></h2>
 
-Describes the ticking area's region.<br><h3>Parameters</h3>
+Describes the ticking area's region.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Default Value</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
@@ -2230,7 +2219,7 @@ Describes the ticking area's region.<br><h3>Parameters</h3>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">name</td>
-<td style="border-style:solid; border-width:2; padding:8px">String</td>
+<td style="border-style:solid; border-width:2; padding:8px">字符串</td>
 <td style="border-style:solid; border-width:2; padding:8px"></td>
 <td style="border-style:solid; border-width:2; padding:8px">The name of the area.<br></td>
 </tr>
@@ -2603,7 +2592,7 @@ This event is triggered whenever a player stops destroying a block.<br><h4>Param
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">destruction_progress</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
 <td style="border-style:solid; border-width:1; padding:9px">How far along the destruction was before it was stopped (0 - 1 range)<br></td>
 </tr>
 <tr>
@@ -3017,7 +3006,7 @@ This event is used to play a sound effect. Currently, sounds can only be played 
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">Default Value</th> <th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">pitch</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
 <td style="border-style:solid; border-width:1; padding:9px">1.0</td>
 <td style="border-style:solid; border-width:1; padding:9px">The pitch of the sound effect. A value of 1.0 will play the sound effect with regular pitch<br></td>
 </tr>
@@ -3035,7 +3024,7 @@ This event is used to play a sound effect. Currently, sounds can only be played 
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">volume</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
 <td style="border-style:solid; border-width:1; padding:9px">1.0</td>
 <td style="border-style:solid; border-width:1; padding:9px">The volume of the sound effect. A value of 1.0 will play the sound effect at the volume it was recorded at<br></td>
 </tr>
@@ -3213,7 +3202,7 @@ This event is used to play a sound effect. Currently, sounds can only be played 
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">Default Value</th> <th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">pitch</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
 <td style="border-style:solid; border-width:1; padding:9px">1.0</td>
 <td style="border-style:solid; border-width:1; padding:9px">The pitch of the sound effect. A value of 1.0 will play the sound effect with regular pitch<br></td>
 </tr>
@@ -3231,7 +3220,7 @@ This event is used to play a sound effect. Currently, sounds can only be played 
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">volume</td>
-<td style="border-style:solid; border-width:1; padding:9px">Decimal</td>
+<td style="border-style:solid; border-width:1; padding:9px">小数</td>
 <td style="border-style:solid; border-width:1; padding:9px">1.0</td>
 <td style="border-style:solid; border-width:1; padding:9px">The volume of the sound effect. A value of 1.0 will play the sound effect at the volume it was recorded at<br></td>
 </tr>
@@ -3461,10 +3450,10 @@ In this section you can find a quick description of the basic structure of a Jav
 
 <h2><p id="1. System Registration"><span class="anchored"><a href="#1.%20System%20Registration" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>1. System Registration</span></p></h2>
 
-First off we need to register the system for our file. This signs up our script to be set-up either on the client or server threads of the game. Generally speaking, you will choose based on whether you put the script file in the client or server folders. To do that simply call registerSystem on either the client or server and give it the version of the API you require.<br><h3>Parameters</h3>
+First off we need to register the system for our file. This signs up our script to be set-up either on the client or server threads of the game. Generally speaking, you will choose based on whether you put the script file in the client or server folders. To do that simply call registerSystem on either the client or server and give it the version of the API you require.<br><h3>参数</h3>
 
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
-<tbody><tr> <th style="border-style:solid; border-width:2;">Name</th> <th style="border-style:solid; border-width:2;">Type</th> <th style="border-style:solid; border-width:2;">Description</th> </tr>
+<tbody><tr> <th style="border-style:solid; border-width:2;">名称</th> <th style="border-style:solid; border-width:2;">类型</th> <th style="border-style:solid; border-width:2;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">majorVersion</td>
 <td style="border-style:solid; border-width:2; padding:8px">Integer</td>
