@@ -27,4 +27,4 @@
 
 # AD 
 ######~~（广告费未到账）~~
-![eznb](/img/ez.png)
+[![ez6](/img/ez.png)](https://github.com/Element-0/ElementZero)
