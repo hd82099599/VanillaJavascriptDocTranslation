@@ -808,13 +808,11 @@ const mySystem = server.registerSystem(0, 0);
 <h2><span style="color:#FFFFFF; background-color:#000000">5、 实体查询</span></h2>
 实体查询是一种用于根据实体的组件筛选实体的方法。注册查询器后，您可以调用函数获得通过筛选捕获的所有实体。实体查询将仅支持查询当前在世界（level）中处于活跃状态的实体<br>
 <strong>Note:</strong>未加载区块中的实体均为不活跃状态。<br>
-
-<h2><p id="registerQuery()"><span class="anchored">registerQuery()</span></p></h2>
+<h2><p id="registerQuery()"><span class="anchored">5-1 registerQuery()</span></p></h2>
 <strong>译者注：</strong><i>为了帮助理解，我将该条目提前了。（原文档安排在本栏目最后）</i><br><br>
 注册一个查询器。查询器将包含所有符合过滤器要求的实体。<br>
 这样注册的查询器不包含任何过滤器，因此它将捕获所有实体。<br>
 <h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
@@ -822,7 +820,6 @@ const mySystem = server.registerSystem(0, 0);
 <td style="border-style:solid; border-width:1; padding:9px">提供查询ID的对象<br></td>
 </tr>
 </tbody></table>
-
 <h3>示例代码：</h3>
 注册一个查询器<br><br><pre>
 const mySystem = server.registerSystem(0, 0);
@@ -833,7 +830,7 @@ mySystem.initialize = function() {
 </pre><br>
 <br><br>
 
-<h2><p id="registerQuery(Component, ComponentField1, ComponentField2, ComponentField3)"><span class="anchored">registerQuery(组件标识符, 组件字段1, 组件字段2, 组件字段3)</span></p></h2>
+<h2><p id="registerQuery(Component, ComponentField1, ComponentField2, ComponentField3)"><span class="anchored">5-2 registerQuery(组件标识符, 组件字段1, 组件字段2, 组件字段3)</span></p></h2>
 <strong>译者注：</strong><i>为了帮助理解，我将该条目提前了。（原文档安排在本栏目倒数第二）</i><br><br>
 注册一个带过滤器的查询器，并定义组件中的那些字段作为过滤器以获取实体。您可以只提供一个组件标识符，也可以提供组件标识符上三个字段共同作为过滤器（如果你选择提供字段，就必须提供3个）。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
@@ -864,10 +861,7 @@ mySystem.initialize = function() {
 <td style="border-style:solid; border-width:1; padding:9px">组件中用作过滤器的第三个字段，默认为“z”<br></td>
 </tr>
 </tbody></table>
-
 <h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
@@ -875,7 +869,6 @@ mySystem.initialize = function() {
 <td style="border-style:solid; border-width:1; padding:9px">提供查询器ID的对象<br></td>
 </tr>
 </tbody></table>
-
 <h3>示例代码：</h3>
 注册一个带过滤器的查询器<br><br><pre>
 const mySystem = server.registerSystem(0, 0);
@@ -886,9 +879,8 @@ mySystem.initialize = function() {
 </pre> <br>
 <br><br>
 
-<h2><p id="addFilterToQuery(Query, ComponentIdentifier)"><span class="anchored">addFilterToQuery(查询器, 组件标识符)</span></p></h2>
+<h2><p id="addFilterToQuery(Query, ComponentIdentifier)"><span class="anchored">5-3 addFilterToQuery(查询器, 组件标识符)</span></p></h2>
 向已存在的查询器中添加过滤器（也就是组件）<br>
-
 <h3>参数</h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">名称</th> <th style="border-style:solid; border-width:2;">类型</th> <th style="border-style:solid; border-width:2;">备注</th> </tr>
@@ -923,9 +915,8 @@ mySystem.update = function() {
 };
 </pre> <br>
 
-<h2><p id="getEntitiesFromQuery(Query)"><span class="anchored">getEntitiesFromQuery(查询器)</span></p></h2>
+<h2><p id="getEntitiesFromQuery(Query)"><span class="anchored">5-4 getEntitiesFromQuery(查询器)</span></p></h2>
 获取指定查询器捕获的所有实体。<br>
-
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
@@ -935,7 +926,6 @@ mySystem.update = function() {
 <td style="border-style:solid; border-width:1; padding:9px">使用 registerQuery()注册的查询器<br></td>
 </tr>
 </tbody></table>
-
 <h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
@@ -944,7 +934,6 @@ mySystem.update = function() {
 <td style="border-style:solid; border-width:1; padding:9px">包含实体对象的数组，为查询器过滤得到的所有实体。<br></td>
 </tr>
 </tbody></table>
-
 <h3>示例代码：</h3>
 从查询器中获取实体<br><br><pre>
 const mySystem = server.registerSystem(0, 0);
@@ -959,7 +948,7 @@ mySystem.update = function() {
 </pre> <br>
 <br><br>
 
-<h2><p id="getEntitiesFromQuery(Query, ComponentField1_Min, ComponentField2_Min, ComponentField3_Min, ComponentField1_Max, ComponentField2_Max, ComponentField3_Max)"><span class="anchored">getEntitiesFromQuery(查询器, 组件字段1_最小, 组件字段2_最小, 组件字段3_最小, 组件字段1_最大, 组件字段2_最大, 组件字段3_最大)</span></p></h2>
+<h2><p id="getEntitiesFromQuery(Query, ComponentField1_Min, ComponentField2_Min, ComponentField3_Min, ComponentField1_Max, ComponentField2_Max, ComponentField3_Max)"><span class="anchored">5-5 getEntitiesFromQuery(查询器, 组件字段1_最小, 组件字段2_最小, 组件字段3_最小, 组件字段1_最大, 组件字段2_最大, 组件字段3_最大)</span></p></h2>
 获取带组件（过滤器）的查询器所捕获的实体。通过该函数获取将只返回在过滤器（组件）指定的三个字段中具有要求值的实体。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
@@ -1000,10 +989,7 @@ mySystem.update = function() {
 <td style="border-style:solid; border-width:1; padding:9px">使用 registerQuery(...)注册的查询器<br></td>
 </tr>
 </tbody></table>
-
 <h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
@@ -1011,7 +997,6 @@ mySystem.update = function() {
 <td style="border-style:solid; border-width:1; padding:9px">包含实体对象的数组，为查询器过滤得到的所有实体。<br></td>
 </tr>
 </tbody></table>
-
 <h3>示例代码：</h3>
 从查询器中获取实体<br><br><pre>
 let globals = {
@@ -1034,8 +1019,9 @@ mySystem.update = function() {
 <br><br>
 <br><br>
 
-<h1><p id="Event Bindings"><span class="anchored"><a href="#Event%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Event Bindings</span></p></h1>
 
+<!-- 书目：Event Bindings -->
+<h2><span style="color:#FFFFFF; background-color:#000000">6、 事件绑定</span></h2>
 These are the bindings used to handle events. For a list of events you can react to or trigger, check the Events section of this document.<br>
 
 <h2><p id="broadcastEvent(EventIdentifier, EventData)"><span class="anchored"><a href="#broadcastEvent(EventIdentifier%2C%20EventData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>broadcastEvent(EventIdentifier, EventData)</span></p></h2>
