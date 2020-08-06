@@ -1154,32 +1154,30 @@ mySystem.onClientEnteredWorld = function(eventData) {
 <br><br>
 
 
-<h1><p id="Logging Bindings"><span class="anchored"><a href="#Logging%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Logging Bindings</span></p></h1>
-<h2><p id="log(Message)"><span class="anchored"><a href="#log(Message)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>log(Message)</span></p></h2>
+<!-- 书目：Log Bindings -->
+<h2><span style="color:#FFFFFF; background-color:#000000">7、 日志绑定</span></h2>
 
-The log function is accessed through the server or client objects and allows for logging a message to the ContentLog file. On Windows 10 devices it is located at ' %APPDATA%\..\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\logs '<br>
-
+<h2><p id="log(Message)"><span class="anchored">7-1 log(消息)</span></p></h2>
+日志可以通过服务端或客户端来查看，并且日志可以被记录在“ContentLog”文件中。在Win10设备上，它位于'%APPDATA%\..\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\logs '。如果是服务器它将被输出到终端。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">Message</td>
 <td style="border-style:solid; border-width:1; padding:9px">字符串</td>
-<td style="border-style:solid; border-width:1; padding:9px">The message that you want to send to the log file<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">希望日志记录的内容。<br></td>
 </tr>
 </tbody></table>
 
 <h3>示例代码：</h3>
-Log<br><pre class="language-javascript">system<span class="token punctuation">.</span><span class="token function-variable function">exampleFunction</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  client<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"example log message"</span><span class="token punctuation">)</span> 
-<span class="token punctuation">}</span><span class="token punctuation">;</span> 
+日志<br><br><pre>
+system.exampleFunction = function() {
+  client.log("example log message") 
+}; 
 </pre> <br>
 <br><br>
-
 <br><br>
+
 
 <h1><p id="Slash Commands"><span class="anchored"><a href="#Slash%20Commands" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Slash Commands</span></p></h1>
 
