@@ -1295,24 +1295,25 @@ let levelComponent = this.getComponent(server.level, "minecraft:example_level_co
 <br><br>
 
 
-<h1><p id="Server Components"><span class="anchored"><a href="#Server%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Server Components</span></p></h1>
+<h1><p id="Server Components"><span class="anchored">服务器组件</span></p></h1>
+这里是在服务器上运行并与客户端状态同步的组件。<br>
+每个组件的字段基本匹配其Json对应项（但也有一些区别需要注意）。
 
-These are the components that run on the server and are synced with all the clients (players) in the world.<br>As much as possible, the API of each component matches its JSON counterpart (with some differences noted).<br>
-
-<h2><p id="minecraft:armor_container"><span class="anchored"><a href="#minecraft%3Aarmor_container" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:armor_container</span></p></h2>
-
-This component represents the armor contents of an entity. The component contains an array of ItemStack JS API Objects representing each slot in the armor container. NOTE: Currently items and containers are read-only. Slots are ordered from head to feet.<br>
-<br><pre class="language-javascript"><span class="token comment">// This example will check the players helmet armor slot for a specific item after the player attacks an entity.</span>
-system<span class="token punctuation">.</span><span class="token function">listenForEvent</span><span class="token punctuation">(</span><span class="token string">"minecraft:player_attacked_entity"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">eventData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// Get the players armor container</span>
-    <span class="token keyword">let</span> playerArmor <span class="token operator">=</span> system<span class="token punctuation">.</span><span class="token function">getComponent</span><span class="token punctuation">(</span>eventData<span class="token punctuation">.</span>data<span class="token punctuation">.</span>player<span class="token punctuation">,</span> <span class="token string">"minecraft:armor_container"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">// Get the players helmet</span>
-    <span class="token keyword">let</span> playerHelmet <span class="token operator">=</span> playerArmor<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token comment">// Destroy the attacked entity if the player has a gold helmet equipped</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>playerHelmet<span class="token punctuation">.</span>item <span class="token operator">==</span> <span class="token string">"minecraft:golden_helmet"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        system<span class="token punctuation">.</span><span class="token function">destroyEntity</span><span class="token punctuation">(</span>eventData<span class="token punctuation">.</span>data<span class="token punctuation">.</span>attacked_entity<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2><p id="minecraft:armor_container"><span class="anchored">minecraft:armor_container</span></p></h2>
+此组件表示实体的装甲物品栏的内容。该组件包含一个JavaScript物品堆叠对象数组，这些数组代表装甲物品栏里的插槽。<br>
+<strong>Note:</strong>目前对于脚本来说装甲物品栏是只读的；物品堆叠数组对应装甲插槽从头到脚排序。
+<br><pre>
+// 此示例为在玩家攻击实体后检查玩家头盔盔甲插槽中是否有特定物品。
+ system.listenForEvent("minecraft:player_attacked_entity", function(eventData) {
+     // Get the players armor container
+     let playerArmor = system.getComponent(eventData.data.player, "minecraft:armor_container");
+     // Get the players helmet
+     let playerHelmet = playerArmor.data[0];
+     // Destroy the attacked entity if the player has a gold helmet equipped
+     if (playerHelmet.item == "minecraft:golden_helmet") {
+         system.destroyEntity(eventData.data.attacked_entity);
+     }
+ });
 </pre> <br>
 
 <h2><p id="minecraft:attack"><span class="anchored"><a href="#minecraft%3Aattack" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:attack</span></p></h2>
