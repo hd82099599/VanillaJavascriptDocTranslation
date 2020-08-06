@@ -1179,42 +1179,39 @@ system.exampleFunction = function() {
 <br><br>
 
 
-<h1><p id="Slash Commands"><span class="anchored"><a href="#Slash%20Commands" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Slash Commands</span></p></h1>
+<!-- 书目：Slash Command -->
+<h2><span style="color:#FFFFFF; background-color:#000000">8、 执行斜杠命令</span></h2>
+您可以在脚本中使用斜杠命令（/command），这会触发一个事件“minecraft:execute_command”。您也可以绑定executeCommand。目前在脚本中使用命令只能应用于服务器脚本，不能运行在客户端上。<br>
 
-You can use the traditional Slash Command system from scripts. Currently you can either trigger an event ("minecraft:execute_command") or use the executeCommand binding. Commands in scripts are restricted to server scripts, they can't be run from the client's side at the moment.<br>
-
-<h2><p id="executeCommand(Command, Callback)"><span class="anchored"><a href="#executeCommand(Command%2C%20Callback)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>executeCommand(Command, Callback)</span></p></h2>
-
-Allows you to execute a Slash Command on the server. The command will be queried and executed at the end of the current frame. All data output from the command will be compiled on a JavaScript Object and sent to the Callback object specified in the second parameter.<br><h3>参数</h3>
-
+<h2><p id="executeCommand(Command, Callback)"><span class="anchored">8-1 executeCommand(命令, 回调)</span></p></h2>
+在服务器上执行斜杠命令，命令输出的所有数据都将被格式化为Json并发送到回调函数上。<br>
+<h3>参数</h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">名称</th> <th style="border-style:solid; border-width:2;">类型</th> <th style="border-style:solid; border-width:2;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">Callback</td>
-<td style="border-style:solid; border-width:2; padding:8px">JSON Object</td>
-<td style="border-style:solid; border-width:2; padding:8px">The JavaScript object that will be called after the command executes<br></td>
+<td style="border-style:solid; border-width:2; padding:8px">Json对象</td>
+<td style="border-style:solid; border-width:2; padding:8px">命令执行后的回调对象<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">Command</td>
 <td style="border-style:solid; border-width:2; padding:8px">字符串</td>
-<td style="border-style:solid; border-width:2; padding:8px">The slash command to run<br></td>
+<td style="border-style:solid; border-width:2; padding:8px">欲执行的命令<br></td>
 </tr>
 </tbody></table>
-<h3>Example</h3>
-<br><pre class="language-javascript">system<span class="token punctuation">.</span><span class="token function">executeCommand</span><span class="token punctuation">(</span><span class="token string">"/fill ~ ~ ~ ~100 ~5 ~50 stone"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">commandResultData</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">commandCallback</span><span class="token punctuation">(</span>commandResultData<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3>示例代码：</h3>
+<br><pre>
+system.executeCommand("/fill ~ ~ ~ ~100 ~5 ~50 stone", (commandResultData) => this.commandCallback(commandResultData));
 
-system<span class="token punctuation">.</span><span class="token function-variable function">commandCallback</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">commandResultData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> eventData <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createEventData</span><span class="token punctuation">(</span><span class="token string">"minecraft:display_chat_event"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>eventData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    eventData<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message <span class="token operator">=</span> message<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">broadcastEvent</span><span class="token punctuation">(</span><span class="token string">"minecraft:display_chat_event"</span><span class="token punctuation">,</span> <span class="token string">"Callback called! Command: "</span> <span class="token operator">+</span> commandResultData<span class="token punctuation">.</span>command <span class="token operator">+</span> <span class="token string">" Data: "</span> <span class="token operator">+</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>commandResultData<span class="token punctuation">.</span>data<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"    "</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
+system.commandCallback = function (commandResultData) {
+  let eventData = this.createEventData("minecraft:display_chat_event");
+  if (eventData) {
+    eventData.data.message = message;
+    this.broadcastEvent("minecraft:display_chat_event", "回调！命令： " + commandResultData.command + " 数据: " + JSON.stringify(commandResultData.data, null, "    ") );
+  }
+};
 </pre> <br>
-
 <br><br>
-
 <br><br>
 
 <h1><p id="Script Components"><span class="anchored"><a href="#Script%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Script Components</span></p></h1>
