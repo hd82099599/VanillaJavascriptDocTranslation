@@ -1022,172 +1022,139 @@ mySystem.update = function() {
 
 <!-- 书目：Event Bindings -->
 <h2><span style="color:#FFFFFF; background-color:#000000">6、 事件绑定</span></h2>
-These are the bindings used to handle events. For a list of events you can react to or trigger, check the Events section of this document.<br>
+进行事件绑定后，在被绑定事件发生后脚本引擎会通知脚本以便脚本进行相应的反应。有关可以反应或触发的事件的列表详见本文档的“事件”部分。<br>
 
-<h2><p id="broadcastEvent(EventIdentifier, EventData)"><span class="anchored"><a href="#broadcastEvent(EventIdentifier%2C%20EventData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>broadcastEvent(EventIdentifier, EventData)</span></p></h2>
-
-Allows you to trigger an event with the desired data from script. Anything that signed up to listen for the event will be notified and the given data delivered to them.<br>
-
+<h2><p id="createEventData(EventIdentifier)"><span class="anchored">6-1 createEventData(事件标识符)</span></p></h2>
+<strong>译者注：</strong><i>为了帮助理解，我将该条目提前了。（原文档安排在本栏目第二）</i><br><br>
+创建一个具有所有必需字段和事件默认数据的对象。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
+<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
+<tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">EventIdentifier</td>
+<td style="border-style:solid; border-width:1; padding:9px">字符串</td>
+<td style="border-style:solid; border-width:1; padding:9px">要创建的自定义组件标识符。必须使用命名空间，但不能是“minecraft”。<br></td>
+</tr>
+</tbody></table>
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
+<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
+<tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
+<tr>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">包含事件数据（eventData）的JS对象。<br></td>
+</tr>
+</tbody></table>
+<br><br>
 
-
-
+<h2><p id="registerEventData(EventIdentifier, EventData)"><span class="anchored">6-2 registerEventData(事件标识符, 事件数据)</span></p></h2>
+<strong>译者注：</strong><i>为了帮助理解，我将该条目提前了。（原文档安排在本栏目倒数第二）</i><br><br>
+将指定事件注册到脚本引擎。您可以使用 createEventData()来创建事件数据，这将使用正确的字段和事件数据将其初始化，只有自定义事件需要初始化。<br>
+<h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">EventData</td>
 <td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
-<td style="border-style:solid; border-width:1; padding:9px">The data for the event. You can create a new JavaScript Object with the parameters you want to pass in to the listener and the engine will take care of delivering the data to them<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">提供所有必须字段和事件数据的JS对象<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">EventIdentifier</td>
 <td style="border-style:solid; border-width:1; padding:9px">字符串</td>
-<td style="border-style:solid; border-width:1; padding:9px">This is the identifier of the event we want to react to. Can be the identifier of a built-in event or a custom one from script<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">要注册的自定义组件标识符。必须使用命名空间，但不能是“minecraft”。<br></td>
 </tr>
 </tbody></table>
-
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-
-
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">Boolean</td>
-<td style="border-style:solid; border-width:1; padding:9px">Successfully broadcasted the event<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">布尔</td>
+<td style="border-style:solid; border-width:1; padding:9px">是否成功注册事件？<br></td>
 </tr>
 </tbody></table>
-
-<h3>示例代码：</h3>
-Broadcasting an event<br><pre class="language-javascript"><span class="token keyword">const</span> mySystem <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token function">registerSystem</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-mySystem<span class="token punctuation">.</span><span class="token function-variable function">initialize</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> eventData <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createEventData</span><span class="token punctuation">(</span><span class="token string">"minecraft:display_chat_event"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  eventData<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">"Hello, World!"</span><span class="token punctuation">;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">broadcastEvent</span><span class="token punctuation">(</span><span class="token string">"minecraft:display_chat_event"</span><span class="token punctuation">,</span> eventData<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-</pre> <br>
 <br><br>
 
-<h2><p id="createEventData(EventIdentifier)"><span class="anchored"><a href="#createEventData(EventIdentifier)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>createEventData(EventIdentifier)</span></p></h2>
+<h2><p id="broadcastEvent(EventIdentifier, EventData)"><span class="anchored">6-3 broadcastEvent(事件标识符, 事件数据)</span></p></h2>
+<i><strong>【待求证】</strong> 由于译者水平所限或原文档语言过于迷惑，本条目可能有错误的地方。</i><br><br>
 
-Creates an object with all the required fields and default data for the specified event. If the event is a custom event, it needs to have been previously registered.<br>
-
+使用脚本中的事件数据广播事件，并将数据传递给每个注册并监听事件的地方。<br>
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
+<td style="border-style:solid; border-width:1; padding:9px">EventData</td>
+<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
+<td style="border-style:solid; border-width:1; padding:9px">要传递的事件数据，引擎负责将事件数据传递给每个监听器。<br></td>
+</tr>
+<tr>
 <td style="border-style:solid; border-width:1; padding:9px">EventIdentifier</td>
 <td style="border-style:solid; border-width:1; padding:9px">字符串</td>
-<td style="border-style:solid; border-width:1; padding:9px">This is the identifier of the custom event we are registering. The namespace is required and can't be set to minecraft.<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">要进行数据传递的事件标识符，可以是内置的事件，也可以是脚本自定义的事件。<br></td>
 </tr>
 </tbody></table>
-
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-
-
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
-<td style="border-style:solid; border-width:1; padding:9px">The object containing the event data<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">布尔</td>
+<td style="border-style:solid; border-width:1; padding:9px">是否成功广播事件？<br></td>
 </tr>
 </tbody></table>
+<h3>示例代码：</h3>
+广播一个事件<br><br><pre>
+const mySystem = client.registerSystem(0, 0);
 
+mySystem.initialize = function() {
+  let eventData = this.createEventData("minecraft:display_chat_event");
+  eventData.data.message = "Hello, World!";
+  this.broadcastEvent("minecraft:display_chat_event", eventData);
+};
+</pre> <br>
 <br><br>
 
-<h2><p id="listenForEvent(EventIdentifier, CallbackObject)"><span class="anchored"><a href="#listenForEvent(EventIdentifier%2C%20CallbackObject)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>listenForEvent(EventIdentifier, CallbackObject)</span></p></h2>
-
-Allows you to register a JavaScript object that gets called whenever the specified event is broadcast. The event can either be a built-in event or an event specified in script.<br>
+<h2><p id="listenForEvent(EventIdentifier, CallbackObject)"><span class="anchored">6-4 listenForEvent(事件标识符, 回调函数)</span></p></h2>
+将一个对象注册成为事件的回调对象，当事件被广播时回调对象将被调用。<br>
 
 <h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">CallbackObject</td>
 <td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
-<td style="border-style:solid; border-width:1; padding:9px">The JavaScript object that will get called whenever the event is broadcast<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">欲注册为回调函数的JS对象。<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:1; padding:9px">EventIdentifier</td>
 <td style="border-style:solid; border-width:1; padding:9px">字符串</td>
-<td style="border-style:solid; border-width:1; padding:9px">This is the identifier of the event to which we want to react. Can be the identifier of a built-in event or a custom one from script<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">欲监听的事件的标识符，可以是内置的事件，也可以是自定义的事件。<br></td>
 </tr>
 </tbody></table>
-
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-
-
+<h3><p id="Return Value"><span class="anchored">返回值</span></p></h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
 <tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
 <tr>
-<td style="border-style:solid; border-width:1; padding:9px">Boolean</td>
-<td style="border-style:solid; border-width:1; padding:9px">Successfully registered to listen for the event<br></td>
+<td style="border-style:solid; border-width:1; padding:9px">布尔</td>
+<td style="border-style:solid; border-width:1; padding:9px">是否成功注册监听事件？<br></td>
 </tr>
 </tbody></table>
-
 <h3>示例代码：</h3>
-Register a callback for a specified event<br><pre class="language-javascript"><span class="token keyword">const</span> mySystem <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token function">registerSystem</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+注册监听事件<br><br><pre>
+const mySystem = client.registerSystem(0, 0);
 
-mySystem<span class="token punctuation">.</span><span class="token function-variable function">initialize</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">listenForEvent</span><span class="token punctuation">(</span><span class="token string">"minecraft:client_entered_world"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">eventData</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onClientEnteredWorld</span><span class="token punctuation">(</span>eventData<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+mySystem.initialize = function() {
+  this.listenForEvent("minecraft:client_entered_world", (eventData) => this.onClientEnteredWorld(eventData));
+};
 
-mySystem<span class="token punctuation">.</span><span class="token function-variable function">onClientEnteredWorld</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">eventData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> messageData <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createEventData</span><span class="token punctuation">(</span><span class="token string">"minecraft:display_chat_event"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  messageData<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">"Player has entered the world"</span><span class="token punctuation">;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">broadcastEvent</span><span class="token punctuation">(</span><span class="token string">"minecraft:display_chat_event"</span><span class="token punctuation">,</span> messageData<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+mySystem.onClientEnteredWorld = function(eventData) {
+  let messageData = this.createEventData("minecraft:display_chat_event");
+  messageData.data.message = "Player has entered the world";
+  this.broadcastEvent("minecraft:display_chat_event", messageData);
+};
 </pre> <br>
 <br><br>
-
-<h2><p id="registerEventData(EventIdentifier, EventData)"><span class="anchored"><a href="#registerEventData(EventIdentifier%2C%20EventData)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>registerEventData(EventIdentifier, EventData)</span></p></h2>
-
-Registers the Event to the script engine. This allows you to create Event Data by calling createEventData and have it initialized with the correct default data and fields. Only custom events need to be registered.<br>
-
-<h3><p id="Parameters"><span class="anchored">参数</span></p></h3>
-
-
-
-<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
-<tbody><tr> <th style="border-style:solid; border-width:1;">名称</th> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">备注</th> </tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">EventData</td>
-<td style="border-style:solid; border-width:1; padding:9px">JavaScript对象</td>
-<td style="border-style:solid; border-width:1; padding:9px">The JavaScript object with the correct fields and default values for the event<br></td>
-</tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">EventIdentifier</td>
-<td style="border-style:solid; border-width:1; padding:9px">字符串</td>
-<td style="border-style:solid; border-width:1; padding:9px">This is the identifier of the custom event we are registering. The namespace is required and can't be set to minecraft.<br></td>
-</tr>
-</tbody></table>
-
-<h3><p id="Return Value"><span class="anchored"><a href="#Return%20Value" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>返回值</span></p></h3>
-
-
-<table style="width:auto; border-style:solid; border-collapse:collapse; border-width:1;">
-<tbody><tr> <th style="border-style:solid; border-width:1;">类型</th><th style="border-style:solid; border-width:1;">值（内容）</th></tr>
-<tr>
-<td style="border-style:solid; border-width:1; padding:9px">Boolean</td>
-<td style="border-style:solid; border-width:1; padding:9px">Successfully registered the event data<br></td>
-</tr>
-</tbody></table>
-
 <br><br>
 
-<br><br>
 
 <h1><p id="Logging Bindings"><span class="anchored"><a href="#Logging%20Bindings" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Logging Bindings</span></p></h1>
-
-
-
 <h2><p id="log(Message)"><span class="anchored"><a href="#log(Message)" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>log(Message)</span></p></h2>
 
 The log function is accessed through the server or client objects and allows for logging a message to the ContentLog file. On Windows 10 devices it is located at ' %APPDATA%\..\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\logs '<br>
