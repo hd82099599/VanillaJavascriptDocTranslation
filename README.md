@@ -27,4 +27,6 @@
 
 # AD 
 ~~（广告费害没到账）~~<br/>
-[![ez6](/img/ez.png)](https://github.com/Element-0/ElementZero)
+[![ez6](/img/ez.png)](https://github.com/Element-0/ElementZero)<br>
+<a href="https://github.com/Element-0/ElementZero/releases/latest">![Latest Tag](https://img.shields.io/github/v/tag/Element-0/ElementZero?label=LATEST%20TAG&style=for-the-badge)</a>![platform](https://img.shields.io/badge/platform-win--x64%20%7C%20wine--linux--x64-green?style=for-the-badge)
+
