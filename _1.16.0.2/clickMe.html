@@ -7,8 +7,8 @@
 *** 翻译内容禁止商用，转载请带上项目Github链接。尊重他人劳动成果请勿盗用。<br><br>
 在这里，你可以找到一些Script API关于对象和返回类型的定义<br>
 
+<h1><span style="color:#FFFFFF; background-color:#000000">** 第一节(1-8)</span></h1>
 <!-- 书目：Index -->
-<h2><span style="color:#FFFFFF; background-color:#000000">1、 首先需要了解</span></h2>
 <h2><p id="Block JS API Object"><span class="anchored">1-1 [对象] JavaScript 方块</span></p></h2>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:3;">
 <tbody><tr> <th style="border-style:solid; border-width:3;">名称</th> <th style="border-style:solid; border-width:3;">类型</th><th style="border-style:solid; border-width:3;">备注</th> </tr>
@@ -1214,79 +1214,86 @@ system.commandCallback = function (commandResultData) {
 <br><br>
 <br><br>
 
-<h1><p id="Script Components"><span class="anchored"><a href="#Script%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Script Components</span></p></h1>
 
-This is the documentation for the attributes, properties, and components available from the Minecraft Script Engine.<br>There are two kinds of components: server components and client components. We will go into a bit more detail on what they are in their respective sections below.<br>Components can be added, retrieved, updated, and removed from entities. They do not exist on their own. Currently only user-defined components can be added and removed from entities. A component must be in an entity in order to retrieve or update it.<br>Check the Script Engine Bindings section to see how to add, remove, retrieve, and update components. This section deals with the specific API of each component.<br><h1><p id="Block Components"><span class="anchored"><a href="#Block%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Block Components</span></p></h1>
+<h1><span style="color:#FFFFFF; background-color:#000000">** 第二节(9-N/A)</span></h1>
+<!-- 书目：Script Components -->
+这里是Minecraft脚本引擎中可用的属性、附加属性和组件的文档<br>
+有两种组件：服务端组件和客户端组件。我们将在后面的部分详细介绍它们的含义。<br>
+组件在实体中可以被添加、检索、更新和删除，它们不是独立存在的，当前，只有自定义的“附加组件”可以被从实体中删除。组件需要附加到实体才能被检索或更新。<br>
+查看“组件绑定”部分以了解如何对组件进行增、删、改、查。本节介绍每个组件的特定API。<br>
 
-These components are only found on block objects and can only be on block objects<br>
-
-<h2><p id="minecraft:blockstate"><span class="anchored"><a href="#minecraft%3Ablockstate" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:blockstate</span></p></h2>
-
-This component contains all the blockstates on a block object. Blockstates control all different aspects of blocks from their orientation to the type of wood they are. Blockstates are represented by numbers, bools, or strings. Please see the Blockstates Documentation to see the valid values for each state. This component allows for the getting and setting of these states.<br><h3>示例代码：</h3>
-<br><pre class="language-javascript"><span class="token keyword">let</span> blockstateComponent <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getComponent</span><span class="token punctuation">(</span>block<span class="token punctuation">,</span> <span class="token string">"minecraft:blockstate"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-blockstateComponent<span class="token punctuation">.</span>data<span class="token punctuation">.</span>coral_color <span class="token operator">=</span> <span class="token string">"blue"</span><span class="token punctuation">;</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">applyComponentChanges</span><span class="token punctuation">(</span>block<span class="token punctuation">,</span> blockstateComponent<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+<!-- 书目：Block Components -->
+<h2><span style="color:#FFFFFF; background-color:#000000">10、 方块组件</span></h2>
+这些组件仅存在于方块对象上。<br>
+<h2><p id="minecraft:blockstate"><span class="anchored">10-1 minecraft:blockstate</span></p></h2>
+该组件包含Block对象上的所有方块状态。方块状态涵盖了方块方方面面的不同的属性，从方块的摆放方向到它们的类型。方块状态由数字，布尔或字符串表示。请参考“Blockstates”文档以查看每个状态的有效值。该组件允许获取和设置这些状态。
+<br><h4>示例代码：</h4>
+<pre>
+let blockstateComponent = this.getComponent(block, "minecraft:blockstate");
+blockstateComponent.data.coral_color = "blue";
+this.applyComponentChanges(block, blockstateComponent);
 </pre> <br>
-
 <br><br>
 
-<h1><p id="Client Components"><span class="anchored"><a href="#Client%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Client Components</span></p></h1>
 
-These components only run on the client where the script ran and can only be used from client scripts.<br>
+<!-- 书目：Client Components -->
+<h2><span style="color:#FFFFFF; background-color:#000000">11、 客户端组件</span></h2>
+这些组件仅在启动脚本引擎的客户端上运行，并且只能在客户端脚本中使用。<br>
 
-<h2><p id="minecraft:molang"><span class="anchored"><a href="#minecraft%3Amolang" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:molang</span></p></h2>
+<h2><p id="minecraft:molang"><span class="anchored">11-1 minecraft:molang</span></p></h2>
+使用MoLang组件可以访问实体中的MoLang变量。想要了解有关MoLang变量的更多信息，请查看其他附加文档。 在脚本中，您可以获取并设置在实体的Json文件中定义的这些变量。由于MoLang变量的格式（例如，variable.isgrazing）因此必须在对象上使用“[]”运算符来访问变量。下面的示例说明如何使用[]运算符访问变量。
 
-The MoLang component gives access to the MoLang variables in an entity. To learn more about MoLang varibles review the add-on documentation. In scripts, you can get and set these varibles that are defined in the entity's JSON files. Because of how the MoLang variables are formatted (variable.isgrazing for example) you must use the [] operator on the object to access the variable. The example below shows how to use the [] operator to access the variable.<br><h3>示例代码：</h3>
-<br><pre class="language-javascript"><span class="token keyword">let</span> molangComponent <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createComponent</span><span class="token punctuation">(</span>entity<span class="token punctuation">,</span> <span class="token string">"minecraft:molang"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-molangComponent<span class="token punctuation">[</span><span class="token string">"variable.molangexample"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span> 
-<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">applyComponentChanges</span><span class="token punctuation">(</span>molangComponent<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-
+<br><h4>示例代码：</h4>
+<pre>
+let molangComponent = this.createComponent(entity, "minecraft:molang"); 
+molangComponent["variable.molangexample"] = 1.0; 
+this.applyComponentChanges(molangComponent); 
 </pre> <br>
-
 <br><br>
 
-<h1><p id="Level Components"><span class="anchored"><a href="#Level%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Level Components</span></p></h1>
+<!-- 书目：Level Components -->
+<h2><span style="color:#FFFFFF; background-color:#000000">11、 存档组件</span></h2>
+这些是属于存档的组件。它们只在level对象中存在，并且不能从level对象中删除。您可以通过全局server对象获取该组件并更改其数据。<br><br>
+<pre>
+let levelComponent = this.getComponent(server.level, "minecraft:example_level_component");
+</pre>
 
-These are the components that belong to the level. They can only belong on the level object and cannot be removed from it. You can get the components and change their data through the global server object.<br><br>let levelComponent = this.getComponent(server.level, "minecraft:example_level_component");<br>
+<h2><p id="minecraft:ticking_areas"><span class="anchored">minecraft:ticking_areas</span></p></h2>
+该组件可以访问存档中的静态常加载区域。该组件数组包含存档中的常加载区域，可以通过名称或UUID进行访问。<br>
 
-<h2><p id="minecraft:ticking_areas"><span class="anchored"><a href="#minecraft%3Aticking_areas" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:ticking_areas</span></p></h2>
-
-This component gives access to the static ticking areas in the level. The component contains an array of ticking areas. The ticking areas can be accessed by name or by UUID if they were not given a name.<br>
-<h2><p id="minecraft:weather"><span class="anchored"><a href="#minecraft%3Aweather" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>minecraft:weather</span></p></h2>
-
-The weather component allows users to change the level's weather. Rain and lightning levels can be changed independently and the default weather cycle can be turned off completely.<br><h3>参数</h3>
-
+<h2><p id="minecraft:weather"><span class="anchored">minecraft:weather</span></p></h2>
+该组件用于更改存档中的天气，可以单独更改雷、雨级别，甚至能完全禁用默认的天气周期。
+<br><h3>参数</h3>
 <table style="width:auto; border-style:solid; border-collapse:collapse; border-width:2;">
 <tbody><tr> <th style="border-style:solid; border-width:2;">名称</th> <th style="border-style:solid; border-width:2;">类型</th> <th style="border-style:solid; border-width:2;">备注</th> </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">do_weather_cycle</td>
-<td style="border-style:solid; border-width:2; padding:8px">Boolean</td>
-<td style="border-style:solid; border-width:2; padding:8px">This is the world option that determines if the vanilla weather cycle will be used<br></td>
+<td style="border-style:solid; border-width:2; padding:8px">布尔</td>
+<td style="border-style:solid; border-width:2; padding:8px">决定是否使用默认的天气周期<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">lightning_level</td>
-<td style="border-style:solid; border-width:2; padding:8px">Decimal</td>
-<td style="border-style:solid; border-width:2; padding:8px">A value between 0 and 1 that determines how much lightning and thunder there is<br></td>
+<td style="border-style:solid; border-width:2; padding:8px">小数</td>
+<td style="border-style:solid; border-width:2; padding:8px">一个介于0-1的值，决定有多少雷电<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">lightning_time</td>
-<td style="border-style:solid; border-width:2; padding:8px">Integer</td>
-<td style="border-style:solid; border-width:2; padding:8px">How long, in ticks, it will lightning and thunder for<br></td>
+<td style="border-style:solid; border-width:2; padding:8px">整数</td>
+<td style="border-style:solid; border-width:2; padding:8px">闪电和雷声持续多长时间，以Tick为单位<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">rain_level</td>
-<td style="border-style:solid; border-width:2; padding:8px">Decimal</td>
-<td style="border-style:solid; border-width:2; padding:8px">A value between 0 and 1 that determains how heavy the rainfall is<br></td>
+<td style="border-style:solid; border-width:2; padding:8px">小数</td>
+<td style="border-style:solid; border-width:2; padding:8px">一个介于0-1的值，决定降雨的强度<br></td>
 </tr>
 <tr>
 <td style="border-style:solid; border-width:2; padding:8px">rain_time</td>
-<td style="border-style:solid; border-width:2; padding:8px">Integer</td>
-<td style="border-style:solid; border-width:2; padding:8px">How long, in ticks, it will rain for<br></td>
+<td style="border-style:solid; border-width:2; padding:8px">整数</td>
+<td style="border-style:solid; border-width:2; padding:8px">雨将持续多长事件，以Tick为单位<br></td>
 </tr>
 </tbody></table>
-
 <br><br>
+
 
 <h1><p id="Server Components"><span class="anchored"><a href="#Server%20Components" tabindex="-1" class="anchor" aria-label="Anchor" aria-hidden="true">#</a>Server Components</span></p></h1>
 
