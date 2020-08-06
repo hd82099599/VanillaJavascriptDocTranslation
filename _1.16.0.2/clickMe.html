@@ -1146,7 +1146,7 @@ mySystem.initialize = function() {
 
 mySystem.onClientEnteredWorld = function(eventData) {
   let messageData = this.createEventData("minecraft:display_chat_event");
-  messageData.data.message = "Player has entered the world";
+  messageData.data.message = "玩家进入地图";
   this.broadcastEvent("minecraft:display_chat_event", messageData);
 };
 </pre> <br>
@@ -1172,7 +1172,7 @@ mySystem.onClientEnteredWorld = function(eventData) {
 <h3>示例代码：</h3>
 日志<br><br><pre>
 system.exampleFunction = function() {
-  client.log("example log message") 
+  client.log("示例日志") 
 }; 
 </pre> <br>
 <br><br>
