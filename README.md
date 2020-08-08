@@ -1,5 +1,7 @@
 # Chinese Translation
-欢迎！这里为[bedrock.dev](https://bedrock.dev/)的**Scripting**栏目提供中文翻译支持(未完成)，如有必要也会选择性的翻译其他栏目的部分内容。
+~~欢迎！这里为[bedrock.dev](https://bedrock.dev/)的**Scripting**栏目提供中文翻译支持(未完成)，如有必要也会选择性的翻译其他栏目的部分内容。~~
+<br>
+由于源HTML感觉不适合阅读，翻译工作也难以进行，本项目逐渐会迁至**Redbeanw44602/JavaScript-Engine-DevDocs**。
 
 # Progress
  - 完全人工翻译，非鸡翻。
